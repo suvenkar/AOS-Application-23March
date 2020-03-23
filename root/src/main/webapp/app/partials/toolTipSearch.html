@@ -1,0 +1,71 @@
+
+<div id="searchSection"
+     data-ng-mouseenter="allowClosing = false"
+     data-ng-mouseleave="allowClosingLeave()"
+     data-ng-click="closeSearchSection()">
+
+    <div id="input" data-ng-click="$event.stopPropagation()">
+        <div id="search">
+            <a title="{{ 'SEARCH' | translate }}">
+                <div icon-search-svg data-ng-click="openSearchProducts()" ></div>
+            </a>
+            <div class="autoCompleteCover">
+                <input id="autoComplete" type="text" class="roboto-regular"
+                       placeholder="{{'Search' | translate }} AdvantageOnlineShopping.com"
+                       data-ng-keypress="checkEnterKey($event)"
+                       data-ng-model="autoCompleteValue"
+                       data-ng-keyup="runAutocomplete()"
+                       data-ng-blur="closeSearchSection()">
+
+                <div data-ng-click="closeSearchForce()"  style="position: absolute; right: 0; top:0" >
+                    <img src="../../css/images/closeDark.png" style="width:20px; height:20px; padding: 12px 0" >
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div id="output" data-ng-show="autoCompleteResult.length > 0" >
+        <div class="searchPopUp" data-ng-click="$event.stopPropagation()" >
+            <div class="categories">
+                <h3 class="roboto-medium" translate="CATEGORIES"
+                    data-ng-mouseenter="searchByCategoryId(null, '')">
+                </h3>
+                <a href="#/search/{{categoryFilter}}?viewAll={{autoCompleteValue}}">
+                    <label class="roboto-light"
+                           data-ng-repeat="result in autoCompleteResult"
+                           data-ng-mouseenter="searchByCategoryId(result.categoryId, result.categoryName)">
+                        {{result.categoryName | lowercase}}
+                    </label>
+                </a>
+            </div>
+            <div class="top6Products">
+                <h3 class="roboto-medium" >{{ 'TOP' | translate }} {{ 'RESULTS_FOR' | translate }}: "{{autoCompleteValue}}"
+                    <p style="font-size: 11px !important; font-weight: 300 !important;" > {{ categoryName }} </p>
+                </h3>
+                <a href="#/search/{{categoryFilter}}?viewAll={{autoCompleteValue}}" translate="View_All"
+                   class="roboto-medium viewAll"></a>
+                <a class="product" href="#/product/{{product.productId}}"
+                   data-ng-click="closeSearchSection()"
+                   data-ng-repeat="product in [] | filterFullArrayforAutoComplate:autoCompleteResult:categoryFilter">
+                    <img data-ng-src="/catalog/fetchImage?image_id={{product.imageUrl}}" />
+                    <p class="roboto-regular">{{product.productName | uppercase}}</p>
+                    <span>{{product.price | currency:'$'}}</span>
+                </a>
+            </div>
+        </div>
+
+
+    </div>
+
+
+</div>
+
+
+
+
+
+

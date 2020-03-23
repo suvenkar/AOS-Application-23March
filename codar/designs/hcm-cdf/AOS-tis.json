@@ -1,0 +1,675 @@
+{
+  "@self" : "/csa/api/topology-model/topology/bc21c5af-1d28-4110-b28b-e6b6b68fec65",
+  "@type" : "urn:x-hp:2013:software:cloud:topology_model:topology",
+  "groupId" : "com.hp.csa",
+  "artifactId" : "2ccdaa885bfbb5ad015c097926c60f10",
+  "version" : "1.0.0",
+  "displayName" : "AOS-tis",
+  "description" : "",
+  "resources" : [ {
+    "id" : "3b62b129-be6b-7959-8238-c50f3ebfaea4",
+    "name" : "DevOps-Bootstrap-ApplyRole(Postgres)",
+    "component" : {
+      "@self" : "/csa/api/topology-model/component-type/e4b5ec43-7dd2-443a-b0a3-8c0e5959e1a8",
+      "groupId" : "com.hp.csa.type.CHEF",
+      "artifactId" : "DevOps-Bootstrap-ApplyRolePostgres_b635a871bfc74e798f2b6acd29fbc906",
+      "version" : "1.0"
+    },
+    "properties" : [ {
+      "propertyKey" : "nodeName",
+      "propertyValue" : {
+        "value" : null,
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "nodeRunList",
+      "propertyValue" : {
+        "value" : "role[postgres]",
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "chefHostUsername",
+      "propertyValue" : {
+        "value" : null,
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "nodeHost",
+      "propertyValue" : {
+        "value" : null,
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "nodeNamePrefix",
+      "propertyValue" : {
+        "value" : null,
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "_modifiable_properties",
+      "propertyValue" : {
+        "value" : "",
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "nodeIP",
+      "propertyValue" : {
+        "value" : null,
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "chefHostPassword",
+      "propertyValue" : {
+        "value" : null,
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "nodePassword",
+      "propertyValue" : {
+        "value" : null,
+        "type" : "string_encrypted"
+      }
+    }, {
+      "propertyKey" : "_enable_modify_during_lifecycle_properties",
+      "propertyValue" : {
+        "value" : "",
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "osType",
+      "propertyValue" : {
+        "value" : "Linux",
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "attributes",
+      "propertyValue" : {
+        "value" : "{}",
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "chefHost",
+      "propertyValue" : {
+        "value" : null,
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "chefTimeout",
+      "propertyValue" : {
+        "value" : "2500000",
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "nodeUserID",
+      "propertyValue" : {
+        "value" : null,
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "nodeHostname",
+      "propertyValue" : {
+        "value" : null,
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "nodeIPAddress",
+      "propertyValue" : {
+        "value" : null,
+        "type" : "string"
+      }
+    } ],
+    "outgoingRelations" : [ {
+      "relationType" : "association",
+      "id" : "3f696227-74fd-6003-fddf-6a744683e36a",
+      "properties" : [ {
+        "propertyKey" : "_enable_modify_during_lifecycle_properties",
+        "propertyValue" : {
+          "value" : null,
+          "type" : "string"
+        }
+      }, {
+        "propertyKey" : "_modifiable_properties",
+        "propertyValue" : {
+          "value" : null,
+          "type" : "string"
+        }
+      }, {
+        "propertyKey" : "_relation_type",
+        "propertyValue" : {
+          "value" : {
+            "first" : "Association",
+            "second" : "ASSOCIATION"
+          },
+          "type" : "pair"
+        }
+      } ],
+      "relationDescriptorName" : "dependsOn-Host_DevOps-Bootstrap-ApplyRolePostgres_b635a871bfc74e798f2b6acd29fbc906__VERSION__1^0__GROUPID__com^hp^csa^type^CHEF",
+      "resourceReference" : {
+        "name" : "DevOps-vCenter Linux Server(Postgres)"
+      }
+    } ],
+    "annotations" : {
+      "uniqueName" : "DevOps-Bootstrap0001",
+      "displayName" : "3b62b129-be6b-7959-8238-c50f3ebfaea4",
+      "x" : "137",
+      "description" : null,
+      "y" : "55"
+    },
+    "capabilityChars" : [ ],
+    "requirements" : [ ]
+  }, {
+    "id" : "bdc54536-61d8-f265-5992-17880935535e",
+    "name" : "DevOps-Bootstrap-ApplyRole(Tomcat)",
+    "component" : {
+      "@self" : "/csa/api/topology-model/component-type/0323da90-8074-403d-aca7-b8e8f4e216cd",
+      "groupId" : "com.hp.csa.type.CHEF",
+      "artifactId" : "DevOps-Bootstrap-ApplyRoleTomcat_2e4e9b0806cf469cb1338e082146b8bb",
+      "version" : "1.0"
+    },
+    "properties" : [ {
+      "propertyKey" : "nodeName",
+      "propertyValue" : {
+        "value" : null,
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "nodeRunList",
+      "propertyValue" : {
+        "value" : "role[aos]",
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "chefHostUsername",
+      "propertyValue" : {
+        "value" : null,
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "nodeHost",
+      "propertyValue" : {
+        "value" : null,
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "nodeNamePrefix",
+      "propertyValue" : {
+        "value" : null,
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "_modifiable_properties",
+      "propertyValue" : {
+        "value" : "",
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "nodeIP",
+      "propertyValue" : {
+        "value" : null,
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "artifact_http_url",
+      "propertyValue" : {
+        "value" : "@artifact_http_url@",
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "chefHostPassword",
+      "propertyValue" : {
+        "value" : null,
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "nodePassword",
+      "propertyValue" : {
+        "value" : null,
+        "type" : "string_encrypted"
+      }
+    }, {
+      "propertyKey" : "_enable_modify_during_lifecycle_properties",
+      "propertyValue" : {
+        "value" : "",
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "osType",
+      "propertyValue" : {
+        "value" : "Linux",
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "attributes",
+      "propertyValue" : {
+        "value" : "{}",
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "chefHost",
+      "propertyValue" : {
+        "value" : null,
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "chefTimeout",
+      "propertyValue" : {
+        "value" : "2500000",
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "nodeUserID",
+      "propertyValue" : {
+        "value" : null,
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "nodeHostname",
+      "propertyValue" : {
+        "value" : null,
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "nodeIPAddress",
+      "propertyValue" : {
+        "value" : null,
+        "type" : "string"
+      }
+    } ],
+    "outgoingRelations" : [ {
+      "relationType" : "association",
+      "id" : "dc68665c-f0ea-2bb5-fe0d-abf042044369",
+      "properties" : [ {
+        "propertyKey" : "_enable_modify_during_lifecycle_properties",
+        "propertyValue" : {
+          "value" : null,
+          "type" : "string"
+        }
+      }, {
+        "propertyKey" : "_modifiable_properties",
+        "propertyValue" : {
+          "value" : null,
+          "type" : "string"
+        }
+      }, {
+        "propertyKey" : "_relation_type",
+        "propertyValue" : {
+          "value" : {
+            "first" : "Association",
+            "second" : "ASSOCIATION"
+          },
+          "type" : "pair"
+        }
+      } ],
+      "relationDescriptorName" : "dependsOn-Chef_DevOps-Bootstrap-ApplyRoleTomcat_2e4e9b0806cf469cb1338e082146b8bb__VERSION__1^0__GROUPID__com^hp^csa^type^CHEF",
+      "resourceReference" : {
+        "name" : "DevOps-Bootstrap-ApplyRole(Postgres)"
+      }
+    }, {
+      "relationType" : "association",
+      "id" : "1ebea8d1-5db9-0b51-a7f8-660910824ee7",
+      "properties" : [ {
+        "propertyKey" : "_enable_modify_during_lifecycle_properties",
+        "propertyValue" : {
+          "value" : null,
+          "type" : "string"
+        }
+      }, {
+        "propertyKey" : "_modifiable_properties",
+        "propertyValue" : {
+          "value" : null,
+          "type" : "string"
+        }
+      }, {
+        "propertyKey" : "_relation_type",
+        "propertyValue" : {
+          "value" : {
+            "first" : "Association",
+            "second" : "ASSOCIATION"
+          },
+          "type" : "pair"
+        }
+      } ],
+      "relationDescriptorName" : "dependsOn-Host_DevOps-Bootstrap-ApplyRoleTomcat_2e4e9b0806cf469cb1338e082146b8bb__VERSION__1^0__GROUPID__com^hp^csa^type^CHEF",
+      "resourceReference" : {
+        "name" : "DevOps-vCenter Linux Server(Tomcat)"
+      }
+    } ],
+    "annotations" : {
+      "uniqueName" : "DevOps-Bootstrap0002",
+      "displayName" : "bdc54536-61d8-f265-5992-17880935535e",
+      "x" : "453",
+      "description" : null,
+      "y" : "40"
+    },
+    "capabilityChars" : [ ],
+    "requirements" : [ ]
+  }, {
+    "id" : "4a3cb4ea-1a54-b20a-86e1-03c7dd53b9a8",
+    "name" : "DevOps-vCenter Linux Server(Postgres)",
+    "component" : {
+      "@self" : "/csa/api/topology-model/component-type/6a271d33-adf9-4ca1-a373-7a8f94ea8965",
+      "groupId" : "com.hp.csa.type",
+      "artifactId" : "DevOps-vCenterLinuxServerPostgres_0800e5fccf11437086208b24a6711456",
+      "version" : "15.07.0000"
+    },
+    "properties" : [ {
+      "propertyKey" : "customizationSpec",
+      "propertyValue" : {
+        "value" : "linux",
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "vmResourcePool",
+      "propertyValue" : {
+        "value" : null,
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "vmID",
+      "propertyValue" : {
+        "value" : null,
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "ipAddress",
+      "propertyValue" : {
+        "value" : null,
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "_modifiable_properties",
+      "propertyValue" : {
+        "value" : "",
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "hostSystem",
+      "propertyValue" : {
+        "value" : null,
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "vmNamePrefix",
+      "propertyValue" : {
+        "value" : "AOS",
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "ipAddressList",
+      "propertyValue" : {
+        "value" : null,
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "result",
+      "propertyValue" : {
+        "value" : null,
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "privateKey",
+      "propertyValue" : {
+        "value" : null,
+        "type" : "string_encrypted"
+      }
+    }, {
+      "propertyKey" : "hostname",
+      "propertyValue" : {
+        "value" : null,
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "macAddress",
+      "propertyValue" : {
+        "value" : null,
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "password",
+      "propertyValue" : {
+        "value" : "ENC(QUVRK7HVG6Z7RjqNuFXIb87CT03tnEmt)",
+        "type" : "string_encrypted"
+      }
+    }, {
+      "propertyKey" : "memorySize",
+      "propertyValue" : {
+        "value" : "1024",
+        "type" : "number"
+      }
+    }, {
+      "propertyKey" : "_enable_modify_during_lifecycle_properties",
+      "propertyValue" : {
+        "value" : "",
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "vmFolder",
+      "propertyValue" : {
+        "value" : "/devops/mo6/dev/aos",
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "clusterName",
+      "propertyValue" : {
+        "value" : "LAB",
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "vmTemplateReference",
+      "propertyValue" : {
+        "value" : "DEVOPS-UBUNTU-1404",
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "dataStore",
+      "propertyValue" : {
+        "value" : "storage01",
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "ip_sequence",
+      "propertyValue" : {
+        "value" : "1",
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "vmState",
+      "propertyValue" : {
+        "value" : null,
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "cpuCount",
+      "propertyValue" : {
+        "value" : "2",
+        "type" : "number"
+      }
+    }, {
+      "propertyKey" : "username",
+      "propertyValue" : {
+        "value" : "root",
+        "type" : "string"
+      }
+    } ],
+    "outgoingRelations" : [ ],
+    "annotations" : {
+      "uniqueName" : "DevOps-vCenterLi0001",
+      "displayName" : "4a3cb4ea-1a54-b20a-86e1-03c7dd53b9a8",
+      "x" : "142",
+      "description" : "vCenter Server",
+      "y" : "322"
+    },
+    "capabilityChars" : [ ],
+    "requirements" : [ ]
+  }, {
+    "id" : "6fd2c38d-a85f-d391-1562-5f9f6e93ddec",
+    "name" : "DevOps-vCenter Linux Server(Tomcat)",
+    "component" : {
+      "@self" : "/csa/api/topology-model/component-type/a3ab3506-5539-457a-8d7c-b9103766f8ca",
+      "groupId" : "com.hp.csa.type",
+      "artifactId" : "DevOps-vCenterLinuxServerTomcat_0a565e22985344428ddd2d249877d4ad",
+      "version" : "15.07.0000"
+    },
+    "properties" : [ {
+      "propertyKey" : "customizationSpec",
+      "propertyValue" : {
+        "value" : "linux",
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "vmResourcePool",
+      "propertyValue" : {
+        "value" : null,
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "vmID",
+      "propertyValue" : {
+        "value" : null,
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "ipAddress",
+      "propertyValue" : {
+        "value" : null,
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "_modifiable_properties",
+      "propertyValue" : {
+        "value" : "",
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "hostSystem",
+      "propertyValue" : {
+        "value" : null,
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "vmNamePrefix",
+      "propertyValue" : {
+        "value" : "AOS",
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "ipAddressList",
+      "propertyValue" : {
+        "value" : null,
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "result",
+      "propertyValue" : {
+        "value" : null,
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "privateKey",
+      "propertyValue" : {
+        "value" : null,
+        "type" : "string_encrypted"
+      }
+    }, {
+      "propertyKey" : "hostname",
+      "propertyValue" : {
+        "value" : null,
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "macAddress",
+      "propertyValue" : {
+        "value" : null,
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "password",
+      "propertyValue" : {
+        "value" : "ENC(2C7VPJg/KmMpEGhv2F73tTikiGYtuStA)",
+        "type" : "string_encrypted"
+      }
+    }, {
+      "propertyKey" : "memorySize",
+      "propertyValue" : {
+        "value" : "2048",
+        "type" : "number"
+      }
+    }, {
+      "propertyKey" : "_enable_modify_during_lifecycle_properties",
+      "propertyValue" : {
+        "value" : "",
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "vmFolder",
+      "propertyValue" : {
+        "value" : "/devops/mo6/dev/aos",
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "clusterName",
+      "propertyValue" : {
+        "value" : "LAB",
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "vmTemplateReference",
+      "propertyValue" : {
+        "value" : "DEVOPS-UBUNTU-1404",
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "dataStore",
+      "propertyValue" : {
+        "value" : "storage01",
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "ip_sequence",
+      "propertyValue" : {
+        "value" : "2",
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "vmState",
+      "propertyValue" : {
+        "value" : null,
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "cpuCount",
+      "propertyValue" : {
+        "value" : "2",
+        "type" : "number"
+      }
+    }, {
+      "propertyKey" : "username",
+      "propertyValue" : {
+        "value" : "root",
+        "type" : "string"
+      }
+    } ],
+    "outgoingRelations" : [ ],
+    "annotations" : {
+      "uniqueName" : "DevOps-vCenterLi0002",
+      "displayName" : "6fd2c38d-a85f-d391-1562-5f9f6e93ddec",
+      "x" : "456",
+      "description" : "vCenter Server",
+      "y" : "323"
+    },
+    "capabilityChars" : [ ],
+    "requirements" : [ ]
+  } ],
+  "revision" : 50,
+  "properties" : [ ],
+  "iconUrl" : "/csa/images/library/IT_infrastructure.png",
+  "tagIds" : [ ],
+  "hidden" : false,
+  "state" : "UNLOCKED",
+  "partial" : false,
+  "profiles" : [ ],
+  "annotations" : {
+    "serviceBlueprintId" : "2ccdaa885bfbb5ad015c09792def0f16",
+    "providerType" : "independent"
+  }
+}

@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <!--<groupId>com.advantage.online.store</groupId>-->
+    <!--<version>1.0-SNAPSHOT</version>-->
+    <artifactId>common</artifactId>
+    <packaging>jar</packaging>
+    <parent>
+        <groupId>com.advantage.online.store</groupId>
+        <artifactId>main_project</artifactId>
+        <version>1.0-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+    <build>
+        <plugins>
+            <!--shared resources-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+            </plugin>
+            <!--read properties from zip-->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>properties-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+    <!-- Spring BOM -->
+    <dependencies>
+        <!--Use shared resources for unit tests only.-->
+        <dependency>
+            <groupId>com.advantage.online.store</groupId>
+            <artifactId>shared_resources</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <!--<classifier>resources</classifier>-->
+            <type>zip</type>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+</project>

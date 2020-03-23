@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+
+    <changeSet author="evgeneyf" id="12345-1">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <tableExists tableName="evg1"/>
+            </not>
+        </preConditions>
+        <createTable tableName="evg1">
+            <column autoIncrement="true" name="PRODUCT_ID" type="BIGINT">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="PRODUCT_NAME" type="VARCHAR(255)"/>
+            <column name="DESCRIPTION" type="VARCHAR(255)"/>
+            <column name="price" type="BIGINT"/>
+            <column name="category_id" type="BIGINT"/>
+        </createTable>
+
+    </changeSet>
+    <changeSet author="evgeneyf" id="12346-1">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <tableExists tableName="evg2"/>
+            </not>
+        </preConditions>
+        <createTable tableName="evg2">
+            <column autoIncrement="true" name="PRODUCT_ID" type="BIGINT">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="PRODUCT_NAME" type="VARCHAR(255)"/>
+            <column name="DESCRIPTION" type="VARCHAR(255)"/>
+            <column name="price" type="BIGINT"/>
+            <column name="category_id" type="BIGINT"/>
+        </createTable>
+
+    </changeSet>
+</databaseChangeLog>

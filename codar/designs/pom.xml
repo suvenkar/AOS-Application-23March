@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.advantage.online.store</groupId>
+    <artifactId>Advantage_Online_Shopping_Design_Release</artifactId>
+    <version>1.0</version>
+ 
+    <name>${project.groupId}:${project.artifactId}</name>
+    <description>Codar design file</description>
+ 
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
+
+    <build>
+      <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <version>2.6</version>
+        <executions>
+          <execution>
+            <id>default-jar</id>
+            <phase>never</phase>
+          </execution>
+        </executions>
+      </plugin>
+
+        <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>build-helper-maven-plugin</artifactId>
+            <version>1.10</version>
+            <executions>
+                <execution>
+                    <id>attach-artifacts</id>
+                    <phase>package</phase>
+                    <goals>
+                        <goal>attach-artifact</goal>
+                    </goals>
+                    <configuration>
+                        <artifacts>
+                            <artifact>
+                                <file>Advantage_Online_Shopping_Design_Release.json</file>
+                                <type>json</type>
+                                <classifier></classifier>
+                            </artifact>
+                        </artifacts>
+                    </configuration>
+                </execution>
+            </executions>
+        </plugin>
+      </plugins>
+    </build>
+ 
+ <distributionManagement>
+  <repository>
+    <id>adm-demo-app-release</id>
+    <url>http://mydtbld0028.hpeswlab.net:8081/nexus/content/repositories/adm-demo-app-release</url>
+  </repository>
+  <snapshotRepository>
+    <id>adm-demo-app-snapshot</id>
+    <url>http://mydtbld0028.hpeswlab.net:8081/nexus/content/repositories/adm-demo-app-snapshot</url>
+  </snapshotRepository>
+</distributionManagement>
+</project>

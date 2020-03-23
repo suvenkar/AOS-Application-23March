@@ -1,0 +1,19 @@
+
+<!-- POPULAR ITEMS -->
+<article>
+    <h3 class="roboto-regular center" translate="POPULAR_ITEMS">
+        <!-- {{'SPACIAL_OFFER' | translate}} -->
+    </h3>
+    <div class="grid-table">
+        <div ng-repeat="product in popularProducts" ng-if="popularProducts.length > 0">
+            <figure>
+                <img data-ng-src="{{product.imageUrl}}" alt="Special-offer" >
+            </figure>
+            <label class="shop_now center">{{product.productName}}</label>
+        </div>
+    </div>
+</article>
+<!-- end POPULAR ITEMS -->
+
+
+

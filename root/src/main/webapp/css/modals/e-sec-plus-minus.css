@@ -1,0 +1,114 @@
+
+.e-sec-plus-minus{
+    border: solid 1px #d0d0d0;
+    display: inline-block;
+    height: 24px;
+    font-size: 0;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    position: relative;
+}
+
+.sec-plus-minus-disable{
+    position: relative;
+    display: inline-block;
+    height: 24px;
+}
+
+.sec-plus-minus-disable:before{
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(245, 200, 192, 0.3);
+    z-index: 90;
+
+}
+
+.sec-plus-minus-disable input{
+    color:#b2b2b2;
+}
+
+.e-sec-plus-minus, .e-sec-plus-minus * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.e-sec-plus-minus div{
+    height: 100%;
+    display: inline-block;
+    width: 24px;
+    position: relative;
+    cursor: default;
+}
+
+.e-sec-plus-minus div:not(.disableBtn):hover{
+    background-color: #f3f3f3;
+    cursor: pointer;
+}
+
+.e-sec-plus-minus div.disableBtn.minus:before,
+.e-sec-plus-minus div.disableBtn.plus:before,
+.e-sec-plus-minus div.disableBtn.plus:after {
+    background-color: #a5a5a5;
+}
+
+.e-sec-plus-minus div.minus:before,
+.e-sec-plus-minus div.plus:before,
+.e-sec-plus-minus div.plus:after{
+    content: '';
+    position: absolute;
+    margin: 0 auto;
+    display: block;
+    right: 0;
+    left: 0;
+}
+
+.e-sec-plus-minus div.minus:before,
+.e-sec-plus-minus div.plus:before{
+    top:11px;
+    background-color: #424242;
+    height: 1px;
+    width: 8px;
+}
+
+.e-sec-plus-minus div.plus:before{
+    width: 9px;
+}
+
+.e-sec-plus-minus div.plus:after{
+    top:7px;
+    background-color: #424242;
+    height: 9px;
+    width: 1px;
+
+}
+
+.e-sec-plus-minus div:nth-child(2){
+    width: 32px;
+}
+
+.e-sec-plus-minus > div > input{
+    border: none;
+    outline: none;
+    font-size: 14px;
+    text-align: center;
+    border-left: solid 1px #d0d0d0;
+    border-right: solid 1px #d0d0d0;
+    width: 100%;
+    top: 0;
+    height: 100%;
+    position: absolute;
+}
+
+.sec-plus-minus-disable .e-sec-plus-minus div.minus:before,
+.sec-plus-minus-disable .e-sec-plus-minus div.plus:before,
+.sec-plus-minus-disable .e-sec-plus-minus div.plus:after
+{
+    background-color:#b2b2b2;
+}

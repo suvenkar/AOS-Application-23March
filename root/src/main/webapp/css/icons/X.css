@@ -1,0 +1,33 @@
+.iconX{
+    position: relative;
+    width: 19px;
+    height: 18px;
+    display: inline-block;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.iconX:before, .iconX:after{
+    content: '';
+    position: absolute;
+    display: block;
+    background-color: #9c9c9c;
+    width: 36px;
+    height: 2px;
+    top: 8px;
+    right: -8px;
+    transform-origin: center center;
+}
+
+.iconX.selected:before, .iconX.selected:after{
+    border: 2px solid #f05b49;
+}
+
+.iconX:before{
+    transform: rotate(45deg);
+}
+
+.iconX:after{
+    top:9px;
+    transform: rotate(-45deg);
+}

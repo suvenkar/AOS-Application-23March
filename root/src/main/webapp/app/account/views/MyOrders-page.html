@@ -1,0 +1,141 @@
+<nav class="pages fixed fixedImportant">
+    <a translate="HOME" href="#/"></a>
+    <a class="select" translate="MY_ORDERS"></a>
+</nav>
+
+<section>
+    <article>
+
+        <h3 class="roboto-regular sticky fixed fixedImportant" translate="MY_ORDERS"></h3>
+
+        <div id="myAccountContainer" data-ng-show="myOrdersCtrl.orders.length > 0" class="myOrderSection">
+
+            <div class="cover">
+
+                <table>
+                    <tr>
+                        <th class="left">
+                            <label translate="ORDER_NUMBER"></label>
+                        </th>
+                        <th>
+                            <label translate="ORDER_DATE"></label>
+                        </th>
+                        <th>
+                            <label translate="PRODUCT_NAME"></label>
+                        </th>
+                        <th>
+                            <label translate="COLOR"></label>
+                        </th>
+                        <th>
+                            <label translate="QUANTITY"></label>
+                        </th>
+                        <th class="right">
+                            <label translate="TOTAL_PRICE"></label>
+                        </th>
+                    </tr>
+                    <tr data-ng-repeat-start="order in myOrdersCtrl.orders track by $index">
+                        <td rowspan="{{order.products.length}}">
+                            <label>{{order.orderNumber}}</label>
+                        </td>
+                        <td rowspan="{{order.products.length}}" class="center">
+                            <label>{{order.orderDate}}</label>
+                        </td>
+                        <td>
+                            <img data-ng-src="/catalog/fetchImage?image_id={{order.products[0].ProductImageUrl}}"/>
+                            <span>{{order.products[0].ProductName}}</span>
+                        </td>
+                        <td class="center">
+                            <div title="{{order.products[0].ProductColorName}}" class="elipse"
+                                 data-ng-style="{'background-color' : '#' + order.products[0].ProductColorCode, 'border' : (order.products[0].ProductColorCode == 'FFFFFF' ? 'solid' : 'none' ) + ' 1px rgba(189, 189, 187, 1)'}"></div>
+                        </td>
+                        <td class="center">
+                            <label>{{order.products[0].Quantity}}</label>
+                        </td>
+                        <td rowspan="{{order.products.length}}" class="right">
+                            <label>{{ myOrdersCtrl.getTotalPrice(order.products) | currency: '$' }}</label>
+                        </td>
+                    </tr>
+                    <tr data-ng-repeat-end ng-if="$index > 0" class="innerTr"
+                        data-ng-repeat="product in order.products track by $index">
+                        <td ng-if="$index > 0">
+                            <img data-ng-src="/catalog/fetchImage?image_id={{product.ProductImageUrl}}"/>
+                            <span>{{product.ProductName}}</span>
+                        </td>
+                        <td ng-if="$index > 0">
+                            <div title="{{product.ProductColorName}}" class="elipse"
+                                 data-ng-style="{'background-color' : '#' + product.ProductColorCode}"></div>
+                        </td>
+                        <td ng-if="$index > 0" class="center">
+                            <label>{{product.Quantity}}</label>
+                        </td>
+                    </tr>
+                </table>
+
+                <div class="tabletsSection">
+
+                    <div class="title">
+                        <div>
+                            <label class="left" translate="ORDER_NUMBER"></label>
+                        </div>
+                        <div>
+                            <label class="center" translate="ORDER_DATE"></label>
+                        </div>
+                        <div>
+                            <label class="right" translate="TOTAL_PRICE"></label>
+                        </div>
+                    </div>
+                    <div class="products" data-ng-repeat="order in myOrdersCtrl.orders track by $index">
+                        <div class="orderDetails">
+                            <div>
+                                <label class="left">{{order.orderNumber}}</label>
+                            </div>
+                            <div>
+                                <label class="center">{{order.orderDate}}</label>
+                            </div>
+                            <div>
+                                <label class="right">{{ myOrdersCtrl.getTotalPrice(order.products) | currency: '$'
+                                    }}</label>
+                            </div>
+                        </div>
+                        <div class="productList">
+
+                            <div data-ng-repeat="product in order.products track by $index">
+                                <img data-ng-src="/catalog/fetchImage?image_id={{product.ProductImageUrl}}"/>
+
+                                <div class="productName">
+                                    <span>{{product.ProductName}}</span>
+
+                                    <div>
+                                        <label>{{'QTY' | translate}} {{product.Quantity}}</label>
+                                        <label>{{'Color' | translate }}
+                                            <span>{{product.ProductColorName}}</span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+        <div class="myOrderSection">
+
+            <div data-ng-hide="myOrdersCtrl.orders.length > 0" class="myOrderSection">
+                <div class="bigEmptyOrder center">
+                    <label class="roboto-bold"> - {{ 'No_orders' | translate}} - </label>
+                    <a href="#/" class="a-button" translate="CONTINUE_SHOPPING"></a>
+                </div>
+            </div>
+        </div>
+    </article>
+</section>
+
+
+<social-media-drtv></social-media-drtv>
+

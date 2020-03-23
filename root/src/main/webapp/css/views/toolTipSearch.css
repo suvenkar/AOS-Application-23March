@@ -1,0 +1,175 @@
+
+
+#searchSection {
+    direction: ltr;
+    position: relative;
+    top:1px;
+    z-index: 1000;
+    text-align: left;
+    white-space: nowrap;
+}
+
+#searchSection #search > div{
+    display: inline-block;
+    white-space: nowrap;
+}
+
+#searchSection .autoCompleteCover{
+    overflow: hidden;
+    width: 0px;
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    opacity: 0.5;
+    margin: 0;
+    top: -10px;
+}
+
+#searchSection .autoCompleteCover .iconCss{
+    position: absolute;
+    right: 0;
+    top: 9px;
+    bottom: 0;
+    vertical-align: middle;
+    margin: 4px 0;
+    display: none;
+    cursor: pointer;
+
+}
+
+#searchSection .autoCompleteCover input{
+    width: 100%;
+    font-size: 16px;
+    color: #2a2a2a;
+    padding: 7px 11px 7px 0;
+    margin: 0;
+    outline: none;
+    cursor: text;
+    border: none;
+    border-bottom: 1px solid #CECCCC;
+    display: block;
+}
+
+#searchSection .autoCompleteCover ::-webkit-input-placeholder{
+    font-weight: 300;
+}
+
+#searchSection .autoCompleteCover :-ms-input-placeholder{
+    font-weight: 300;
+}
+
+#searchSection .autoCompleteCover :-moz-placeholder{
+    font-weight: 300;
+}
+
+#searchSection .iconMagnifyingGlass{
+    cursor: pointer;
+}
+
+#searchSection #output{
+    position: absolute;
+    background-color: rgba(246, 246, 246, 0.95);
+    width: 100%;
+    box-sizing: border-box;
+    top: 42px;
+}
+
+#searchSection .searchPopUp > div.categories{
+    /*width: 160px;*/
+}
+
+
+#searchSection #output .top6Products{
+    padding: 17px 20px;
+    background-color: rgba(255, 255, 255, 1);
+    width: calc(100% - 173px);
+}
+
+#searchSection #output > div > div{
+    white-space: normal;
+    display: inline-block;
+    vertical-align: top;
+}
+
+#searchSection  div .animPlaceholderUp label{
+    color: #828282;
+    font-size: 16px;
+}
+
+#searchSection .searchPopUp {
+    position: relative;
+}
+
+#searchSection .searchPopUp > div h3{
+    font-size: 14px;
+    color:#2a2a2a;
+    padding: 6px 0;
+}
+
+#searchSection .searchPopUp div.categories h3{
+    font-size: 14px;
+    color:#2a2a2a;
+    padding: 22px;
+    padding-bottom: 10px;
+}
+
+#searchSection div.categories label{
+    font-size: 14px;
+    color:#2a2a2a;
+    padding: 5px 22px;
+    display: block;
+    cursor: pointer;
+}
+
+#searchSection div.categories label:first-letter{
+    text-transform: uppercase;
+}
+
+#searchSection .searchPopUp > div .product{
+    width: 33.333%;
+    display: inline-block;
+    vertical-align: top;
+    box-sizing: border-box;
+    padding: 17px 10px;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+#searchSection .searchPopUp > div .product img{
+    width: calc(100% - 10px);
+    box-sizing: border-box;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 15px;
+}
+
+#searchSection .searchPopUp > div .product p {
+    font-size: 11px;
+    color: #2a2a2a;
+    margin: 4px 10px;
+    height: 33px;
+    overflow: hidden;
+
+}
+
+#searchSection .searchPopUp .viewAll  {
+    position: absolute;
+    top:23px;
+    right:35px;
+    font-size: 13px;
+    color: #54b3ad;
+    cursor: pointer;
+}
+
+#searchSection .searchPopUp > div .product span {
+    font-size: 14px;
+    display: block;
+    color: #54b3ad;
+}
+
+
+/*end searchSection */
+
+
+

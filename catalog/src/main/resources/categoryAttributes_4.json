@@ -1,0 +1,287 @@
+  [
+  {
+    "categoryId": 1,
+    "attributeId": 1,
+    "showInFilter": false
+  },
+  {
+    "categoryId": 1,
+    "attributeId": 2,
+    "showInFilter": false
+  },
+  {
+    "categoryId": 1,
+    "attributeId": 3,
+    "showInFilter": true
+  },
+  {
+    "categoryId": 1,
+    "attributeId": 4,
+    "showInFilter": true
+  },
+  {
+    "categoryId": 1,
+    "attributeId": 5,
+    "showInFilter": false
+  },
+  {
+    "categoryId": 1,
+    "attributeId": 6,
+    "showInFilter": true
+  },
+  {
+    "categoryId": 1,
+    "attributeId": 7,
+    "showInFilter": false
+  },
+  {
+    "categoryId": 1,
+    "attributeId": 8,
+    "showInFilter": false
+  },
+  {
+    "categoryId": 1,
+    "attributeId": 9,
+    "showInFilter": true
+  },
+  {
+    "categoryId": 1,
+    "attributeId": 10,
+    "showInFilter": false
+  },
+  {
+    "categoryId": 1,
+    "attributeId": 11,
+    "showInFilter": false
+  },
+  {
+    "categoryId": 1,
+    "attributeId": 12,
+    "showInFilter": false
+  },
+  {
+    "categoryId": 1,
+    "attributeId": 13,
+    "showInFilter": false
+  },
+  {
+    "categoryId": 1,
+    "attributeId": 14,
+    "showInFilter": false
+  },
+  {
+    "categoryId": 1,
+    "attributeId": 15,
+    "showInFilter": false
+  },
+  {
+    "categoryId": 1,
+    "attributeId": 16,
+    "showInFilter": false
+  },
+  {
+    "categoryId": 1,
+    "attributeId": 17,
+    "showInFilter": false
+  },
+  {
+    "categoryId": 2,
+    "attributeId": 8,
+    "showInFilter": true
+  },
+  {
+    "categoryId": 2,
+    "attributeId": 7,
+    "showInFilter": true
+  },
+  {
+    "categoryId": 2,
+    "attributeId": 9,
+    "showInFilter": true
+  },
+  {
+    "categoryId": 3,
+    "attributeId": 1,
+    "showInFilter": false
+  },
+  {
+    "categoryId": 3,
+    "attributeId": 2,
+    "showInFilter": false
+  },
+  {
+    "categoryId": 3,
+    "attributeId": 3,
+    "showInFilter": false
+  },
+  {
+    "categoryId": 3,
+    "attributeId": 4,
+    "showInFilter": true
+  },
+  {
+    "categoryId": 3,
+    "attributeId": 5,
+    "showInFilter": false
+  },
+  {
+    "categoryId": 3,
+    "attributeId": 6,
+    "showInFilter": true
+  },
+  {
+    "categoryId": 3,
+    "attributeId": 7,
+    "showInFilter": false
+  },
+  {
+    "categoryId": 3,
+    "attributeId": 8,
+    "showInFilter": false
+  },
+  {
+    "categoryId": 3,
+    "attributeId": 9,
+    "showInFilter": false
+  },
+  {
+    "categoryId": 3,
+    "attributeId": 10,
+    "showInFilter": false
+  },
+  {
+    "categoryId": 4,
+    "attributeId": 1,
+    "showInFilter": false
+  },
+  {
+    "categoryId": 4,
+    "attributeId": 2,
+    "showInFilter": false
+  },
+  {
+    "categoryId": 4,
+    "attributeId": 3,
+    "showInFilter": false
+  },
+  {
+    "categoryId": 4,
+    "attributeId": 4,
+    "showInFilter": false
+  },
+  {
+    "categoryId": 4,
+    "attributeId": 5,
+    "showInFilter": false
+  },
+  {
+    "categoryId": 4,
+    "attributeId": 6,
+    "showInFilter": false
+  },
+  {
+    "categoryId": 4,
+    "attributeId": 7,
+    "showInFilter": true
+  },
+  {
+    "categoryId": 4,
+    "attributeId": 8,
+    "showInFilter": true
+  },
+  {
+    "categoryId": 4,
+    "attributeId": 9,
+    "showInFilter": true
+  },
+  {
+    "categoryId": 4,
+    "attributeId": 10,
+    "showInFilter": true
+  },
+  {
+    "categoryId": 4,
+    "attributeId": 11,
+    "showInFilter": false
+  },
+  {
+    "categoryId": 4,
+    "attributeId": 12,
+    "showInFilter": false
+  },
+  {
+    "categoryId": 4,
+    "attributeId": 13,
+    "showInFilter": true
+  },
+  {
+    "categoryId": 5,
+    "attributeId": 1,
+    "showInFilter": false
+  },
+  {
+    "categoryId": 5,
+    "attributeId": 2,
+    "showInFilter": false
+  },
+  {
+    "categoryId": 5,
+    "attributeId": 3,
+    "showInFilter": false
+  },
+  {
+    "categoryId": 5,
+    "attributeId": 4,
+    "showInFilter": false
+  },
+  {
+    "categoryId": 5,
+    "attributeId": 5,
+    "showInFilter": false
+  },
+  {
+    "categoryId": 5,
+    "attributeId": 6,
+    "showInFilter": false
+  },
+  {
+    "categoryId": 5,
+    "attributeId": 7,
+    "showInFilter": false
+  },
+  {
+    "categoryId": 5,
+    "attributeId": 8,
+    "showInFilter": false
+  },
+  {
+    "categoryId": 5,
+    "attributeId": 9,
+    "showInFilter": false
+  },
+  {
+    "categoryId": 5,
+    "attributeId": 10,
+    "showInFilter": false
+  },
+  {
+    "categoryId": 5,
+    "attributeId": 11,
+    "showInFilter": false
+  },
+  {
+    "categoryId": 5,
+    "attributeId": 12,
+    "showInFilter": false
+  },
+  {
+    "categoryId": 5,
+    "attributeId": 13,
+    "showInFilter": false
+  },
+  {
+    "categoryId": 5,
+    "attributeId": 14,
+    "showInFilter": true
+  }
+]

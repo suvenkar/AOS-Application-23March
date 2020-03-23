@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="accountservice:war">
+    <output-path>$PROJECT_DIR$/accountservice/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>accountservice</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="accountservice.war">
+      <element id="artifact" artifact-name="accountservice:war exploded" />
+    </root>
+  </artifact>
+</component>

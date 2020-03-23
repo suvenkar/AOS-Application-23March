@@ -1,0 +1,33 @@
+
+<section>
+    <article id="searchPage" ng-switch="noProducts">
+        <search mobile-search ></search>
+        <div>
+            <nav class="pages categoryDataFixedNav"  data-ng-class="{ fixedImportant : viewAll }">
+                <a translate="HOME" href="#/" ></a>
+                <a class="select "> {{ 'Search_Result' | translate}}: "{{ searchKey }}" </a>
+            </nav>
+        </div>
+
+        <h3 class="roboto-regular center sticky fixedImportant" data-ng-hide="noProducts" > {{ 'Search_Result' | translate}}: "{{ searchKey }}" </h3>
+
+        <div class="noPromotedProductDiv">
+            <div ng-switch-when="true" class="textAlignCenter">
+                <label class="noProducts roboto-bold ">
+                    <span>
+                     {{ 'No_results_for' | translate}} "{{searchKey}}"
+                    </span>
+                </label>
+            </div>
+            <div ng-switch-when="false">
+                <div class="category-type-products"
+                     category-type-products-drtv
+                     params-to-pass="paramsToPass"
+                ></div>
+            </div>
+            <social-media-drtv></social-media-drtv>
+        </div>
+    </article>
+
+</section>
+

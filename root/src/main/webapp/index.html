@@ -1,0 +1,246 @@
+<!DOCTYPE html >
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="css/images/favicon.ico">
+    <meta name="viewport" content="width=device-width,  initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"/>
+    <title>&nbsp;Advantage Shopping</title>
+    <!-- build:css css/main.min.css -->
+    <link href="css/main.css" rel="stylesheet">
+    <!-- endbuild -->
+	<!-- remove google analytics
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-81334227-1', 'auto');ga('send', 'pageview');
+    </script>
+-->
+</head>
+
+<body data-ng-controller="mainCtrl as mainCtrl" data-ng-cloak>
+<div id="team" data-ng-click="mainCtrl.closeImgTeam()">
+    <div class="container">
+        <div class="img">
+            <div id="teamIdToAnimate" class="animated">
+                <img src="../../css/images/Advantage_online_shopping_team.jpg" alt="team">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="waitBackground_2">
+    <div>
+        <!--
+        <svg version="1.1" id="Layer_1"
+             xmlns="http://www.w3.org/2000/svg"
+             xmlns:xlink="http://www.w3.org/1999/xlink"
+             x="0px" y="0px"
+             width="250px" height="250px" viewBox="0 0 30 45" enable-background="new 0 0 45 45" xml:space="preserve">
+                <path fill="#54B3AD" d="M21,33h-6c-1.1,0-2-1.1-2-2.2V7h2.9c0.7,0,1.3,0.4,1.6,1.1l12.9,35.2c0.4,1,1.6,1.6,2.6,1.6h5L22,1.8
+                    C21.6,0.7,21.1,0,20,0H6v34.1c0,3.3,1.4,5.9,5,5.9h14l-1.3-5.6C23.4,33.4,22,33,21,33z"/>
+        </svg>-->
+    </div>
+</div>
+
+<div class="loader">
+    <div>
+        <svg width="50" height="50" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <linearGradient x1="8.042%" y1="0%" x2="65.682%" y2="23.865%" id="a">
+                    <stop stop-color="#54B3AD" stop-opacity="0" offset="0%"/>
+                    <stop stop-color="#54B3AD" stop-opacity=".631" offset="63.146%"/>
+                    <stop stop-color="#54B3AD" offset="100%"/>
+                </linearGradient>
+            </defs>
+            <g fill="none" fill-rule="evenodd">
+                <g transform="translate(1 1)">
+                    <path d="M36 18c0-9.94-8.06-18-18-18" id="Oval-2" stroke="url(#a)" stroke-width="2">
+                        <animateTransform
+                                attributeName="transform"
+                                type="rotate"
+                                from="0 18 18"
+                                to="360 18 18"
+                                dur="0.9s"
+                                repeatCount="indefinite"/>
+                    </path>
+                    <circle fill="#54B3AD" cx="36" cy="18" r="1">
+                        <animateTransform
+                                attributeName="transform"
+                                type="rotate"
+                                from="0 18 18"
+                                to="360 18 18"
+                                dur="0.9s"
+                                repeatCount="indefinite"/>
+                    </circle>
+                </g>
+            </g>
+        </svg>
+    </div>
+</div>
+
+<login-modal></login-modal>
+
+<span class="mobileTitle">
+    <div class="mini-title" id="loginMobileMiniTitle">
+        <label class="option" translate="My_account" ng-click="accountSection()"></label>
+        <label class="option" translate="My_Orders" ng-click="mobileRedirect('MyOrders')"></label>
+        <label class="option" translate="Sign_out" ng-click="signOut()"></label>
+    </div>
+</span>
+
+<aside id="mobile-section" data-ng-cloak>
+    <ul>
+        <li data-ng-click="mobileRedirect('default')">
+            <a class="img">
+                <div icon-home-svg></div>
+            </a>
+        </li>
+        <li data-ng-click="mobileRedirect('shoppingCart')">
+            <a class="img">
+                <div icon-cart-svg></div>
+                <span class="cart" ng-show="(cart | productsCartCount) > 0">{{ cart | productsCartCount }}</span>
+            </a>
+        </li>
+        <li class="pointer" data-ng-click="login('loginMobileMiniTitle')">
+            <a class="img center">
+                <div icon-user-svg></div>
+                <span data-ng-show="userCookie.response" class="hi-user">
+                    {{userCookie.name}}
+                </span>
+            </a>
+        </li>
+        <li data-ng-click="mobileRedirect('searchPage')">
+            <a class="img">
+                <div icon-search-svg></div>
+            </a>
+        </li>
+    </ul>
+</aside>
+
+<!-- end mobile slider -->
+
+
+
+
+<!-- navegation -->
+
+<header ng-show="welcome" data-ng-cloak>
+    <nav>
+        <ul class="roboto-light desktop-handler" >
+            <li data-ng-mouseenter="enterCart()" data-ng-mouseleave="leaveCart()">
+                <a class="img" href="#/shoppingCart">
+                    <div icon-cart-svg></div>
+                    <span class="cart" ng-show="(cart | productsCartCount) > 0">{{ cart | productsCartCount }}</span>
+                </a>
+                <ul>
+                    <li style="position: relative; background-color: white">
+                        <tool-tip-cart id="toolTipCart"></tool-tip-cart>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a class="img" data-ng-click="login('loginMiniTitle')"
+                   data-ng-mouseenter="miniTitleIn('loginMiniTitle')"
+                   data-ng-mouseleave="miniTitleOut('loginMiniTitle')">
+                    <span data-ng-show="userCookie.response" class="hi-user containMiniTitle">
+                        {{userCookie.name}}
+                    </span>
+
+                    <div icon-user-svg></div>
+                    <div class="mini-title" id="loginMiniTitle">
+                        <label class="option roboto-medium" translate="My_account" ng-click="accountSection()"></label>
+                        <label class="option" translate="My_Orders" ng-click="mobileRedirect('MyOrders')"></label>
+                        <label class="option roboto-medium" translate="Sign_out" ng-click="signOut($event)"></label>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a class="img">
+                    <search tool-tip-search></search>
+                </a>
+            </li>
+            <li class="nav-li-Links">
+                <a ng-click="gotoElement('contact_us')" class="menu navLinks roboto-regular" translate="CONTACT_US"></a>
+            </li>
+            <li class="nav-li-Links">
+                <a class="menu navLinks roboto-regular" ng-click="gotoElement('popular_items')"
+                   translate="POPULAR_ITEMS"></a>
+            </li>
+            <li class="nav-li-Links">
+                <a class="menu navLinks roboto-regular" ng-click="gotoElement('special_offer_items')"
+                   translate="SPACIAL_OFFER"></a>
+            </li>
+            <li class="nav-li-Links">
+                <a class="menu navLinks roboto-regular" ng-click="gotoElement('our_products')"
+                   translate="OUR_PRODUCTS"></a>
+            </li>
+
+        </ul>
+        <div class="logo">
+            <a href="#/" ng-click="go_up()">
+                <!--<img src="css/images/logo.png"/>-->
+                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                     width="45px" height="45px" viewBox="0 0 30 45" enable-background="new 0 0 45 45" xml:space="preserve">
+                    <path fill="#54B3AD" d="M21,33h-6c-1.1,0-2-1.1-2-2.2V7h2.9c0.7,0,1.3,0.4,1.6,1.1l12.9,35.2c0.4,1,1.6,1.6,2.6,1.6h5L22,1.8
+                        C21.6,0.7,21.1,0,20,0H6v34.1c0,3.3,1.4,5.9,5,5.9h14l-1.3-5.6C23.4,33.4,22,33,21,33z"/>
+                </svg>
+                <span class="roboto-medium">
+                    {{'dvantage' | translate}}
+                </span>
+				<!--
+                <span class="logoDemo roboto-light">{{'HELLO' | translate}}</span>
+				-->
+                <span class="logoDemo roboto-light">{{'DEMO' | translate}}</span>
+            </a>
+
+            <div id="mobile-btn" class="mobile-btn-handler" ng-click="openMobileSection()">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<!-- end navegation " ng-show="cartCount != 0 -->
+
+<div class="uiview" ui-view></div>
+
+<div virtual-footer></div>
+
+
+<script type="text/javascript" data-main="main" src="vendor/requirejs/require.js"></script>
+
+<div id="toast">
+    <a>Product Added Successfully</a>
+</div>
+
+
+<input class="tempBtn" data-ng-click="setUser()" type="button"/>
+
+<style>
+    .tempBtn {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        border-radius: 0 100% 0 0;
+        height: 20px;
+        width: 20px;
+        background-color: rgba(237, 252, 255, 0.1);
+        border: solid 1px transparent;
+        cursor: none;
+    }
+</style>
+
+
+</body>
+</html>
+
+
+
+
+
+
+

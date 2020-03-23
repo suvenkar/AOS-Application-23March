@@ -1,0 +1,487 @@
+{
+  "@self" : "/csa/api/topology-model/topology/bd25f13d-b803-4daa-9911-b1ac48beee5d",
+  "@type" : "urn:x-hp:2013:software:cloud:topology_model:topology",
+  "groupId" : "com.hp.csa",
+  "artifactId" : "2ccdaa865c86fb73015d0e104fca3f91",
+  "version" : "1.0.0",
+  "displayName" : "AOS-qas",
+  "description" : "",
+  "resources" : [ {
+    "id" : "6cb5424f-b12b-73eb-ad2a-b974f9396914",
+    "name" : "DevOps-ExistingLinuxServer(Tomcat)",
+    "component" : {
+      "@self" : "/csa/api/topology-model/component-type/b1ed8e4b-05cc-4265-a10e-1dcd63f2c896",
+      "groupId" : "com.hp.csa.type",
+      "artifactId" : "DevOps-ExistingLinuxServerTomcat_dac8b01fc6104a70adcff78b53579305",
+      "version" : "15.07.0000"
+    },
+    "properties" : [ {
+      "propertyKey" : "password",
+      "propertyValue" : {
+        "value" : "ENC(g6uaOS4TyRvvzpwJecE7IuzL3EI0rRqk)",
+        "type" : "string_encrypted"
+      }
+    }, {
+      "propertyKey" : "privateKeyFile",
+      "propertyValue" : {
+        "value" : null,
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "port",
+      "propertyValue" : {
+        "value" : "22",
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "_enable_modify_during_lifecycle_properties",
+      "propertyValue" : {
+        "value" : "",
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "host",
+      "propertyValue" : {
+        "value" : "@tomcat-ip@",
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "_modifiable_properties",
+      "propertyValue" : {
+        "value" : "",
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "arguments",
+      "propertyValue" : {
+        "value" : null,
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "command",
+      "propertyValue" : {
+        "value" : "ls",
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "timeout",
+      "propertyValue" : {
+        "value" : "60000",
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "username",
+      "propertyValue" : {
+        "value" : "root",
+        "type" : "string"
+      }
+    } ],
+    "outgoingRelations" : [ ],
+    "annotations" : {
+      "uniqueName" : "DevOps-ExistingL0001",
+      "displayName" : "6cb5424f-b12b-73eb-ad2a-b974f9396914",
+      "x" : "780",
+      "y" : "295",
+      "description" : "vCenter Server"
+    },
+    "capabilityChars" : [ ],
+    "requirements" : [ ]
+  }, {
+    "id" : "b344902b-e622-a9bd-78ff-e5f94684b1a5",
+    "name" : "DevOps-ApplyRole(Tomcat)",
+    "component" : {
+      "@self" : "/csa/api/topology-model/component-type/7dacddc2-9f92-454b-995a-0d7771eeeb4d",
+      "groupId" : "com.hp.csa.type.CHEF",
+      "artifactId" : "DevOps-ApplyRoleTomcat_990ceb3e4e194b9f878398a483482c68",
+      "version" : "1.0"
+    },
+    "properties" : [ {
+      "propertyKey" : "nodeName",
+      "propertyValue" : {
+        "value" : "AOS-TOMCAT-QAS",
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "nodeRunList",
+      "propertyValue" : {
+        "value" : "role[aos]",
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "chefHostUsername",
+      "propertyValue" : {
+        "value" : "${chefHostUsername}",
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "nodeIP",
+      "propertyValue" : {
+        "value" : null,
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "_modifiable_properties",
+      "propertyValue" : {
+        "value" : "",
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "artifact_http_url",
+      "propertyValue" : {
+        "value" : "@artifact_http_url@",
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "chefHostPassword",
+      "propertyValue" : {
+        "value" : "ENC(PjuULs73fN1RodYjIpZY8DIMaH1lm8k60YX1sQm4vpGc3hI3GKqYEngMtcE0MKZfDBWgaxVNPAJSEi5x659CwdlBGAFPylDz)",
+        "type" : "string_encrypted"
+      }
+    }, {
+      "propertyKey" : "nodePassword",
+      "propertyValue" : {
+        "value" : "ENC(d5qBfb30evRNVktEhBXpYNRz5XCK15mD2wxcxozEzDdemDJF4yBUQQv7GmdPrhNJ)",
+        "type" : "string_encrypted"
+      }
+    }, {
+      "propertyKey" : "_enable_modify_during_lifecycle_properties",
+      "propertyValue" : {
+        "value" : "",
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "osType",
+      "propertyValue" : {
+        "value" : "Linux",
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "attributes",
+      "propertyValue" : {
+        "value" : "{}",
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "chefHost",
+      "propertyValue" : {
+        "value" : "${chefHost}",
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "chefTimeout",
+      "propertyValue" : {
+        "value" : "2500000",
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "nodeUserID",
+      "propertyValue" : {
+        "value" : "${nodeUserID}",
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "nodeIPAddress",
+      "propertyValue" : {
+        "value" : null,
+        "type" : "string"
+      }
+    } ],
+    "outgoingRelations" : [ {
+      "relationType" : "association",
+      "id" : "ff796778-93c8-f967-2ca9-f4af6f18db9a",
+      "properties" : [ {
+        "propertyKey" : "_enable_modify_during_lifecycle_properties",
+        "propertyValue" : {
+          "value" : null,
+          "type" : "string"
+        }
+      }, {
+        "propertyKey" : "_modifiable_properties",
+        "propertyValue" : {
+          "value" : null,
+          "type" : "string"
+        }
+      }, {
+        "propertyKey" : "_relation_type",
+        "propertyValue" : {
+          "value" : {
+            "first" : "Association",
+            "second" : "ASSOCIATION"
+          },
+          "type" : "pair"
+        }
+      } ],
+      "relationDescriptorName" : "dependsOn-Host_DevOps-ApplyRoleTomcat_990ceb3e4e194b9f878398a483482c68__VERSION__1^0__GROUPID__com^hp^csa^type^CHEF",
+      "resourceReference" : {
+        "name" : "DevOps-ExistingLinuxServer(Tomcat)"
+      }
+    }, {
+      "relationType" : "association",
+      "id" : "c397950a-f2bb-3120-07b9-95c6ac0f4352",
+      "properties" : [ {
+        "propertyKey" : "_enable_modify_during_lifecycle_properties",
+        "propertyValue" : {
+          "value" : null,
+          "type" : "string"
+        }
+      }, {
+        "propertyKey" : "_modifiable_properties",
+        "propertyValue" : {
+          "value" : null,
+          "type" : "string"
+        }
+      }, {
+        "propertyKey" : "_relation_type",
+        "propertyValue" : {
+          "value" : {
+            "first" : "Association",
+            "second" : "ASSOCIATION"
+          },
+          "type" : "pair"
+        }
+      } ],
+      "relationDescriptorName" : "dependsOn-Chef_DevOps-ApplyRoleTomcat_990ceb3e4e194b9f878398a483482c68__VERSION__1^0__GROUPID__com^hp^csa^type^CHEF",
+      "resourceReference" : {
+        "name" : "DevOps-ApplyRole(Postgres)"
+      }
+    } ],
+    "annotations" : {
+      "uniqueName" : "DevOps-ApplyRole0001",
+      "displayName" : "b344902b-e622-a9bd-78ff-e5f94684b1a5",
+      "x" : "797",
+      "y" : "59"
+    },
+    "capabilityChars" : [ ],
+    "requirements" : [ ]
+  }, {
+    "id" : "d69e07ea-642e-9b2e-094d-af27423c7011",
+    "name" : "DevOps-ExistingLinuxServer(Postgres)",
+    "component" : {
+      "@self" : "/csa/api/topology-model/component-type/7efe287c-e4ed-4d31-9681-0c68dea87941",
+      "groupId" : "com.hp.csa.type",
+      "artifactId" : "DevOps-ExistingLinuxServerPostgres_2b1ebd12b4bf4208a5138697bcec327f",
+      "version" : "15.07.0000"
+    },
+    "properties" : [ {
+      "propertyKey" : "password",
+      "propertyValue" : {
+        "value" : "ENC(8wkd1s/0lPtERUA/rw2fmj8PTPiig17c)",
+        "type" : "string_encrypted"
+      }
+    }, {
+      "propertyKey" : "privateKeyFile",
+      "propertyValue" : {
+        "value" : null,
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "_enable_modify_during_lifecycle_properties",
+      "propertyValue" : {
+        "value" : "",
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "port",
+      "propertyValue" : {
+        "value" : "22",
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "host",
+      "propertyValue" : {
+        "value" : "@postgres-ip@",
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "_modifiable_properties",
+      "propertyValue" : {
+        "value" : "",
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "arguments",
+      "propertyValue" : {
+        "value" : null,
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "command",
+      "propertyValue" : {
+        "value" : "ls",
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "timeout",
+      "propertyValue" : {
+        "value" : "60000",
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "username",
+      "propertyValue" : {
+        "value" : "root",
+        "type" : "string"
+      }
+    } ],
+    "outgoingRelations" : [ ],
+    "annotations" : {
+      "uniqueName" : "DevOps-ExistingL0002",
+      "displayName" : "d69e07ea-642e-9b2e-094d-af27423c7011",
+      "x" : "354",
+      "y" : "291",
+      "description" : "vCenter Server"
+    },
+    "capabilityChars" : [ ],
+    "requirements" : [ ]
+  }, {
+    "id" : "f12690b6-fb8c-6439-5b6e-7020a6334bef",
+    "name" : "DevOps-ApplyRole(Postgres)",
+    "component" : {
+      "@self" : "/csa/api/topology-model/component-type/ef3e9042-78f3-4083-aeb6-857075c67e8d",
+      "groupId" : "com.hp.csa.type.CHEF",
+      "artifactId" : "DevOps-ApplyRolePostgres_98d533499a874faa8e18b06b4dc8a6da",
+      "version" : "1.0"
+    },
+    "properties" : [ {
+      "propertyKey" : "nodeRunList",
+      "propertyValue" : {
+        "value" : "role[postgres]",
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "postgres-ip",
+      "propertyValue" : {
+        "value" : "@postgres-ip@",
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "nodeName",
+      "propertyValue" : {
+        "value" : "AOS-POSTGRES-QAS",
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "chefHostUsername",
+      "propertyValue" : {
+        "value" : "${chefHostUsername}",
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "nodeIP",
+      "propertyValue" : {
+        "value" : null,
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "_modifiable_properties",
+      "propertyValue" : {
+        "value" : "",
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "chefHostPassword",
+      "propertyValue" : {
+        "value" : "ENC(7Jfhhjg6eLE/pxqhyvdrcwda6YBywksDTNKTRCXqQ0KwbKQEvZAJMiUQg4s4JgLuFW8n8W/bbLzWT75UUXsL9ADL7hCFwOse)",
+        "type" : "string_encrypted"
+      }
+    }, {
+      "propertyKey" : "nodePassword",
+      "propertyValue" : {
+        "value" : "ENC(QvGUdmM4qMEZKNrmsBOr8cpLI5S3C/Aw3imcTgBF2tUSqfpp7ziav/ebcZkgeGzI)",
+        "type" : "string_encrypted"
+      }
+    }, {
+      "propertyKey" : "_enable_modify_during_lifecycle_properties",
+      "propertyValue" : {
+        "value" : "",
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "osType",
+      "propertyValue" : {
+        "value" : "Linux",
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "attributes",
+      "propertyValue" : {
+        "value" : "{}",
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "chefHost",
+      "propertyValue" : {
+        "value" : "${chefHost}",
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "chefTimeout",
+      "propertyValue" : {
+        "value" : "2500000",
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "nodeUserID",
+      "propertyValue" : {
+        "value" : "${nodeUserID}",
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "nodeIPAddress",
+      "propertyValue" : {
+        "value" : null,
+        "type" : "string"
+      }
+    } ],
+    "outgoingRelations" : [ {
+      "relationType" : "association",
+      "id" : "c2e872a1-b7d0-ec4f-fcc1-817de077de20",
+      "properties" : [ {
+        "propertyKey" : "_enable_modify_during_lifecycle_properties",
+        "propertyValue" : {
+          "value" : null,
+          "type" : "string"
+        }
+      }, {
+        "propertyKey" : "_modifiable_properties",
+        "propertyValue" : {
+          "value" : null,
+          "type" : "string"
+        }
+      }, {
+        "propertyKey" : "_relation_type",
+        "propertyValue" : {
+          "value" : {
+            "first" : "Association",
+            "second" : "ASSOCIATION"
+          },
+          "type" : "pair"
+        }
+      } ],
+      "relationDescriptorName" : "dependsOn-Host_DevOps-ApplyRolePostgres_98d533499a874faa8e18b06b4dc8a6da__VERSION__1^0__GROUPID__com^hp^csa^type^CHEF",
+      "resourceReference" : {
+        "name" : "DevOps-ExistingLinuxServer(Postgres)"
+      }
+    } ],
+    "annotations" : {
+      "uniqueName" : "DevOps-ApplyRole0002",
+      "displayName" : "f12690b6-fb8c-6439-5b6e-7020a6334bef",
+      "x" : "361",
+      "y" : "57"
+    },
+    "capabilityChars" : [ ],
+    "requirements" : [ ]
+  } ],
+  "revision" : 11,
+  "properties" : [ ],
+  "iconUrl" : "/csa/api/blobstore/IT_infrastructure.png?tag=library",
+  "tagIds" : [ ],
+  "hidden" : false,
+  "state" : "UNLOCKED",
+  "partial" : false,
+  "profiles" : [ ],
+  "annotations" : {
+    "serviceBlueprintId" : "2ccdaa865c86fb73015d0e1050f03f96",
+    "providerType" : "independent"
+  }
+}

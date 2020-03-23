@@ -1,0 +1,130 @@
+
+<table border="1" width="100%" style="border:solid red 5px">
+    <tbody><tr>
+        <th>
+            <label class="ng-binding">ORDER NUMBER</label>
+        </th>
+        <th>
+            <label class="ng-binding">ORDER DATE</label>
+        </th>
+        <th>
+            <label class="ng-binding">PRODUCT NAME</label>
+        </th>
+        <th>
+            <label class="ng-binding">COLOR</label>
+        </th>
+        <th>
+            <label class="ng-binding">QUANTITY</label>
+        </th>
+        <th>
+            <label class="ng-binding">TOTAL PRICE</label>
+        </th>
+    </tr>
+    <tr data-ng-repeat-start="order in myOrdersCtrl.orders" class="ng-scope">
+        <td rowspan="3">
+        </td>
+        <td rowspan="3">
+        </td>
+        <td class="ng-binding">
+        </td>
+        <td>
+        </td>
+        <td>
+-        </td>
+        <td rowspan="3">
+        </td>
+    </tr>
+    <tr data-ng-repeat-end="" data-ng-repeat="product in order.products" class="ng-scope">
+        <!-- ngIf: $index > 0 -->
+        <!-- ngIf: $index > 0 -->
+        <!-- ngIf: $index > 0 -->
+    </tr>
+    <!-- end ngRepeat: product in order.products -->
+    <tr data-ng-repeat-end="" data-ng-repeat="product in order.products" class="ng-scope">
+        <td ng-if="$index > 0" class="ng-binding ng-scope"></td><!-- end ngIf: $index > 0 -->
+        <td ng-if="$index > 0" class="ng-scope"></td><!-- end ngIf: $index > 0 -->
+        <td ng-if="$index > 0" class="ng-scope"></td><!-- end ngIf: $index > 0 -->
+    </tr><!-- end ngRepeat: product in order.products -->
+    <tr data-ng-repeat-end="" data-ng-repeat="product in order.products" class="ng-scope">
+        <td ng-if="$index > 0" class="ng-binding ng-scope"></td><!-- end ngIf: $index > 0 -->
+        <td ng-if="$index > 0" class="ng-scope"></td><!-- end ngIf: $index > 0 -->
+        <td ng-if="$index > 0" class="ng-scope"></td><!-- end ngIf: $index > 0 -->
+    </tr>
+    <tr data-ng-repeat-start="order in myOrdersCtrl.orders" class="ng-scope">
+        <td rowspan="1">
+        </td>
+        <td rowspan="1">
+        </td>
+        <td class="ng-binding">
+        </td>
+        <td>
+            <div title="Gray" class="elipse" data-ng-style="{'background-color' : '#' + order.products[0].ProductColorCode}" style="background-color: rgb(195, 195, 195);"></div>
+        </td>
+        <td>
+            <label class="ng-binding">2</label>
+        </td>
+        <td rowspan="1">
+            <label class="ng-binding">$2,523.98 TP</label>
+        </td>
+    </tr>
+    <!-- ngRepeat: product in order.products -->
+    <tr data-ng-repeat-end="" data-ng-repeat="product in order.products" class="ng-scope">
+        <!-- ngIf: $index > 0 -->
+        <!-- ngIf: $index > 0 -->
+        <!-- ngIf: $index > 0 -->
+    </tr>
+    <!-- end ngRepeat: product in order.products --><!-- end ngRepeat: order in myOrdersCtrl.orders --><tr data-ng-repeat-start="order in myOrdersCtrl.orders" class="ng-scope">
+        <td rowspan="1">
+            <label class="ng-binding">9606466647</label>
+        </td>
+        <td rowspan="1">
+            <label class="ng-binding">27/07/2016</label>
+        </td>
+        <td class="ng-binding">
+            <img width="100" data-ng-src="/catalog/fetchImage?image_id=5400" src="/catalog/fetchImage?image_id=5400">
+            HP USB 3 Button Optical Mouse
+        </td>
+        <td>
+            <div title="Black" class="elipse" data-ng-style="{'background-color' : '#' + order.products[0].ProductColorCode}" style="background-color: rgb(65, 65, 65);"></div>
+        </td>
+        <td>
+            <label class="ng-binding">1</label>
+        </td>
+        <td rowspan="1">
+            <label class="ng-binding">$9.99 TP</label>
+        </td>
+    </tr>
+    <!-- ngRepeat: product in order.products --><tr data-ng-repeat-end="" data-ng-repeat="product in order.products" class="ng-scope">
+        <!-- ngIf: $index > 0 -->
+        <!-- ngIf: $index > 0 -->
+        <!-- ngIf: $index > 0 -->
+    </tr><!-- end ngRepeat: product in order.products --><!-- end ngRepeat: order in myOrdersCtrl.orders -->
+
+    </tbody></table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

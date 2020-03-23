@@ -1,0 +1,80 @@
+
+.PopUp{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 9999;
+    display: none;
+}
+.PopUp > div:nth-child(1){
+
+    padding: 20px 50px;
+    width: 350px;
+    background-color: white;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    position: absolute;
+    top:-180%;
+}
+
+.PopUp.BlockPopUp > div:before{
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.6);
+    z-index: 10;
+    left: 0;
+    top: 0;
+}
+
+.PopUp div .loader{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    text-align: center;
+    z-index: 10000;
+    background-color: rgba(255, 255, 255, 0.6);
+    padding: 0;
+    margin: 0;
+    top:0;
+    left:0;
+}
+
+.closePopUpBtn{
+    position: absolute;
+    background-color: white;
+    top: 16px;
+    right: 16px;
+    height: 16px;
+    width: 16px;
+    background-image: url(../images/closeDark.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    cursor:pointer;
+}
+
+
+@media screen and (max-width: 480px) {
+
+    .PopUp{
+        top: 0;
+        overflow-y: scroll
+    }
+
+    .PopUp > div:nth-child(1) {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+}
+
+
+
+
+
+
+

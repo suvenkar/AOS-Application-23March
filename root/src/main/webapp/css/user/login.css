@@ -1,0 +1,96 @@
+
+.PopUp img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 34px;
+}
+
+.PopUp label{
+    display: block;
+}
+
+.PopUp img{
+    display: block;
+    margin: 5px auto;
+}
+
+.facebook {
+    cursor: pointer;
+    color: white;
+    display: block;
+    font-weight: 100;
+    padding: 15px;
+    margin: 20px 0 ;
+    text-align: center;
+    background-color: #46629E;
+    background-image: url("../../../css/images/FacebookLogo.png") ;
+    background-repeat:no-repeat;
+    background-position: 16% center;
+}
+
+.or{
+    display: block;
+}
+
+.login .sec-sender {
+    width: 100%;
+}
+
+.login .sec-sender .sec-sender-a
+{
+    font-size: 17px;
+    margin: 36px 0 5px 0;
+    padding: 12px 0;
+}
+
+.forgot-Passwowd{
+    display: block;
+    opacity: .5;
+    cursor: pointer;
+    padding: 8px 0;
+    text-align: center;
+}
+
+.create-new-account{
+    cursor: pointer;
+    text-align: center;
+}
+
+.login{
+    position: relative;
+}
+
+.login .invalid{
+    color:#ff454f;
+}
+
+@media screen and (max-width: 600px) {
+
+    .PopUp > div:nth-child(1){
+        margin-top: 10%;
+        padding: 20px 38px;
+    }
+
+
+    .PopUp img{
+        display: none;
+    }
+}
+
+
+@media screen and (max-width: 480px) {
+
+
+    .PopUp > div:nth-child(1){
+        width: 80%;
+    }
+
+    .facebook {
+        background-image: none;
+        background-position: 21px center;
+    }
+}
+
+
+

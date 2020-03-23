@@ -1,0 +1,248 @@
+.sec-view {
+    position: relative;
+    display: block;
+}
+
+.sec-view div.inputContainer {
+    margin: 2px 0;
+    padding-top: 22px;
+    height: 54px;
+}
+
+.sec-view div label,
+.sec-view div .selectList,
+.sec-sender {
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+.sec-view div label,
+.sec-view div input,
+.sec-view div .selectList span {
+    width: 100%;
+    display: block;
+    padding: 3px 3px;
+    font-size: 14px;
+}
+
+.sec-view div .selectList span {
+    padding: 6px 8px;
+}
+
+.sec-view * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.sec-view div .selectList {
+    float: right;
+    position: absolute;
+    top: 52px;
+    max-height: 161px;
+    width: 100%;
+    border: solid 1px rgb(213, 213, 213);
+    overflow: hidden;
+    overflow-y: scroll;
+    /*resize: vertical;*/
+    display: none;
+    cursor: pointer;
+    z-index: 20;
+}
+
+.sec-view div .selectList span {
+    background-color: white;
+    transition: all .2s ease;
+}
+
+.sec-view div .selectList span:last-child {
+    border-bottom: solid 1px rgba(213, 213, 213, 0);
+}
+
+.sec-view div .selectList span:hover {
+    background-color: rgb(240, 240, 240);
+}
+
+.sec-view div label {
+    position: absolute;
+    top: 22px;
+    left: 0;
+    transition: all .4s ease, top .2s ease, transform .4s ease;
+    transform-origin: 0;
+    color: #5d5d5d;
+}
+
+.sec-view div .star {
+    display: inline-block;
+    position: absolute;
+    top: 29px;
+    left: -10px;
+    font-size: 14px;
+    color: #ff454f;
+}
+
+.sec-view div label.select-value {
+    height: 31px;
+    border-bottom: 1px solid #CECCCC;
+    cursor: pointer;
+    font-size: 14px !important;
+}
+
+.sec-view div label.select-value:before {
+    content: "";
+    position: absolute;
+    top: 14px;
+    right: 10px;
+    border-top: solid 4px #5e5e5e;
+    border-left: solid 4px transparent;
+    border-right: solid 4px transparent;
+
+}
+
+.sec-view div label.animated {
+    top: 2px;
+    transform: scale(0.8, 1);
+    padding: 0 3px;
+    margin: 5px 0;
+    transition: all .6s ease, transform .2s ease;
+    color: rgb(130, 130, 130);
+}
+
+.sec-view div label.invalid {
+    color: #ff454f;
+}
+
+.sec-view div input, .sec-view div select {
+    margin: 0;
+    outline: none;
+    cursor: text;
+    border: none;
+    border-bottom: 1px solid #CECCCC;
+    transition: border-bottom .4s ease;
+}
+
+.sec-view div select{
+    width: 100%;
+    font-size: 14px;
+    padding: 2px 0;
+}
+
+.sec-view div textarea {
+    margin: 0;
+    outline: none;
+    cursor: text;
+    border: none;
+    border: 1px solid #CECCCC;
+    width: 100%;
+    height: 115px;
+    resize: none;
+}
+
+.sec-view div.card-number-four-digits {
+    position: relative;
+    padding-left:3px;
+}
+
+.sec-view div.card-number-four-digits:before{
+    display: inline-block;
+    position: absolute;
+    content:"4886";
+    bottom: 10px;
+    font-size: 14px;
+}
+
+.sec-view div.card-number-four-star:before{
+    content:"****";
+}
+
+.sec-view div input.card-number-four-digits{
+    text-indent:30px;
+}
+
+.sec-view div.card-number-four-star .card-number-four-digits{
+    text-indent:22px;
+}
+
+.sec-view div input.invalid {
+    border-bottom: 1px solid #ff454f;
+}
+
+.sec-view div label.invalid {
+    color: #ff454f;
+}
+
+.sec-view ul {
+    list-style: none;
+}
+
+.sec-view ul li {
+    display: none;
+}
+
+.sec-view ul li a {
+    color: #828282;
+    font-size: 12px;
+    padding: 2px 0;
+    text-decoration: none;
+}
+
+/*CHECKBOX*/
+
+.sec-view div input[type=checkbox] {
+    width: 16px;
+    height: 17px;
+}
+
+.sec-view div label.checkboxText {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    text-indent: 22px;
+    top: -2px;
+    width: 100%;
+    font-size: 13px;
+    transform: scale(1)
+}
+
+.sec-sender {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.sec-sender .sec-sender-a {
+    transition: all linear .2s;
+    border: solid 2px #2a2a2a;
+    background-color: transparent;
+    color: #2a2a2a;
+    width: 100%;
+    display: block;
+    text-align: center;
+    font-size: 12px;
+    padding: 8px 13px;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+    box-sizing: border-box;
+}
+
+.sec-sender:hover .sec-sender-a{
+    color: white;
+    background-color:#2a2a2a;
+}
+
+.sec-sender .sec-sender-a.invalid,
+.sec-sender .sec-sender-a.invalid:hover {
+    color: #b2b2b2 !important;
+    border: solid 2px #d1d1d1 !important;
+    cursor: default;
+    background-color: white ;
+}
+
+
+
+
+/*CHECKBOX*/
+
+
+

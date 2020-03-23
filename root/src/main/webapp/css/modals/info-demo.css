@@ -1,0 +1,34 @@
+
+.info-demo {
+    display: inline-block;
+    padding: 22px 23px;
+    position: relative;
+    border: solid 1px #454545;
+    margin: 0 auto;
+}
+
+.info-demo > div {
+    display: block;
+    padding: 0px 19px;
+    position: relative;
+    border-left: solid 2px #454545;
+}
+
+.info-demo > div > h4 {
+    background-image: url(/css/images/Bell.png);
+    background-repeat: no-repeat;
+    background-position: 0 50%;
+    font-size: 20px;
+    font-weight: 500;
+    text-indent: 23px;
+    padding: 3px;
+    top: -3px;
+    position: relative;
+}
+
+.info-demo > div > p {
+    font-size: 14px;
+    font-weight: 300;
+    margin-top: 0;
+    color: #828282;
+}

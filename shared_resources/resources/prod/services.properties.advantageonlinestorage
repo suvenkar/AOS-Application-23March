@@ -1,0 +1,28 @@
+account.soapservice.url.host=www.advantageonlineshopping.com
+account.soapservice.url.port=80
+account.soapservice.url.suffix=accountservice
+account.soapservice.url.wsdl=/accountservice.wsdl
+
+catalog.service.url.host=www.advantageonlineshopping.com
+catalog.service.url.port=80
+catalog.service.url.suffix=catalog/api/v1
+
+order.service.url.host=www.advantageonlineshopping.com
+order.service.url.port=80
+order.service.url.suffix=order/api/v1
+
+mastercredit.service.url.host=www.advantageonlineshopping.com
+mastercredit.service.url.port=80
+mastercredit.service.url.suffix=MasterCredit/api/v1
+
+shipex.soapservice.url.host=www.advantageonlineshopping.com
+shipex.soapservice.url.port=80
+shipex.soapservice.url.suffix=ShipEx
+shipex.soapservice.url.wsdl=/shipex.wsdl
+
+safepay.service.url.host=www.advantageonlineshopping.com
+safepay.service.url.port=80
+safepay.service.url.suffix=SafePay/api/v1
+#example order.hibernate.db.url=jdbc:postgresql://localhost:5432/adv-root?loglevel=0
+#example order.service.url=localhost:8080/order
+

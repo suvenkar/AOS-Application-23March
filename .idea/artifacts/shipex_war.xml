@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="shipex:war">
+    <output-path>$PROJECT_DIR$/shipex/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>shipex</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="ShipEx.war">
+      <element id="artifact" artifact-name="shipex:war exploded" />
+    </root>
+  </artifact>
+</component>

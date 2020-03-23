@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.voltage:vphost-native:4.2.0">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/voltage/vphost-native/4.2.0/vphost-native-4.2.0.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/voltage/vphost-native/4.2.0/vphost-native-4.2.0-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/voltage/vphost-native/4.2.0/vphost-native-4.2.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

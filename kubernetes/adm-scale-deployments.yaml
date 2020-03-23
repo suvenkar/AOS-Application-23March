@@ -1,0 +1,132 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: postgresql-deployment
+  namespace: ${Enviroment}
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        name: db-postgresql
+    spec:
+      containers:
+      - name: db
+        image: app-registry:5000/postgresql:adm-db
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 5432
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: accountservice-deployment
+  namespace: ${Enviroment}
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        name: pod-accountservice
+    spec:
+      containers:
+      - name: accountservice
+        image: app-registry:5000/accountservice:${IMAGE_VERSION}
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: mastercredit-deployment
+  namespace: ${Enviroment}
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        name: pod-mastercredit
+    spec:
+      containers:
+      - name: mastercredit
+        image: app-registry:5000/mastercredit:${IMAGE_VERSION}
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: order-deployment
+  namespace: ${Enviroment}
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        name: pod-order
+    spec:
+      containers:
+      - name: order
+        image: app-registry:5000/order:${IMAGE_VERSION}
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: safepay-deployment
+  namespace: ${Enviroment}
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        name: pod-safepay
+    spec:
+      containers:
+      - name: safepay
+        image: app-registry:5000/safepay:${IMAGE_VERSION}
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: shipex-deployment
+  namespace: ${Enviroment}
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        name: pod-shipex
+    spec:
+      containers:
+      - name: shipex
+        image: app-registry:5000/shipex:${IMAGE_VERSION}
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: frontend-deployment
+  namespace: ${Enviroment}
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        name: pod-frontend
+    spec:
+      containers:
+      - name: frontend
+        image: app-registry:5000/frontend:${IMAGE_VERSION}
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080

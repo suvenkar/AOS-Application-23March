@@ -1,0 +1,6 @@
+mvn.buildTime=2017-12-12 00:43:23
+mvn.scmBranch=master
+mvn.commit.revision=e0e2a0e3
+mvn.project.build.finalName=common-1.0-SNAPSHOT
+mvn.project.version=1.0-SNAPSHOT
+mvn.buildComputerName=DESKTOP-KVM3V3B

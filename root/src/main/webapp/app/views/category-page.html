@@ -1,0 +1,42 @@
+
+<section>
+    <article ng-switch="noProducts">
+
+        <div ng-style="categoryData.categoryId ? { 'background-image': 'url(css/images/category_banner_' + categoryData.categoryId + '.png)' } : {}"
+             data-ng-hide="categoryData.promotedProduct == null" class="categoryData" >
+            <h1 class="roboto-bold"> {{categoryData.promotedProduct.promotionHeader}}</h1>
+            <h2 class="roboto-thin"> {{categoryData.promotedProduct.promotionSubHeader}}</h2>
+            <h3 class="roboto-thin">
+                {{categoryData.promotedProduct.productName}} |
+                {{ 'STARTING_AT' | translate }} ${{categoryData.promotedProduct.staringPrice}}
+            </h3>
+            <a href="#/product/{{categoryData.promotedProduct.id}}">
+                <button class="roboto-medium" translate="BUY_NOW">
+                </button>
+            </a>
+        </div>
+        <div>
+            <nav class="pages categoryDataFixedNav"  data-ng-class="{ fixedImportant : viewAll }">
+                <a translate="HOME" href="#/" ></a>
+                <a class="select "> {{categoryName}} </a>
+            </nav>
+        </div>
+        <h3 class="categoryTitle roboto-regular sticky"
+            data-ng-class="{ noPromotedProduct : viewAll }" >{{categoryName}}
+        </h3>
+        <div ng-class="{ noPromotedProductDiv : viewAll }">
+            <div ng-switch-when="true">
+                <label style="display: block; text-align: center; color:black; font-size: 100px">
+                    No products!
+                </label>
+            </div>
+            <div ng-switch-when="false">
+                <div class="category-type-products"
+                     category-type-products-drtv
+                     params-to-pass="paramsToPass"
+                ></div>
+            </div>
+            <social-media-drtv></social-media-drtv>
+        </div>
+    </article>
+</section>

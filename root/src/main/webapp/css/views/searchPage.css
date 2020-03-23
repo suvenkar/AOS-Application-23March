@@ -1,0 +1,14 @@
+
+
+#searchPage #mobileSearch {
+    position: fixed;
+    top:65px;
+    z-index: 999;
+    width: 100%;
+}
+
+@media screen and (max-width: 480px) {
+    #searchPage #mobileSearch {
+        position: static;
+    }
+}

@@ -1,0 +1,36 @@
+.iconUser{
+    position: relative;
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+}
+.iconUser:before, .iconUser:after{
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    display: block;
+    border: 2px solid #313131;
+}
+.iconUser.selected:before, .iconUser.selected:after{
+    /*border: 2px solid #55f024;*/
+}
+
+.iconUser:before{
+    top:1px;
+    width: 7px;
+    height: 9px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px white;
+    z-index: 10;
+}
+
+.iconUser:after{
+    bottom: 0;
+    width: 16px;
+    height: 8px;
+    border-radius: 10px;
+    border-top: 2px none #313131;
+    z-index: 9;
+ }

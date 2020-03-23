@@ -1,0 +1,58 @@
+
+.iconMagnifyingGlass{
+    position: relative;
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    top: 1px;
+}
+
+.iconMagnifyingGlass:before, .iconMagnifyingGlass:after{
+    content: '';
+    position: absolute;
+    left: 0;
+    display: block;
+}
+
+.iconMagnifyingGlass:before{
+    top:0px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    z-index: 10;
+    border: 2px solid #313131;
+}
+
+
+.iconMagnifyingGlass:after{
+    bottom: 3px;
+    left:14px;
+    width: 11px;
+    height: 2px;
+    border-radius: 2px;
+    z-index: 9;
+    background-color: #313131;
+    transform: rotate(45deg);
+}
+
+.iconMagnifyingGlass.selected:after{
+    background-color: #55f024;
+
+}
+.iconMagnifyingGlass.selected:before {
+    border: 2px solid #55f024;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

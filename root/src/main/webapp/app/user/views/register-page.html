@@ -1,0 +1,201 @@
+<nav class="pages">
+    <a translate="HOME" href="#/"></a>
+    <a class="select" translate="CREATE_ACCOUNT"> </a>
+</nav>
+<section id="registerPage">
+    <article>
+        <h3 class="roboto-regular sticky fixedImportant fixed" translate="CREATE_ACCOUNT"></h3>
+
+        <sec-form sec-is-valid-form="isValidForm(valid)">
+
+            <div id="registerCover" data-ng-hide="registerSuccess">
+                <div id="infoDemo">
+                    <info-demo a-title="{{'NOTICE' | translate }}" a-lines="{{mainCtrl.getNoticeInfo()}}"></info-demo>
+                </div>
+                <div id="form">
+
+                    <div id="formCover">
+
+                        <div>
+                            <h3 translate="ACCOUNT_DETAILS"></h3>
+
+                            <div class="spliter">
+
+                                <sec-view a-hint="{{'User_name' | translate}}"
+                                          sec-model="model.username"
+                                          sec-require="mainCtrl.getRequire('User_name')"
+                                          sec-min-length="mainCtrl.getMin(5)"
+                                          sec-max-length="mainCtrl.getMax(15)"
+                                          sec-pattern="mainCtrl.getPattern('Username')">
+                                </sec-view>
+
+                                <sec-view a-hint="{{'Email' | translate}}"
+                                          sec-model="model.email"
+                                          sec-require="mainCtrl.getRequire('Email')"
+                                          sec-pattern="mainCtrl.getPattern('Email')">
+                                </sec-view>
+
+                            </div>
+                            <div class="spliter">
+
+                                <sec-view a-hint="{{'Password' | translate}}"
+                                          a-type="password"
+                                          sec-model="model.password"
+                                          sec-require="mainCtrl.getRequire('Password')"
+                                          sec-min-length="mainCtrl.getMin(4)"
+                                          sec-max-length="mainCtrl.getMax(12)"
+                                          sec-pattern="mainCtrl.getPattern('Password')">
+                                </sec-view>
+
+                                <sec-view a-hint="{{'Confirm_password' | translate}}"
+                                          a-type="password"
+                                          sec-model="model.confirm_password"
+                                          sec-require="mainCtrl.getRequire('Confirm_password')"
+                                          sec-compare-to="mainCtrl.getCompare('Password', model.password)"
+                                          sec-model-compare-to="model.password">
+                                </sec-view>
+
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 translate="PERSONAL_DETAILS"></h3>
+
+                            <div class="spliter">
+
+                                <sec-view a-hint="{{'First_Name' | translate}}"
+                                          sec-model="model.firstName"
+                                          sec-min-length="mainCtrl.getMin(2)"
+                                          sec-max-length="mainCtrl.getMax(30)">
+                                </sec-view>
+
+                                <sec-view a-hint="{{'Last_Name' | translate}}"
+                                          sec-model="model.lastName"
+                                          sec-min-length="mainCtrl.getMin(2)"
+                                          sec-max-length="mainCtrl.getMax(30)">
+                                </sec-view>
+
+                            </div>
+                            <div class="spliter">
+
+                                <sec-view a-hint="{{'Phone_Number' | translate}}"
+                                          sec-max-length="mainCtrl.getMax(20)"
+                                          sec-model="model.phoneNumber">
+                                </sec-view>
+
+                            </div>
+                        </div>
+
+
+                        <div>
+                            <h3 translate="ADDRESS"></h3>
+
+                            <div class="spliter">
+
+                                <sec-view a-hint="Country"
+                                          a-type="select"
+                                          a-show="name"
+                                          sec-model="model.country"
+                                          sec-select-options="countries">
+                                </sec-view>
+
+
+                                <sec-view a-hint="{{'City' | translate}}"
+                                          sec-model="model.city"
+                                          sec-max-length="mainCtrl.getMax(25)">
+                                </sec-view>
+
+                            </div>
+                            <div class="spliter">
+
+                                <sec-view a-hint="{{'Address' | translate}}"
+                                          sec-model="model.address"
+                                          sec-max-length="mainCtrl.getMax(50)">
+                                </sec-view>
+
+
+                                <sec-view a-hint="{{'State__Province__Region' | translate}}"
+                                          sec-model="model.state"
+                                          sec-max-length="mainCtrl.getMax(10)">
+                                </sec-view>
+
+                            </div>
+                            <div class="spliter">
+
+                                <sec-view a-hint="{{'Postal_Code' | translate}}"
+                                          sec-model="model.postalCode"
+                                          sec-max-length="mainCtrl.getMax(10)">
+                                </sec-view>
+
+                            </div>
+                        </div>
+
+                        <div class="option marginTop">
+                            <input ng-model="model.offers_promotion" type="checkbox" autocomplete="off"/>
+                            <span class="roboto-light" translate="offers_promotion"></span>
+                        </div>
+
+                        <sec-view
+                                a-dont-change="true"
+                                sec-model="agree_Agreement"
+                                a-type="checkbox"
+                                sec-require="mainCtrl.getAgreeAgreementRequire()"
+                        ></sec-view>
+
+                    </div>
+                </div>
+            </div>
+            <div class="center">
+
+                <sec-sender class="roboto-medium" a-value="{{'REGISTER' | translate}}"
+                            sec-send="register()"></sec-sender>
+
+                <label class="{{registerAnswer.class}} center block smollMargin" data-ng-show="!registerSuccess">
+                    {{registerAnswer.message}}
+                </label>
+
+                <label class="ALREADY_HAVE_AN_ACCOUNT roboto-medium" data-ng-show="!registerSuccess">
+                    <a translate="ALREADY_HAVE_AN_ACCOUNT" ng-click="login()"></a>
+                </label>
+
+            </div>
+
+        </sec-form>
+
+        <div id="registerSuccessCover" data-ng-show="registerSuccess">
+            <div class="center">
+                <h1 class="roboto-medium"> {{ 'Hi' | translate }} {{ WellcomeName }}, </h1>
+
+                <p class="roboto-regular successMessage">
+                    {{ 'your_Account_was_created_successfully' | translate}}
+                </p>
+                <br/>
+                <a class="a-button" href="/"> {{ 'CONTINUE_SHOPPING' | translate}} </a>
+            </div>
+        </div>
+
+    </article>
+</section>
+
+
+<social-media-drtv></social-media-drtv>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

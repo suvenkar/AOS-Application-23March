@@ -1,0 +1,246 @@
+{
+  "@self" : "/csa/api/topology-model/topology/4bbc0b89-b822-4fac-8662-086357063817",
+  "@type" : "urn:x-hp:2013:software:cloud:topology_model:topology",
+  "groupId" : "com.hp.csa",
+  "artifactId" : "8a8780ae6484e82b01648531fc9d0056",
+  "version" : "1.0.0",
+  "displayName" : "AOS-qas",
+  "resources" : [ {
+    "id" : "360ae1a1-acf8-d526-0ddc-7d60e52b363a",
+    "name" : "DevOps-Existing Server",
+    "component" : {
+      "@self" : "/csa/api/topology-model/component-type/be4e14ca-2ba0-485a-8cc2-2c9b3d22d514",
+      "groupId" : "com.hp.csa.type",
+      "artifactId" : "DevOps-ExistingServer_ab983f4e43b244e3a83db2dd87f0d3c5",
+      "version" : "1.80.0000"
+    },
+    "properties" : [ {
+      "propertyKey" : "sshPort",
+      "propertyValue" : {
+        "value" : "22",
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "privatekey",
+      "propertyValue" : {
+        "value" : null,
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "capability",
+      "propertyValue" : {
+        "value" : null,
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "password",
+      "propertyValue" : {
+        "value" : null,
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "instanceId",
+      "propertyValue" : {
+        "value" : null,
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "ipAddress",
+      "propertyValue" : {
+        "value" : null,
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "isBlocked",
+      "propertyValue" : {
+        "value" : "false",
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "ip_sequence",
+      "propertyValue" : {
+        "value" : "2",
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "userid",
+      "propertyValue" : {
+        "value" : null,
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "username",
+      "propertyValue" : {
+        "value" : null,
+        "type" : "string"
+      }
+    } ],
+    "outgoingRelations" : [ ],
+    "annotations" : {
+      "uniqueName" : "DevOps-ExistingS0001",
+      "displayName" : "360ae1a1-acf8-d526-0ddc-7d60e52b363a",
+      "x" : "175",
+      "description" : "MO6 Existing Server Component",
+      "y" : "340"
+    },
+    "capabilityChars" : [ ],
+    "requirements" : [ ]
+  }, {
+    "id" : "3c1cb3d1-20ea-f0c9-0142-947df6d5d249",
+    "name" : "DevOps-ApplyRole",
+    "component" : {
+      "@self" : "/csa/api/topology-model/component-type/cf8ce1e0-6e99-429b-a6d0-cd3ba4524434",
+      "groupId" : "com.hp.csa.type.CHEF",
+      "artifactId" : "DevOps-ApplyRole_1be1529d67ef4b5196da4b35506773f1",
+      "version" : "1.0"
+    },
+    "properties" : [ {
+      "propertyKey" : "nodeRunList",
+      "propertyValue" : {
+        "value" : "role[postgres-aos]",
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "chefHostUsername",
+      "propertyValue" : {
+        "value" : "${chefHostUsername}",
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "nodeNamePrefix",
+      "propertyValue" : {
+        "value" : "AOS-POOL",
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "_modifiable_properties",
+      "propertyValue" : {
+        "value" : null,
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "nodeIP",
+      "propertyValue" : {
+        "value" : null,
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "artifact_http_url",
+      "propertyValue" : {
+        "value" : "@artifact_http_url@",
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "chefHostPassword",
+      "propertyValue" : {
+        "value" : "ENC(ENC(0gEDDGCB9H3bzsahOW6fk9zV+addlw0KkqyNBbDQ5le8MCPtemobqjwrbP+aepwgkoOOGCKZLa/aJaevb9BFABYnDFP/5YxjpZ/87Ys/fvw1xPQV616rfP0wLQ0mP3G84ynnrzG/oibc6mlhXQAI3x8KJqXfkDoHQ5MUXj7MxieFljIVeUG4HNalBPUQrx/0UKAkoA56/FyKOG6N))",
+        "type" : "string_encrypted"
+      }
+    }, {
+      "propertyKey" : "nodePassword",
+      "propertyValue" : {
+        "value" : "ENC(ENC(3yRvNEgx9X7drJm2QsAA6Js/FJpPpnpqSUe17wzqk2qRYvtBfWN24l4R+uwa7FrVFeG3hvdZk+Gt51DPaGR4QIdLI/4omVaGoVI1ihtU1balFN8IC7aPXQ6vTIrxYQbdO+LB67S26wUzOiYROzulHimZV+kKRu35k44Yjw==))",
+        "type" : "string_encrypted"
+      }
+    }, {
+      "propertyKey" : "_enable_modify_during_lifecycle_properties",
+      "propertyValue" : {
+        "value" : null,
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "stage_name",
+      "propertyValue" : {
+        "value" : "@stage_name@",
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "osType",
+      "propertyValue" : {
+        "value" : "Linux",
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "attributes",
+      "propertyValue" : {
+        "value" : "{}",
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "chefHost",
+      "propertyValue" : {
+        "value" : "${chefHost}",
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "chefTimeout",
+      "propertyValue" : {
+        "value" : "2500000",
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "nodeUserID",
+      "propertyValue" : {
+        "value" : "${nodeUserID}",
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "nodeIPAddress",
+      "propertyValue" : {
+        "value" : null,
+        "type" : "string"
+      }
+    } ],
+    "outgoingRelations" : [ {
+      "relationType" : "association",
+      "id" : "13c09b74-36bf-513d-5602-e2f8f5a91808",
+      "properties" : [ {
+        "propertyKey" : "_enable_modify_during_lifecycle_properties",
+        "propertyValue" : {
+          "value" : null,
+          "type" : "string"
+        }
+      }, {
+        "propertyKey" : "_modifiable_properties",
+        "propertyValue" : {
+          "value" : null,
+          "type" : "string"
+        }
+      }, {
+        "propertyKey" : "_relation_type",
+        "propertyValue" : {
+          "value" : {
+            "first" : "Association",
+            "second" : "ASSOCIATION"
+          },
+          "type" : "pair"
+        }
+      } ],
+      "relationDescriptorName" : "dependsOn-Host_DevOps-ApplyRole_1be1529d67ef4b5196da4b35506773f1__VERSION__1^0__GROUPID__com^hp^csa^type^CHEF",
+      "resourceReference" : {
+        "name" : "DevOps-Existing Server"
+      }
+    } ],
+    "annotations" : {
+      "uniqueName" : "DevOps-ApplyRole0001",
+      "displayName" : "3c1cb3d1-20ea-f0c9-0142-947df6d5d249",
+      "x" : "180",
+      "description" : "MO6 apply a role to a node",
+      "y" : "73"
+    },
+    "capabilityChars" : [ ],
+    "requirements" : [ ]
+  } ],
+  "revision" : 34,
+  "properties" : [ ],
+  "iconUrl" : "/csa/images/library/IT_infrastructure.png",
+  "tagIds" : [ ],
+  "hidden" : false,
+  "state" : "UNLOCKED",
+  "partial" : false,
+  "profiles" : [ ],
+  "annotations" : {
+    "serviceBlueprintId" : "8a8780ae6484e82b01648531fd1d005d",
+    "providerType" : "independent"
+  }
+}

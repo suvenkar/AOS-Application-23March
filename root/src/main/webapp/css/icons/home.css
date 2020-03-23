@@ -1,0 +1,70 @@
+
+.iconHome{
+    position: relative;
+    transform: translateY(6px) scale(0.9);
+    width: 18px;
+    height: 16px;
+    display: inline-block;
+    border: 2px solid #313131;
+    border-top: 0px none transparent;
+}
+
+.iconHome:after, .iconHome:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    display: block;
+}
+.iconHome:after{
+    border: 2px solid #313131;
+    bottom: 0;
+    width: 5px;
+    height: 8px;
+    margin: 0 auto;
+    border-bottom: none 0 transparent;
+}
+
+.iconHome.selected:before, .iconHome.selected:after{
+    border: 2px solid #55f024;
+}
+
+.iconHomeRoof{
+    position: relative;
+    top:-9px;
+    border-bottom: 9px solid white;
+    border-left: 13px solid transparent;
+    border-right: 13px solid transparent;
+    margin: 0 -4px;
+}
+
+.iconHome:before {
+    top:-11px;
+    border-bottom: 11px solid #313131;
+    border-left: 16px solid transparent;
+    border-right: 16px solid transparent;
+    margin: 0 -7px;
+}
+
+.iconHomeRoof:before, .iconHomeRoof:after {
+    content: '';
+    position: absolute;
+}
+
+.iconHomeRoof:before {
+    top:5px;
+    border-bottom: 2px solid #313131;
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+    margin: 0 -16px;
+    height: 2px;
+    width: 26px;
+}
+
+.iconHomeRoof:after {
+    top:4px;
+    height: 5px;
+    width: 18px;
+    background-color: white;
+    margin: 2px -9px;
+}

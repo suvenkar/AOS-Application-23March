@@ -1,0 +1,188 @@
+
+<nav class="pages fixed fixedImportant">
+    <a translate="HOME" href="#/" ></a>
+    <a class="select" translate="MY_ACCOUNT"></a>
+</nav>
+
+<section>
+    <article >
+        <h3 class="roboto-regular sticky fixed fixedImportant" translate="MY_ACCOUNT"></h3>
+
+        <div id="myAccountContainer">
+
+            <!--ACCOUNT DETAILS SECCION-->
+            <div class="cube">
+                <h3 class="blueLink">
+                    {{ "Account_Details" | translate }}
+                    <a class="floatRigth" href="#/accountDetails" translate="Edit">
+                    </a>
+                </h3>
+                <div class="borderBox">
+                    <div>
+                        <div class="floatRigth">
+                            <div icon-user-svg ></div>
+                        </div>
+                        <label>
+                            {{accountDetails.firstName}} {{accountDetails.lastName}}
+                        </label>
+                    </div>
+                    <div class="middle">
+                        <div class="floatRigth">
+                            <div icon-home></div>
+                        </div>
+                        <label data-ng-hide="accountDetails.homeAddress == ''"> {{accountDetails.homeAddress}} </label>
+                        <label data-ng-hide="accountDetails.cityName == ''"> {{accountDetails.cityName}} </label>
+                        <label data-ng-hide="accountDetails.countryName == ''"> {{accountDetails.countryName}} </label>
+                        <label data-ng-hide="accountDetails.stateProvince == ''"> {{accountDetails.stateProvince}} </label>
+                        <label data-ng-hide="accountDetails.zipcode == ''"> {{accountDetails.zipcode}} </label>
+                    </div>
+                    <div>
+                        <div class="floatRigth">
+                            <div icon-phone></div>
+                        </div>
+                        <label> {{accountDetails.mobilePhone}} </label>
+                    </div>
+                </div>
+            </div>
+            <!--ACCOUNT DETAILS SECCION-->
+
+
+
+            <!-- NO SHIPPING DETAILS TO SHOW SECCION-->
+            <div class="cube" data-ng-show="shippingDetails == null">
+                <h3 class="blueLink">
+                    {{ "Shipping_Details" | translate }}
+                </h3>
+                <div class="borderBox">
+                    <div>
+                        <div class="floatRigth">
+                            <div icon-user-svg ></div>
+                        </div>
+                        <label>
+                            {{accountDetails.firstName}} {{accountDetails.lastName}}
+                        </label>
+                    </div>
+                    <div class="middle">
+                        <div class="floatRigth">
+                            <div icon-home></div>
+                        </div>
+                        <!--<label> HPE Software (building M3) </label>-->
+                        <label data-ng-hide="accountDetails.homeAddress == ''"> {{accountDetails.homeAddress}} </label>
+                        <label data-ng-hide="accountDetails.cityName == ''"> {{accountDetails.cityName}} </label>
+                        <label data-ng-hide="accountDetails.countryName == ''"> {{accountDetails.countryName}} </label>
+                        <label data-ng-hide="accountDetails.stateProvince == ''"> {{accountDetails.stateProvince}} </label>
+                        <label data-ng-hide="accountDetails.zipcode == ''"> {{accountDetails.zipcode}} </label>
+                    </div>
+                    <div>
+                        <div class="floatRigth">
+                            <div icon-phone></div>
+                        </div>
+                        <label> {{accountDetails.mobilePhone}} </label>
+                    </div>
+                </div>
+            </div>
+            <!--END NO SHIPPING DETAILS TO SHOW SECCION-->
+
+
+
+
+            <!--SHIPPING DETAILS SECCION-->
+            <div class="cube" data-ng-hide="shippingDetails == null">
+                <h3 class="blueLink" translate="Shipping_Details">
+                </h3>
+                <div class="borderBox">
+                    <div>
+                        <div class="floatRigth">
+                            <img src="css/images/User.jpg">
+                        </div>
+                        <label>
+                            {{accountDetails.firstName}} {{accountDetails.lastName}}
+                        </label>
+                    </div>
+                    <div class="middle">
+                        <div class="floatRigth">
+                            <div icon-home></div>
+                        </div>
+                        <label data-ng-hide="shippingDetails.address_line1 == ''"> {{shippingDetails.address_line1}} </label>
+                        <label data-ng-hide="shippingDetails.address_line2 == ''"> {{shippingDetails.address_line2}} </label>
+                        <label data-ng-hide="shippingDetails.country == ''"> {{shippingDetails.country}} </label>
+                        <label data-ng-hide="shippingDetails.state == ''"> {{shippingDetails.state }} </label>
+                        <label data-ng-hide="shippingDetails.postalCode == ''"> {{shippingDetails.postalCode}} </label>
+                    </div>
+                    <div>
+                        <div class="floatRigth">
+                            <div icon-phone ></div>
+                        </div>
+                        <label> {{accountDetails.mobilePhone}} </label>
+                    </div>
+                </div>
+            </div>
+            <!--SHIPPING DETAILS SECCION-->
+
+
+
+
+            <!--PREFERRED PAYMENT METHOD DETAILS SECCION-->
+            <div class="cube" >
+                <h3 class="blueLink">
+                    {{ userSecondWsdl ? "Preferred_payment_method2" : "Preferred_payment_method" | translate }}
+                    <a class="floatRigth" href="#/accountPaymentEdit" translate="Edit">
+                    </a>
+                </h3>
+                <div class="paymentBox" data-ng-show="defaultPaymentMethodId == 0">
+                    <label class="mastercart" style="width: 100%; text-align: center; box-sizing: border-box" translate="Preferred_payment_has_not_been_set">
+                    </label>
+                </div>
+                <div class="paymentBox" data-ng-show="defaultPaymentMethodId == 20 && masterCredit4Digits != null">
+                    <img src="css/images/Master_credit.png">
+                    <label class="mastercart" translate="MasterCredit"></label>
+                    <span>****</span>
+                    <span>****</span>
+                    <span>****</span>
+                    <span>{{masterCredit4Digits}}</span>
+                </div>
+                <div class="paymentBox" data-ng-show="defaultPaymentMethodId == 10 && safePayName != null">
+                    <img src="css/images/SafePay.png">
+                    <label class="mastercart" translate="SafePay"></label>
+                    <span>{{safePayName}}</span>
+                </div>
+            </div>
+            <!--END PREFERRED PAYMENT METHOD DETAILS SECCION-->
+
+
+
+            <!--NOTIFY ME ABOUT PROMOTIONS SECCION-->
+            <div class="cube">
+                <div class="option notPromotionCheckbox">
+                    <input type="checkbox"
+                           data-ng-model="accountDetails.allowOffersPromotion"
+                           data-ng-click="allowOffersPromotionChanged()">
+                    <span translate="Notify_me_about_Promotions"></span>
+                </div>
+                <div class="categoriesBox" data-ng-class="{ disableBox : !accountDetails.allowOffersPromotion }">
+                    <div class="categoriesCheckboxes" >
+                        <div class="Categories" >
+                            <h4 class="roboto-regular" translate="Categories">
+                            </h4>
+                        </div>
+                        <div class="option" data-ng-repeat="cat in categoriesPromotions track by $index">
+                            <input type="checkbox" data-ng-model="cat.categoryValue">
+                            <span> {{ cat.categoryName }} </span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!--END NOTIFY ME ABOUT PROMOTIONS SECCION-->
+
+
+        </div>
+
+    </article>
+</section>
+
+
+
+
+<social-media-drtv></social-media-drtv>
+

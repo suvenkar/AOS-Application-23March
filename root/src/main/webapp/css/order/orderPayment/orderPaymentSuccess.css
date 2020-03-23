@@ -1,0 +1,199 @@
+
+#orderPaymentSuccess {
+
+    display: block;
+    margin:130px auto;
+    padding-top:30px;
+    text-align: center;
+}
+
+#orderPaymentSuccess > h2{
+
+    display: inline-block;
+    background-color: #54b3ad;
+    margin: 0 auto;
+    padding: 0 100px;
+    color: white;
+}
+
+#orderPaymentSuccess > h2 span{
+    padding: 10px;
+    font-size: 15px;
+    color: white;
+    display: block;
+    font-weight: 300;
+    position: relative;
+}
+
+#orderPaymentSuccess > h2 span:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    top: 19px;
+    left:-12px;
+    z-index: 1;
+    display: inline-block;
+    border-left: solid 15px white;
+    border-right: solid 15px white;
+}
+
+#orderPaymentSuccess span.separator {
+    padding: 0 10px;
+    display: inline-block;
+
+}
+
+#orderPaymentSuccess > p {
+    font-size: 14px;
+    color: #2a2a2a;
+    padding: 28px 0;
+}
+
+
+#orderPaymentSuccess > div{
+
+    display: inline-block;
+    margin:0px auto;
+    border:solid #2a2a2a 1px;
+    font-size: 0;
+    padding: 30px 0;
+}
+
+#orderPaymentSuccess > div > div.seccion {
+
+    text-align: left;
+    font-size: 14px;
+    width: 358px;
+    height: 286px;
+    display: inline-block;
+    border-right: solid #454545 2px;
+    vertical-align: top;
+}
+
+#orderPaymentSuccess > div > div.seccion .iconCss{
+    float: right;
+    vertical-align: top;
+}
+
+
+#orderPaymentSuccess > div > div.seccion:last-child {
+    border-right: none 0px red;
+}
+
+#orderPaymentSuccess .seccion > span  {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+#orderPaymentSuccess div.innerSeccion,
+#orderPaymentSuccess .seccion > span  {
+    padding: 20px 0;
+    margin: 0 40px;
+}
+
+#orderPaymentSuccess div.innerSeccion {
+    border-bottom: solid 1px #d0d0d0;
+}
+
+
+#orderPaymentSuccess div.innerSeccion:last-child {
+    border-bottom: none 0px red;
+}
+
+#orderPaymentSuccess div.innerSeccion img,
+#orderPaymentSuccess div.innerSeccion .floater  {
+    float: right;
+    display: inline-block;
+}
+
+#orderPaymentSuccess div.innerSeccion .floater span {
+    padding: 0 2px;
+    display: inline-block;
+}
+
+#orderPaymentSuccess div.innerSeccion label {
+    display: block;
+    padding: 2px;
+    font-size: 14px;
+    color: #2a2a2a;
+}
+
+#orderPaymentSuccess div.innerSeccion label.total {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+@media screen and (max-width: 1100px) {
+
+
+
+    #orderPaymentSuccess > div {
+        margin: 0 33px;
+    }
+
+
+    #orderPaymentSuccess > h2{
+        padding: 0 39px;
+    }
+
+    #orderPaymentSuccess > h2 span{
+        font-size: 13px;
+    }
+
+    /*#orderPaymentSuccess > h2 span:before{*/
+        /*top: 27px;*/
+    /*}*/
+
+    #orderPaymentSuccess span.separator{
+        display: block;
+        font-size: 0;
+    }
+
+    #orderPaymentSuccess > div{
+        width: 90%;
+    }
+
+    #orderPaymentSuccess > div > div.seccion{
+        border-right: none #454545 0px;
+        height: auto;
+        padding: 20px 0;
+        width: 100%;
+    }
+
+    #orderPaymentSuccess {
+        margin:140px auto;
+    }
+
+}
+
+
+
+
+@media screen and (max-width: 768px) {
+
+    #orderPaymentSuccess {
+        /*padding-top:0px;*/
+        /*padding-bottom:30px;*/
+    }
+
+    #orderPaymentSuccess > h2 span:before{
+        top:17px;
+    }
+
+    #orderPaymentSuccess {
+        margin:0px auto;
+    }
+
+}
+
+
+
+@media screen and (max-width: 600px) {
+
+    #orderPaymentSuccess > div {
+        margin: 0 auto;
+    }
+
+
+}

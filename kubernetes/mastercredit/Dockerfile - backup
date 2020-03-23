@@ -1,0 +1,67 @@
+FROM alpine:3.2
+MAINTAINER andrea_simonini@microfocus.com
+
+# Install cURL
+RUN apk --update add curl ca-certificates tar bash
+RUN export https_proxy=http://proxy.atlanta.hp.com:8080; curl -Ls https://github.com/sgerrand/alpine-pkg-glibc/releases/download/2.21-r2/glibc-2.21-r2.apk > /tmp/glibc-2.21-r2.apk
+RUN apk add --allow-untrusted /tmp/glibc-2.21-r2.apk
+
+ENV JAVA_VERSION_MAJOR 8
+ENV JAVA_VERSION_MINOR 144
+ENV JAVA_VERSION_BUILD 01
+ENV JAVA_PACKAGE jdk
+
+# Download and unarchive Java
+RUN  mkdir /opt && \
+     export https_proxy=http://proxy.atlanta.hp.com:8080 && \
+     curl -jksSLH "Cookie: oraclelicense=accept-securebackup-cookie" \
+     http://download.oracle.com/otn-pub/java/jdk/${JAVA_VERSION_MAJOR}u${JAVA_VERSION_MINOR}-b${JAVA_VERSION_BUILD}/090f390dda5b47b9b721c7dfaa008135/jdk-${JAVA_VERSION_MAJOR}u${JAVA_VERSION_MINOR}-linux-x64.tar.gz \
+    | tar -xzf - -C /opt &&\
+    ln -s /opt/jdk1.${JAVA_VERSION_MAJOR}.0_${JAVA_VERSION_MINOR} /opt/jdk &&\
+    rm -rf /opt/jdk/*src.zip \
+           /opt/jdk/lib/missioncontrol \
+           /opt/jdk/lib/visualvm \
+           /opt/jdk/lib/*javafx* \
+           /opt/jdk/jre/lib/plugin.jar \
+           /opt/jdk/jre/lib/ext/jfxrt.jar \
+           /opt/jdk/jre/bin/javaws \
+           /opt/jdk/jre/lib/javaws.jar \
+           /opt/jdk/jre/lib/desktop \
+           /opt/jdk/jre/plugin \
+           /opt/jdk/jre/lib/deploy* \
+           /opt/jdk/jre/lib/*javafx* \
+           /opt/jdk/jre/lib/*jfx* \
+           /opt/jdk/jre/lib/amd64/libdecora_sse.so \
+           /opt/jdk/jre/lib/amd64/libprism_*.so \
+           /opt/jdk/jre/lib/amd64/libfxplugins.so \
+           /opt/jdk/jre/lib/amd64/libglass.so \
+           /opt/jdk/jre/lib/amd64/libgstreamer-lite.so \
+           /opt/jdk/jre/lib/amd64/libjavafx*.so \
+           /opt/jdk/jre/lib/amd64/libjfx*.so
+
+# Set environment
+ENV JAVA_HOME /opt/jdk
+ENV PATH ${PATH}:${JAVA_HOME}/bin
+
+ENV CATALINA_HOME /usr/local/tomcat
+ENV PATH $CATALINA_HOME/bin:$PATH
+RUN mkdir -p "$CATALINA_HOME"
+WORKDIR $CATALINA_HOME
+
+ENV TOMCAT_MAJOR 8
+ENV TOMCAT_VERSION 8.0.46
+ENV TOMCAT_TGZ_URL https://www.apache.org/dist/tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz
+
+RUN set -x \
+    && export https_proxy=http://proxy.atlanta.hp.com:8080 \
+    && curl ${TOMCAT_TGZ_URL} -o tomcat.tar.gz \
+    && curl ${TOMCAT_TGZ_URL}.asc -o tomcat.tar.gz.asc \
+    && tar -xvf tomcat.tar.gz --strip-components=1 \
+    && rm bin/*.bat \
+    && rm tomcat.tar.gz*
+
+RUN rm -rf /usr/local/tomcat/webapps/mastercredit
+ADD mastercredit.war /usr/local/tomcat/webapps/
+
+EXPOSE 8080
+CMD ["catalina.sh", "run"]

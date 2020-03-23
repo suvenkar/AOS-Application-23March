@@ -1,0 +1,431 @@
+
+#myAccountContainer{
+    padding-top: 135px;
+    margin: 0 50px;
+}
+
+.fixed + #myAccountContainer{
+    padding-top: 95px;
+    margin: 0 50px;
+}
+
+#myAccountContainer .cube{
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 0;
+}
+
+#myAccountContainer .cube > h3{
+    padding-top: 37px;
+    padding-bottom: 7px;
+    color: #020202;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+#myAccountContainer .cube > div > div{
+    position: relative;
+    width: 33.33%;
+    display: inline-block;
+    box-sizing: border-box;
+    font-size: 15px;
+    vertical-align: top;
+    padding: 17px 17px;
+}
+
+#myAccountContainer .cube .borderBox,
+#myAccountContainer .cube .categoriesBox,
+#myAccountContainer .cube .paymentBox{
+    border: solid 1px #454545;
+    /*min-height: 120px;*/
+    min-height: 50px;
+}
+
+#myAccountContainer .cube > div > div.middle{
+    border-left: solid 1px #454545;
+    border-right: solid 1px #454545;
+}
+
+#myAccountContainer .cube .floatRigth{
+    float: right;
+}
+
+
+#myAccountContainer .cube .iconHome{
+    transform: scale(0.8);
+    top: 5px;
+}
+
+#myAccountContainer .cube > div label{
+    display: block;
+    font-weight: 400;
+    font-size: 14px;
+    padding: 2px 0;
+    color: #020202;
+}
+
+#myAccountContainer .cube div .floatRigth + label{
+    padding-top: 11px;
+}
+
+#myAccountContainer .cube .blueLink a{
+    font-weight: 400;
+    padding: 0 2px;
+    font-size: 15px;
+}
+
+
+#myAccountContainer .cube .paymentBox{
+    font-size: 15px;
+}
+
+#myAccountContainer .cube .paymentBox img{
+    padding: 8px 10px;
+}
+
+#myAccountContainer .cube .paymentBox .mastercart{
+    padding: 15px 7px;
+    padding-right: 12px;
+    font-size: 16px;
+}
+
+#myAccountContainer .cube .paymentBox label{
+    padding: 18px 2px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+#myAccountContainer .cube .paymentBox span{
+    padding: 18px 2px;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 13px;
+}
+
+#myAccountContainer .cube .option span{
+    font-weight: 300;
+    font-size: 14px;
+}
+
+#myAccountContainer .cube .notPromotionCheckbox {
+    margin-top: 37px;
+    margin-bottom: 6px;
+}
+
+#myAccountContainer .cube .categoriesBox p{
+    font-size: 16px;
+    padding: 14px 17px;
+    display: inline-block;
+}
+
+#myAccountContainer .cube .categoriesBox{
+    position: relative;
+}
+
+#myAccountContainer .cube .categoriesBox.disableBox{
+    border:solid 1px rgba(69, 69, 69, 0.49)
+}
+
+#myAccountContainer .cube .categoriesBox.disableBox:before{
+    content: "";
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.42);
+}
+
+#myAccountContainer .cube .categoriesBox .categoriesCheckboxes{
+    width: 100%;
+    padding: 0px 0px;
+    margin: 0;
+    white-space: nowrap;
+}
+
+#myAccountContainer .cube .categoriesBox .categoriesCheckboxes .option{
+    display: inline-block;
+    margin: 10px 13px;
+    white-space: nowrap;
+}
+
+#myAccountContainer .cube .categoriesBox .categoriesCheckboxes .Categories{
+    padding: 15px 13px;
+    display: inline-block;
+    border-right: solid 1px #454545;
+    color: #454545;
+}
+
+#registerCover .link {
+    display: inline-block;
+    color: #54b3ad;
+    font-size: 14px;
+    position: relative;
+    padding-top:22px;
+    cursor: pointer;
+}
+
+#form .accountDetailsBtn .sec-sender-a{
+     margin: 20px auto;
+}
+
+
+
+
+
+
+
+/*//// accountDetails PAGE ///*/
+
+
+.changePassword{
+    display: none;
+    position: relative;
+    margin: 0;
+    white-space: normal;
+}
+
+.changePassword .validate-directive{
+    display: block;
+    margin: 28px 0;
+}
+
+
+/*//// end accountDetails PAGE ///*/
+
+
+
+
+
+
+
+
+
+
+/*//// accountPaymentEdit PAGE ///*/
+
+#form .Choose_payment {
+    padding: 30px 0 22px 0;
+    display: block;
+}
+
+#accountCover .maxWidth {
+    max-width: 950px;
+    margin: 100px auto;
+    padding: 40px;
+}
+
+#accountCover #paymentMethod .blueLink {
+    display: inline-block;
+    float: right;
+}
+
+#paymentMethod .option span{
+    margin-top: 30px;
+    font-weight: 400;
+    display: block;
+    cursor: pointer;
+}
+
+
+#paymentMethod .option.blocked:before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+}
+
+#accountCover .paymentMethods {
+    margin-bottom: 20px;
+}
+
+#accountCover #paymentMethod .spliter .sec-view{
+    padding-right: 10%;
+}
+
+#accountCover #paymentMethod .sec-sender .sec-sender-a{
+    width: 134px;
+}
+
+
+
+/*//// END accountPaymentEdit PAGE ///*/
+
+
+
+@media screen and (max-width: 768px)
+{
+    #myAccountContainer .cube .categoriesBox .categoriesCheckboxes .option{
+        width: 27%;
+        white-space: normal;
+    }
+
+    #myAccountContainer{
+        padding-top: 0px !important;
+    }
+
+    #accountCover .maxWidth {
+        margin: 0px auto;
+    }
+
+    #myAccountContainer .cube .categoriesBox .categoriesCheckboxes{
+        white-space: normal;
+    }
+
+    #myAccountContainer .cube .categoriesBox .categoriesCheckboxes .Categories{
+        padding: 15px 13px;
+        display: inline-block;
+        border-right: none 1px #454545;
+        border-bottom: solid 1px #454545;
+        box-sizing: border-box;
+        width: 100%;
+    }
+
+}
+
+
+@media screen and (max-width: 600px) {
+
+    #myAccountContainer .cube .categoriesBox .categoriesCheckboxes .option{
+        width: 40%;
+    }
+
+       /*
+
+    #myAccountContainer .cube .categoriesBox .categoriesCheckboxes .option{*/
+    /*width: 27%;*/
+    /*white-space: normal;*/
+    /*}*/
+
+    /*#myAccountContainer{*/
+    /*padding-top: 0px !important;*/
+    /*}*/
+
+    /*#accountCover .maxWidth {*/
+    /*margin: 0px auto;*/
+    /*}*/
+
+    /*#myAccountContainer .cube .categoriesBox .categoriesCheckboxes{*/
+    /*white-space: normal;*/
+    /*}*/
+
+    /*#myAccountContainer .cube .categoriesBox .categoriesCheckboxes .Categories{*/
+    /*padding: 15px 13px;*/
+    /*display: inline-block;*/
+    /*border-right: none 1px #454545;*/
+    /*border-bottom: solid 1px #454545;*/
+    /*box-sizing: border-box;*/
+    /*width: 100%;*/
+    /*}*/
+}
+
+@media screen and (max-width: 480px)
+{
+
+    #myAccountContainer .cube .categoriesBox .categoriesCheckboxes .option{
+        width: 100%;
+    }
+
+    #accountCover #form .accountDetailsBtn.withMargin{
+        margin: 0 !important;
+        width: 100% !important;
+        height: auto !important;
+        padding: 12px 0;
+        font-size: 15px;
+        float: none;
+    }
+
+    #accountCover #form .accountDetailsBtn{
+        width: 100% !important;
+        height: 49px !important;
+    }
+
+    #accountCover #formCover > div input[type=text], #formCover > div input[type=password], #formCover > div .inputtext
+    {
+        width: 100% !important
+    }
+
+    #myAccountContainer{
+        margin: 0 25px;
+        margin-bottom: 35px;
+    }
+
+    #myAccountContainer .cube > div > div{
+        width: 100%;
+    }
+
+    #myAccountContainer .cube > div > div.middle{
+        border-top: solid 1px #454545;
+        border-bottom: solid 1px #454545;
+        border-left: none 1px #454545;
+        border-right: none 1px #454545;
+    }
+
+    .fixed + #myAccountContainer{
+        margin-bottom: 40px;
+    }
+
+    #myAccountContainer .cube .floatRigth{
+        top: 0px;
+    }
+
+    #myAccountContainer .cube > h3{
+        font-size: 14px;
+        padding-top: 18px;
+    }
+
+    #myAccountContainer .cube .option span{
+        color: #020202;
+        font-size: 14px;
+        font-weight: 400;
+    }
+
+
+    #myAccountContainer .cube .categoriesBox .categoriesCheckboxes{
+        width: 100%;
+    }
+
+    #myAccountContainer .cube .categoriesBox p{
+        padding-bottom: 0;
+    }
+
+    #infoDemo > div{
+        width: 185px;
+        margin: 34px auto;
+    }
+
+    #accountCover .maxWidth{
+        padding: 0 20px;
+    }
+}
+
+@media screen and (max-width: 366px)
+{
+    #myAccountContainer .cube .paymentBox .mastercart{
+        padding: 15px 0px;
+        padding-right: 0;
+    }
+
+}
+
+
+
+@media screen and (max-width: 350px)
+{
+    #myAccountContainer .cube .floatRigth{
+        float: none;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+

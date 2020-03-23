@@ -1,0 +1,267 @@
+
+@font-face {
+    font-family: 'localRobotoThin';
+    src: url('../../css/fonts/roboto_thin_macroman/Roboto-Thin-webfont.eot');
+    src: url('../../css/fonts/roboto_thin_macroman/Roboto-Thin-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../../css/fonts/roboto_thin_macroman/Roboto-Thin-webfont.woff') format('woff'),
+    url('../../css/fonts/roboto_thin_macroman/Roboto-Thin-webfont.ttf') format('truetype'),
+    url('../../css/fonts/roboto_thin_macroman/Roboto-Thin-webfont.svg#RobotoMediumItalic') format('svg');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'localRobotoLight';
+    src: url('../../css/fonts/roboto_light_macroman/Roboto-Light-webfont.eot');
+    src: url('../../css/fonts/roboto_light_macroman/Roboto-Light-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../../css/fonts/roboto_light_macroman/Roboto-Light-webfont.woff') format('woff'),
+    url('../../css/fonts/roboto_light_macroman/Roboto-Light-webfont.ttf') format('truetype'),
+    url('../../css/fonts/roboto_light_macroman/Roboto-Light-webfont.svg#RobotoMediumItalic') format('svg');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'localRobotoRegular';
+    src: url('../../css/fonts/roboto_regular_macroman/Roboto-Regular-webfont.eot');
+    src: url('../../css/fonts/roboto_regular_macroman/Roboto-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../../css/fonts/roboto_regular_macroman/Roboto-Regular-webfont.woff') format('woff'),
+    url('../../css/fonts/roboto_regular_macroman/Roboto-Regular-webfont.ttf') format('truetype'),
+    url('../../css/fonts/roboto_regular_macroman/Roboto-Regular-webfont.svg#RobotoMediumItalic') format('svg');
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'localRobotoMedium';
+    src: url('../../css/fonts/roboto_medium_macroman/Roboto-Medium-webfont.eot');
+    src: url('../../css/fonts/roboto_medium_macroman/Roboto-Medium-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../../css/fonts/roboto_medium_macroman/Roboto-Medium-webfont.woff') format('woff'),
+    url('../../css/fonts/roboto_medium_macroman/Roboto-Medium-webfont.ttf') format('truetype'),
+    url('../../css/fonts/roboto_medium_macroman/Roboto-Medium-webfont.svg#RobotoMediumItalic') format('svg');
+    font-style: normal;
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'localRobotoBold';
+    src: url('../../css/fonts/roboto_bold_macroman/Roboto-Bold-webfont.eot');
+    src: url('../../css/fonts/roboto_bold_macroman/Roboto-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../../css/fonts/roboto_bold_macroman/Roboto-Bold-webfont.woff') format('woff'),
+    url('../../css/fonts/roboto_bold_macroman/Roboto-Bold-webfont.ttf') format('truetype'),
+    url('../../css/fonts/roboto_bold_macroman/Roboto-Bold-webfont.svg#RobotoMediumItalic') format('svg');
+    font-style: normal;
+    font-weight: 800;
+}
+
+*{
+    font-family: localRobotoRegular;
+}
+
+html, body{
+    margin: 0;
+    padding: 0;
+}
+
+#chat {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background-color: white;
+    padding: 20px 30px;
+    box-sizing: border-box;
+    overflow-y: scroll;
+    border-bottom: 52px solid white;
+}
+
+#chat > #chatBody{
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#chat .chat-date{
+    font-size: 12px;
+    color: #828282;
+    text-align: center;
+}
+
+#chat .chat-date img{
+    margin: -2px 3px;
+}
+
+
+#chat .assistant {
+    width: 65px;
+    text-align: center;
+    display: inline-block;
+    vertical-align: top;
+}
+
+#chat .message .assistant img{
+    width: 45px;
+}
+
+#chat .message.user {
+    direction: rtl;
+}
+
+#chat .message .assistant span{
+    font-size: 11px;
+    color: #828282;
+    display: block;
+}
+
+
+#chat .message .ballon, #chat .message .written {
+    display: inline-block;
+    width: 50%;
+    vertical-align: top;
+    position: relative;
+    top:11px;
+    box-sizing: border-box;
+
+}
+
+
+#chat .message .ballon {
+    background-color: #54b3ad;
+    padding: 0px 40px 0px 25px;
+    border-radius: 0 60px 60px 60px;
+    top:20px;
+    margin-bottom: 30px;
+}
+
+#chat .message.user .ballon{
+    background-color: #ececec;
+    border-radius: 60px 0 60px 60px;
+    padding: 0px 40px 0px 40px;
+    direction: ltr;
+
+}
+
+#chat .message .ballon p {
+    color:white;
+    font-size: 13px;
+}
+
+#chat .message.user .ballon p{
+    color: #2a2a2a;
+    text-align: left;
+}
+
+#chat .message.user .ballon p{
+    color: #2a2a2a;
+    text-align: left;
+}
+
+#chat .message .written ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#chat .message .written ul li{
+    width: 6px;
+    height: 6px;
+    border-radius: 10px;
+    margin-left: 7px;
+    background-color: #54b3ad;
+    display: inline-block;
+
+
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+
+    -webkit-animation-name: writtenRightNow;
+    -moz-animation-name: writtenRightNow;
+    -o-animation-name: writtenRightNow;
+    animation-name: writtenRightNow;
+
+    animation-delay: 0s;
+    transform: scale(1);
+}
+
+#chat .message .written ul li:nth-child(2){
+    animation-delay: .2s;
+    background-color: #98d1ce;
+}
+
+#chat .message .written ul li:nth-child(3){
+    animation-delay: .4s;
+    background-color: #bbe1de;
+}
+
+
+@keyframes writtenRightNow {
+    from {
+        background-color: #54b3ad;
+    }
+
+    70% {
+        background-color: #bbe1de;
+        transform: scale(1);
+    }
+
+    to {
+        background-color: #54b3ad;
+    }
+}
+
+
+
+#bottomSection{
+    position: fixed;
+    bottom: 0;
+    z-index: 20;
+    width: 100%;
+    border: solid 1px #e8e8e8;
+}
+
+#btnSender.disable{
+    opacity: 0.3;
+}
+
+#bottomSection input[type=text]{
+    font-size: 14px;
+    color:#828282;
+    font-family: localRobotoLight;
+    width: calc(100% - 64px);
+    display: inline-block;
+    padding: 15px 30px;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+}
+
+
+#bottomSection img{
+    cursor: pointer;
+    padding: 10px;
+    vertical-align: middle;
+}
+
+
+@media screen and (max-width: 450px){
+
+    #chat .assistant{
+        width: auto;
+    }
+
+    #chat .message .assistant img, #chat .message .assistant span{
+        display: inline-block;
+        vertical-align: middle;
+        padding: 0 5px;
+    }
+
+    #chat .message .ballon {
+        width: 100%;
+        top:5px;
+    }
+    #chat .chat-date{
+        margin-bottom: 20px;
+    }
+}

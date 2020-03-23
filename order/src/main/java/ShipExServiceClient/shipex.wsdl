@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:sch="https://www.AdvantageOnlineBanking.com/ShipEx/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="https://www.AdvantageOnlineBanking.com/ShipEx/" targetNamespace="https://www.AdvantageOnlineBanking.com/ShipEx/">
+  <wsdl:types>
+    <xs:schema xmlns:sx="http://www.w3.org/2001/XMLSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="https://www.AdvantageOnlineBanking.com/ShipEx/">
+
+    <xs:complexType name="product">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="productName" type="xs:string"/>
+            <xs:element name="productQuantity" type="xs:int"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="SEProducts">
+        <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="product" type="tns:product"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="SEAddress">
+        <xs:sequence>
+            <sx:element name="City" type="xs:string"/>
+            <sx:element name="Country" type="xs:string"/>
+            <sx:element name="State" type="xs:string"/>
+            <sx:element name="PostalCode" type="xs:string"/>
+            <xs:element name="AddressLine1" type="xs:string"/>
+            <xs:element name="AddressLine2" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:element name="ShippingCostRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <sx:element name="SETransactionType" type="xs:string"/>
+                <sx:element name="SEAddress" type="tns:SEAddress"/>
+                <xs:element name="SENumberOfProducts" type="xs:int"/>
+                <xs:element name="SECustomerName" type="xs:string"/>
+                <xs:element name="SECustomerPhone" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="ShippingCostResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="SETransactionType" type="xs:string"/>
+                <xs:element name="Code" type="xs:string"/>
+                <xs:element name="Reason" type="xs:string"/>
+                <xs:element name="Amount" type="xs:string"/>
+                <xs:element name="Currency" type="xs:string"/>
+                <xs:element name="TransactionDate" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="PlaceShippingOrderRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <sx:element name="SETransactionType" type="xs:string"/>
+                <sx:element name="SEAddress" type="tns:SEAddress"/>
+                <xs:element form="qualified" name="SEProducts" type="tns:SEProducts"/>
+                <xs:element name="OrderNumber" type="xs:string"/>
+                <xs:element name="SECustomerName" type="xs:string"/>
+                <xs:element name="SECustomerPhone" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="PlaceShippingOrderResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <sx:element name="SETransactionType" type="xs:string"/>
+                <xs:element name="Code" type="xs:string"/>
+                <xs:element name="Reason" type="xs:string"/>
+                <xs:element name="TransactionReference" type="xs:string"/>
+                <xs:element name="TransactionDate" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="TrackNumberRequest">
+        <xs:complexType>
+            <xs:sequence>
+
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="TrackNumberResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="track" type="xs:long"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="TrackNumberRequest">
+    <wsdl:part element="tns:TrackNumberRequest" name="TrackNumberRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="PlaceShippingOrderResponse">
+    <wsdl:part element="tns:PlaceShippingOrderResponse" name="PlaceShippingOrderResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="TrackNumberResponse">
+    <wsdl:part element="tns:TrackNumberResponse" name="TrackNumberResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ShippingCostResponse">
+    <wsdl:part element="tns:ShippingCostResponse" name="ShippingCostResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="PlaceShippingOrderRequest">
+    <wsdl:part element="tns:PlaceShippingOrderRequest" name="PlaceShippingOrderRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ShippingCostRequest">
+    <wsdl:part element="tns:ShippingCostRequest" name="ShippingCostRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="ShipExPort">
+    <wsdl:operation name="TrackNumber">
+      <wsdl:input message="tns:TrackNumberRequest" name="TrackNumberRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:TrackNumberResponse" name="TrackNumberResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PlaceShippingOrder">
+      <wsdl:input message="tns:PlaceShippingOrderRequest" name="PlaceShippingOrderRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:PlaceShippingOrderResponse" name="PlaceShippingOrderResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ShippingCost">
+      <wsdl:input message="tns:ShippingCostRequest" name="ShippingCostRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:ShippingCostResponse" name="ShippingCostResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ShipExPortSoap11" type="tns:ShipExPort">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="TrackNumber">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="TrackNumberRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="TrackNumberResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PlaceShippingOrder">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="PlaceShippingOrderRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="PlaceShippingOrderResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ShippingCost">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="ShippingCostRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="ShippingCostResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ShipExPortService">
+    <wsdl:port binding="tns:ShipExPortSoap11" name="ShipExPortSoap11">
+      <soap:address location="http://localhost:8080/ShipEx/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>order</artifactId>
+    <packaging>war</packaging>
+    <parent>
+        <groupId>com.advantage.online.store</groupId>
+        <artifactId>main_project</artifactId>
+        <version>1.0-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+    <build>
+        <finalName>order</finalName>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>sql-maven-plugin</artifactId>
+                    <configuration>
+                        <!--suppress MavenModelInspection -->
+                        <url>${db.url.prefix}://${order.hibernate.db.url.host}:${order.hibernate.db.url.port}/postgres
+                        </url>
+                        <!--suppress MavenModelInspection -->
+                        <username>${order.hibernate.db.login}</username>
+                        <!--suppress MavenModelInspection -->
+                        <password>${order.hibernate.db.password}</password>
+                        <sqlCommand>create database "${order.hibernate.db.name}"</sqlCommand>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+        <plugins>
+            <!--shared resources-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+            </plugin>
+            <!--read properties from zip-->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>properties-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+    <!-- Spring BOM -->
+    <dependencies>
+        <!--shared resources-->
+        <dependency>
+            <groupId>com.advantage.online.store</groupId>
+            <artifactId>shared_resources</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <!--<classifier>resources</classifier>-->
+            <type>zip</type>
+            <scope>provided</scope>
+        </dependency>
+        <!-- For WSDL handling -->
+        <dependency>
+            <groupId>com.predic8</groupId>
+            <artifactId>soa-model-core</artifactId>
+            <version>1.5.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.advantage.online.store</groupId>
+            <artifactId>common</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency><!-- Use root.WAR with classes - for sharing with WARs-->
+            <groupId>com.advantage.online.store</groupId>
+            <artifactId>root</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <classifier>classes</classifier>
+            <scope>compile</scope>
+        </dependency>
+        <!--
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.17</version>
+        </dependency>
+        -->
+    </dependencies>
+</project>

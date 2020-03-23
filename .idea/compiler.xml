@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="root" />
+        <module name="catalog" />
+        <module name="common" />
+        <module name="order" />
+        <module name="safepay" />
+        <module name="shipex" />
+        <module name="accountservice" />
+        <module name="mastercredit" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="accountservice" target="1.8" />
+      <module name="catalog" target="1.8" />
+      <module name="common" target="1.8" />
+      <module name="main_project" target="1.8" />
+      <module name="mastercredit" target="1.8" />
+      <module name="order" target="1.8" />
+      <module name="root" target="1.8" />
+      <module name="safepay" target="1.8" />
+      <module name="shared_resources" target="1.8" />
+      <module name="shipex" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

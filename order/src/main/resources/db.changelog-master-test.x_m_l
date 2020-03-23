@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+
+    <changeSet author="assaf" id="0000-1">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <tableExists tableName="PRODUCT"/>
+            </not>
+        </preConditions>
+        <createTable tableName="PRODUCT">
+            <column autoIncrement="true" name="PRODUCT_ID" type="BIGINT">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="PRODUCT_NAME" type="VARCHAR(255)"/>
+            <column name="DESCRIPTION" type="VARCHAR(255)"/>
+            <column name="price" type="BIGINT"/>
+            <column name="category_id" type="BIGINT"/>
+        </createTable>
+        <createTable tableName="CATEGORY">
+            <column autoIncrement="true" name="CATEGORY_ID" type="BIGINT">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="CATEGORY_NAME" type="VARCHAR(255)"/>
+        </createTable>
+        <addUniqueConstraint
+                columnNames="product_name"
+                constraintName="unique_product_name_constraint"
+                deferrable="true"
+                disabled="true"
+                initiallyDeferred="true"
+                tableName="PRODUCT"/>
+        <addUniqueConstraint
+                columnNames="category_name"
+                constraintName="unique_category_name_constraint"
+                deferrable="true"
+                disabled="true"
+                initiallyDeferred="true"
+                tableName="CATEGORY"/>
+    </changeSet>
+
+</databaseChangeLog>

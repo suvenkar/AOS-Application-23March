@@ -1,0 +1,183 @@
+#toolTipCart {
+    position: absolute;
+    top: -3px;
+    right: -8px;
+    z-index: 99999;
+    display: none;
+    direction: ltr;
+}
+
+#toolTipCart .emptyCart{
+    border: solid 1px #d0d0d0;
+    background-color: white;
+    text-align: center;
+    width: 266px;
+    padding: 12px 0;
+}
+
+
+#toolTipCart .emptyCart > label{
+    display: block;
+    padding: 3px 0;
+    color: #2a2a2a;
+    font-size: 14px;
+}
+#toolTipCart .emptyCart > label.items{
+    font-size: 16px;
+}
+
+#toolTipCart .emptyCart > label span{
+    position: relative;
+    top: -2px;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+#toolTipCart table{
+    background-color: white;
+    border: solid 1px #d0d0d0;
+}
+
+#toolTipCart *{
+    margin: 0;
+    padding: 0;
+}
+
+#toolTipCart table{
+    display: block;
+}
+
+
+#toolTipCart tbody{
+    position: relative;
+    display: block;
+    margin: 0;
+}
+
+#toolTipCart *{
+    cursor: pointer;
+}
+
+#toolTipCart tbody tr {
+    display: block;
+    border-bottom: solid 1px #d0d0d0;
+    margin: 0 5px;
+    height: 104px;
+}
+
+#toolTipCart tbody td{
+    padding: 14px 5px;
+    vertical-align: top;
+    position: relative;
+    text-align: left;
+    height: 64px;
+}
+
+
+#toolTipCart tbody td:nth-child(1){
+    vertical-align: middle;
+}
+
+#toolTipCart tfoot td:nth-child(1){
+    text-align: left;
+}
+
+#toolTipCart tbody td:nth-child(2){
+    width: 100%;
+}
+
+#toolTipCart tbody td:nth-child(3){
+    text-align: center;
+}
+
+
+#toolTipCart tbody img{
+    width: 56px;
+    vertical-align: middle;
+}
+
+#toolTipCart tbody a {
+    text-decoration: none;
+}
+
+#toolTipCart tbody h3{
+    font-size: 13px;
+    padding-bottom: 7px;
+    margin-bottom: 8px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-height:  1.9em;
+    font-weight: 400;
+    color: #313131;
+}
+
+#toolTipCart tbody label{
+    font-size: 11px;
+    color: #828282;
+    display: block;
+    position: relative;
+    line-height:15px
+}
+
+#toolTipCart tbody span.productColor{
+    position: absolute;
+    top:-2px;
+    margin: 0 4px;
+}
+
+#toolTipCart tbody .price{
+    font-size: 13px;
+    color: #2a2a2a;
+}
+
+#toolTipCart tbody .removeProduct{
+    position: absolute;
+    bottom: 20px;
+    right: 15px;
+    width: 18px;
+    height: 18px;
+    transform: scale(0.8);
+    cursor: pointer;
+}
+
+
+
+
+#toolTipCart tfoot {
+    display: block;
+    border-top: solid 1px #d0d0d0;
+    background-color: #f9f9f9;
+}
+
+
+
+#toolTipCart tfoot span {
+    font-size: 15px;
+    color: #2a2a2a;
+    margin: 10px 10px 0 10px;
+    display: inline-block;
+}
+#toolTipCart tfoot .cart-total{
+    float: right;
+}
+
+#toolTipCart tfoot button
+{
+    width: 285px;
+    font-size: 13px;
+    color: #2a2a2a;
+    margin: 10px;
+    padding: 10px;
+    background-color: white;
+    border: solid 2px #2a2a2a;
+    display: block;
+}
+
+#toolTipCart tfoot button:hover
+{
+    color: white;
+    margin: 10px;
+    padding: 10px;
+    background-color: #2a2a2a;
+    border: solid 2px white;
+}

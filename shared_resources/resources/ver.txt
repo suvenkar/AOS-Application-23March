@@ -1,0 +1,6 @@
+mvn.buildTime=${timestamp}
+mvn.scmBranch=${scmBranch}
+mvn.commit.revision=${buildNumber}
+mvn.project.build.finalName=${project.build.finalName}
+mvn.project.version=${project.version}
+mvn.buildComputerName=${compName}

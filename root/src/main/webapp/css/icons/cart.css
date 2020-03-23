@@ -1,0 +1,85 @@
+
+.iconCart{
+    position: relative;
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    top: 1px;
+    position: relative;
+    perspective: 96px;
+    transform-style: preserve-3d;
+    /*transform: rotate(-3deg);*/
+    /*top: 1px;*/
+    /*background-color: rgba(0, 255, 0, 0.47);*/
+}
+
+.iconCartTop{
+    transform: rotateX(-64deg) skew(0deg);
+    height: 16px;
+    width: 15px;
+    border-left: none 0px transparent;
+    border-right: solid 2px #313131;
+    border-top: solid 3px #313131;
+    border-bottom: solid 5px black;
+    left: 4px;
+    top: -2px;
+}
+
+.iconCartTop:before{
+    background-color: #313131;
+    height: 2px;
+    width: 100%;
+    content: "";
+    position: absolute;
+    bottom: 0;
+
+}
+
+.iconCartTop, .iconCartBottom{
+    position: absolute;
+}
+
+.iconCartTop:before, .iconCartTop:after,
+.iconCartBottom:before, .iconCartBottom:after,
+.iconCartHandle:before, .iconCartHandle:after{
+    content: '';
+    position: absolute;
+    display: block;
+}
+
+.iconCartHandle{
+    position: absolute;
+    height: 17px;
+    width: 2px;
+    border-top: solid 2px #313131;
+    border-right: solid 3px #313131;
+    left: -1px;
+    top: 0;
+    transform: skew(16deg);
+}
+
+.iconCartBottom{
+    background-color: #313131;
+    width: 15px;
+    height: 2px;
+    bottom: 5px;
+    left:0;
+    right: 0;
+    margin: 0 auto;
+}
+
+.iconCartBottom:before, .iconCartBottom:after {
+    bottom: -5px;
+    width: 4px;
+    height: 4px;
+    background-color: #313131;
+    border-radius: 50%;
+}
+
+.iconCartBottom:before{
+right: 0;
+}
+
+.iconCartBottom:after{
+    left:0;
+}

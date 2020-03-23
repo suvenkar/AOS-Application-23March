@@ -1,0 +1,309 @@
+#registerCover {
+    max-width: 1260px;
+    margin: 0 auto;
+    padding: 110px 30px 30px 30px;
+
+}
+
+#infoDemo, #form {
+    display: table-cell;
+    vertical-align: top;
+}
+
+#form {
+    width: 100%;
+}
+
+#infoDemo {
+    white-space: nowrap;
+}
+
+#registerPage .spliter {
+    white-space: nowrap;
+    width: 90%;
+}
+
+#registerPage .spliter .sec-view {
+    width: 50%;
+    display: inline-block;
+    padding-right: 80px;
+    box-sizing: border-box;
+    vertical-align: top;
+}
+
+#registerPage .spliter .sec-view div label.select-value,
+#registerPage .spliter .sec-view div.selectList
+{
+    width: 82%;
+}
+
+#formCover > div {
+    margin-bottom: 56px;
+}
+
+#formCover > div h3 {
+    margin: 30px 0 13px 0;
+    letter-spacing: 1px;
+    font-size: 16px;
+}
+
+#infoDemo .info-demo {
+    margin: 34px 75px 0 0;
+}
+
+#registerPage .invalid {
+    color: #ff454f;
+    margin-bottom: 10px;
+}
+
+#formCover .option {
+    margin: 3px 0;
+    display: block;
+}
+
+#formCover .option.marginTop {
+    margin-top: 30px;
+}
+
+#formCover .option span {
+    width: 100%;
+    font-size: 14px;
+    color: #828282;
+}
+
+.removeSpaces {
+    width: 100%;
+    margin: 0;
+}
+
+
+#registerPage .sec-sender .sec-sender-a {
+    width: 330px;
+    font-size: 16px;
+    margin: 20px auto;
+}
+
+.ALREADY_HAVE_AN_ACCOUNT {
+    display: block;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.ALREADY_HAVE_AN_ACCOUNT a {
+    font-size: 12px;
+    color: #2a2a2a;
+    cursor: pointer;
+}
+
+#form .valid {
+    color: lime !important;
+}
+
+#form .center {
+    display: block;
+    text-align: center;
+    padding: 20px;
+}
+
+#form .invalidInput {
+    border-bottom: solid #ff454f 1px;
+}
+
+/*.buttonDisable*/
+
+#formCover .validate-directive {
+    width: 49%;
+}
+
+#formCover > div input[type=text], #formCover > div input[type=password], #formCover > div .inputtext {
+    /*width: 90% !important;*/
+}
+
+/* Register Success seccion */
+
+#registerSuccessCover {
+    padding: 100px 0;
+    font-size: 26px;
+}
+
+#registerSuccessCover h1 {
+}
+
+#registerSuccessCover .successMessage {
+    display: inline-block;
+    position: relative;
+}
+
+#registerSuccessCover .successMessage:before {
+    content: "";
+    position: absolute;
+    top: 6px;
+    left: -29px;
+    width: 20px;
+    height: 10px;
+    border-bottom: solid #54b3ad 4px;
+    border-left: solid #54b3ad 4px;
+    transform: rotate(-48deg);
+    z-index: 10;
+}
+
+#registerSuccessCover .a-button {
+    padding: 13px 30px;
+    margin: 30px 0 80px 0;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+/* Register Success seccion */
+
+@media screen and (max-width: 1200px) {
+
+    #registerPage .spliter {
+        width: 100%;
+    }
+
+}
+
+@media screen and (max-width: 940px) {
+
+    #infoDemo, #form {
+        display: block;
+        width: 100%;
+    }
+
+    #infoDemo {
+        text-align: center;
+    }
+
+    #infoDemo .info-demo {
+        text-align: left;
+        margin: 0px auto;
+        display: inline-block;
+    }
+
+    #registerPage .spliter .sec-view {
+        padding: 0px;
+    }
+
+    #registerPage .spliter .sec-view:nth-child(odd) {
+        padding-right: 40px;
+    }
+
+    #registerPage .spliter .sec-view div label.select-value,
+    #registerPage .spliter .sec-view div.selectList {
+        width: 91%;
+    }
+
+    /*#registerCover{*/
+    /*padding-top: 0px;*/
+    /*}*/
+    /*#formCover > div input[type=text], #formCover > div input[type=password], #formCover > div .inputtext*/
+    /*{*/
+    /*!*width: 100% !important;*!*/
+    /*}*/
+    /*#form{*/
+    /*box-sizing: border-box;*/
+    /*width: 100%;*/
+    /*background-clip: content-box;*/
+    /*padding: 25px 20px;*/
+    /*}*/
+    /*#infoDemo{*/
+    /*width: 340px;*/
+    /*margin: 10px auto;*/
+    /*}*/
+    /*#formCover{*/
+    /*width: 100%;*/
+    /*}*/
+    /*#formCover > div span {*/
+    /*display: inline-block;*/
+    /*width: 43%;*/
+    /*margin-right: 25px;*/
+    /*margin-left: 25px;*/
+    /*}*/
+
+}
+
+@media screen and (max-width: 768px) {
+    #form {
+        width: 100%;
+        display: block;
+    }
+
+    #formCover > div span {
+        width: 100%;
+        margin: 0px;
+    }
+
+    .animPlaceholderUp * {
+        white-space: normal;
+    }
+
+    #registerSuccessCover .successMessage {
+        width: 240px;
+    }
+
+    #registerPage .spliter {
+        white-space: normal;
+    }
+
+    #registerPage .spliter .sec-view,
+    #registerPage .spliter .sec-view div label.select-value,
+    #registerPage .spliter .sec-view div.selectList {
+        width: 100%;
+    }
+
+    #registerPage .spliter .sec-view:nth-child(odd) {
+        padding: 0px;
+    }
+
+    #registerCover {
+        padding: 0 30px 30px 30px;
+    }
+
+    #registerPage .sec-sender {
+        /*width: 100%;*/
+        /*margin: 20px;*/
+    }
+
+}
+
+@media screen and (max-width: 480px) {
+
+    /*#accountCover .maxWidth {*/
+        /*padding: 15px 0px !important;*/
+    /*}*/
+
+    #registerPage .sec-sender .sec-sender-a {
+        width: 100%;
+        /*margin: 20px;*/
+    }
+
+    #registerPage .sec-sender {
+        width: 100%;
+        padding: 0 30px;
+        box-sizing: border-box;
+    }
+
+    #formCover > div {
+        /*margin: 0 0 56px 12px;*/
+    }
+
+    #infoDemo {
+        display: none;
+    }
+
+    #form button {
+        width: 100%;
+    }
+
+    #formCover > div input[type=text],
+    #formCover > div input[type=password],
+    #formCover > div .inputtext {
+        width: 100% !important;
+    }
+
+}
+
+
+
+

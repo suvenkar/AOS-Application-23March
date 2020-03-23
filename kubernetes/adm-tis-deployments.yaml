@@ -1,0 +1,170 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: postgresql-deployment
+  namespace: devops-aos-tis
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        name: db-postgresql
+    spec:
+      containers:
+      - name: db
+        image: app-registry:30005/postgresql:adm-db
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 5432
+        resources:
+          limits:
+            memory: 128Mi
+      nodeSelector:
+        devops.node.pool: static
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: mastercredit-deployment
+  namespace: devops-aos-tis
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        name: pod-mastercredit
+    spec:
+      containers:
+      - name: mastercredit
+        image: app-registry:30005/mastercredit:latest
+        env:
+        - name: CATALINA_OPTS
+          value: "-Xms256M -Xmx1024M"
+        command: ["/bin/sh","-c"]
+        args: ["cd /usr/local/tomcat/webapps;mkdir mastercredit;cd mastercredit;jar -xvf /usr/local/tomcat/webapps/mastercredit.war;ls;sed -i 's/30051/30011/g' ./WEB-INF/classes/properties/services.properties; sed -i 's/30053/30013/g' ./WEB-INF/classes/properties/services.properties;sed -i 's/30054/30014/g' ./WEB-INF/classes/properties/services.properties;sed -i 's/30055/30015/g' ./WEB-INF/classes/properties/services.properties;sed -i 's/30056/30016/g' ./WEB-INF/classes/properties/services.properties;rm /usr/local/tomcat/webapps/mastercredit.war;cd ..;jar -cvf mastercredit.war /usr/local/tomcat/webapps/mastercredit;/usr/local/tomcat/bin/catalina.sh run "]
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
+        resources:
+          limits:
+            memory: 1G 
+      nodeSelector:
+        devops.node.pool: static
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: safepay-deployment
+  namespace: devops-aos-tis
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        name: pod-safepay
+    spec:
+      containers:
+      - name: safepay
+        image: app-registry:30005/safepay:latest
+        env:
+        - name: CATALINA_OPTS
+          value: "-Xms256M -Xmx1024M"
+        command: ["/bin/sh","-c"]
+        args: ["cd /usr/local/tomcat/webapps;mkdir safepay;cd safepay;jar -xvf /usr/local/tomcat/webapps/safepay.war;ls;sed -i 's/30051/30011/g' ./WEB-INF/classes/properties/services.properties; sed -i 's/30053/30013/g' ./WEB-INF/classes/properties/services.properties;sed -i 's/30054/30014/g' ./WEB-INF/classes/properties/services.properties;sed -i 's/30055/30015/g' ./WEB-INF/classes/properties/services.properties;sed -i 's/30056/30016/g' ./WEB-INF/classes/properties/services.properties;rm /usr/local/tomcat/webapps/safepay.war;cd ..;jar -cvf safepay.war /usr/local/tomcat/webapps/safepay;/usr/local/tomcat/bin/catalina.sh run "]
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
+        resources:
+          limits:
+            memory: 1G 
+      nodeSelector:
+        devops.node.pool: static
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: shipex-deployment
+  namespace: devops-aos-tis
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        name: pod-shipex
+    spec:
+      containers:
+      - name: shipex
+        image: app-registry:30005/shipex:latest
+        env:
+        - name: CATALINA_OPTS
+          value: "-Xms256M -Xmx1024M"
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
+        resources:
+          limits:
+            memory: 1G         
+      nodeSelector:
+        devops.node.pool: static
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: accountservice-deployment
+  namespace: devops-aos-tis
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        name: pod-accountservice
+    spec:
+      containers:
+      - name: accountservice
+        image: app-registry:30005/accountservice:latest
+        env:
+        - name: CATALINA_OPTS
+          value: "-Xms256M -Xmx1024M"
+        command: 
+        - /bin/sh
+        - -c
+        - while [ $(timeout 5 bash -c "</dev/tcp/k8s-master.modeloffice.org/30017"; echo $? ) -ne 0 ]; do sleep 6; done; cd /usr/local/tomcat/webapps/;mkdir accountservice;cd accountservice;jar -xvf /usr/local/tomcat/webapps/accountservice.war;ls;sed -i 's/30057/30017/g' ./WEB-INF/classes/properties/internal_config_for_env.properties;sed -i 's/30051/30011/g' ./WEB-INF/classes/properties/services.properties; sed -i 's/30053/30013/g' ./WEB-INF/classes/properties/services.properties;sed -i 's/30054/30014/g' ./WEB-INF/classes/properties/services.properties;sed -i 's/30055/30015/g' ./WEB-INF/classes/properties/services.properties;sed -i 's/30056/30016/g' ./WEB-INF/classes/properties/services.properties;rm /usr/local/tomcat/webapps/accountservice.war;cd ..;jar -cvf accountservice.war /usr/local/tomcat/webapps/accountservice;/usr/local/tomcat/bin/catalina.sh run
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
+        resources:
+          limits:
+            memory: 1G
+      nodeSelector:
+        devops.node.pool: static
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: frontend-deployment
+  namespace: devops-aos-tis
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        name: pod-frontend
+    spec:
+      containers:
+      - name: frontend
+        image: app-registry:30005/frontend:latest
+        env:
+        - name: CATALINA_OPTS
+          value: "-Xms256M -Xmx2048M"
+        command:
+        - /bin/sh
+        - -c
+        - while [ $(timeout 5 bash -c "</dev/tcp/k8s-master.modeloffice.org/30017"; echo $? ) -ne 0 ]; do sleep 6; done; cd webapps;mkdir ROOT;cd ROOT;jar -xvf /usr/local/tomcat/webapps/ROOT.war;ls;sed -i 's/30051/30011/g' ./services.properties; sed -i 's/30053/30013/g' ./services.properties;sed -i 's/30054/30014/g' ./services.properties;sed -i 's/30055/30015/g' ./services.properties;sed -i 's/30056/30016/g' ./services.properties;rm /usr/local/tomcat/webapps/ROOT.war;cd ..;jar -cvf ROOT.war /usr/local/tomcat/webapps/ROOT;mkdir catalog;cd catalog;jar -xvf /usr/local/tomcat/webapps/catalog.war;ls;sed -i 's/30057/30017/g' ./WEB-INF/classes/properties/internal_config_for_env.properties;sed -i 's/30051/30011/g' ./WEB-INF/classes/properties/services.properties; sed -i 's/30053/30013/g' ./WEB-INF/classes/properties/services.properties;sed -i 's/30054/30014/g' ./WEB-INF/classes/properties/services.properties;sed -i 's/30055/30015/g' ./WEB-INF/classes/properties/services.properties;sed -i 's/30056/30016/g' ./WEB-INF/classes/properties/services.properties;rm /usr/local/tomcat/webapps/catalog.war;cd ..;jar -cvf catalog.war /usr/local/tomcat/webapps/catalog;mkdir order;cd order;jar -xvf /usr/local/tomcat/webapps/order.war;ls;sed -i 's/30057/30017/g' ./WEB-INF/classes/properties/internal_config_for_env.properties;sed -i 's/30051/30011/g' ./WEB-INF/classes/properties/services.properties; sed -i 's/30053/30013/g' ./WEB-INF/classes/properties/services.properties;sed -i 's/30054/30014/g' ./WEB-INF/classes/properties/services.properties;sed -i 's/30055/30015/g' ./WEB-INF/classes/properties/services.properties;sed -i 's/30056/30016/g' ./WEB-INF/classes/properties/services.properties;rm /usr/local/tomcat/webapps/order.war;cd ..;jar -cvf order.war /usr/local/tomcat/webapps/order;/usr/local/tomcat/bin/catalina.sh run
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
+        resources:
+          limits:
+            memory: 2G 
+      nodeSelector:
+        devops.node.pool: static

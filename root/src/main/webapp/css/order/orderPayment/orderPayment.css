@@ -1,0 +1,255 @@
+
+#orderPayment {
+    max-width: 1180px;
+    font-size: 0;
+    margin:100px auto;
+    padding:65px 0 100px 0;
+}
+
+#orderPayment > div{
+    display: inline-block;
+    font-size: 14px;
+    vertical-align: top;
+    position: relative;
+}
+
+#orderPayment  > div:nth-child(1){
+    width: 63%;
+}
+
+#orderPayment > #userCart {
+    width: 330px;
+    padding: 20px 25px ;
+    background-color: rgb(249, 249, 249);
+    position: relative;
+    right: -50px;
+}
+
+#orderPayment > #userCart #toolTipCart {
+    display: block;
+    /*background-color: rgb(249, 249, 249);*/
+    z-index: 20;
+    position: static;
+}
+
+#orderPayment > #userCart #toolTipCart *{
+    background-color: transparent;
+}
+
+#orderPayment > #userCart #toolTipCart table{
+    border: solid 0px #d0d0d0;
+}
+
+#orderPayment > #userCart #toolTipCart tbody h3{
+    font-weight: 600;
+}
+
+#orderPayment .itemsCount{
+    color: #2a2a2a;
+    font-size: 12px;
+    position: absolute;
+    top: 25px;
+    right: 35px;
+}
+
+
+#orderPayment .closeDiv {
+    display: none;
+}
+
+#orderPayment .shipping, #orderPayment .total {
+    color: #2a2a2a;
+    display: block;
+}
+
+#orderPayment label:first-child {
+    font-size: 16px;
+}
+
+#orderPayment .total {
+    font-size: 15px;
+    margin: 6px 0;
+}
+
+#userCart .penetrationInCart{
+    padding: 0 0 0 80px;
+    position: relative;
+}
+
+#userCart .penetrationInCart > span{
+    font-size: 11px !important;
+    color: #828282;
+    padding-bottom: 5px;
+    display: inline-block;
+}
+
+#orderPayment .penetrationInCart > label {
+    display: block;
+    font-size: 12px;
+}
+
+#orderPayment .penetrationInCart > label:first-child {
+    padding-top: 20px;
+    padding-bottom: 5px;
+}
+
+#orderPayment .penetrationInCart > label span{
+    position: absolute;
+    right: 8px;
+}
+
+#orderPayment .penetrationInCart .noShipping {
+    height: 0;
+    font-size: 0;
+    overflow: hidden;
+    opacity: 0;
+    padding-top: 10px !important;
+}
+
+#orderPayment .penetrationInCart > label.shippingText{
+    font-size: 12px;
+}
+#orderPayment .penetrationInCart > label span.shippingValue{
+    font-size: 14px;
+}
+#orderPayment .penetrationInCart > label.totalText{
+    font-size: 15px;
+}
+#orderPayment .penetrationInCart > label span.totalValue{
+    font-size: 20px;
+}
+
+
+#orderPayment .totalTitle {
+    position: absolute;
+    right: 11px;
+    top: 4px;
+}
+
+#orderPayment #toolTipCart tbody .price {
+    height: 100%;
+    padding: 50% 0;
+}
+
+
+
+
+
+
+/*CART CART SECCION MODIFY*/
+#orderPayment tfoot {
+    display: none;
+}
+
+#orderPayment .closeDiv {
+    display: none;
+}
+
+#orderPayment #toolTipCart tbody tr:first-child {
+    border-top: solid 1px #d0d0d0;
+}
+
+#orderPayment #toolTipCart tbody {
+    max-height: inherit;
+}
+
+
+/*END CART SECCION MODIFY*/
+
+
+@media screen and (max-width: 1200px){
+
+    #orderPayment > #userCart {
+        right: 0px;
+    }
+
+    #detailslink > label {
+        width: 50% !important;
+    }
+
+
+    #orderPayment > div:nth-child(1)
+    {
+        width: 60%;
+    }
+
+}
+
+@media screen and (max-width: 980px){
+
+    #orderPayment .blueLink{
+        /*padding: 30px 0;*/
+        display: block;
+    }
+
+    #orderPayment .marginBottom{
+        margin-bottom: 90px;
+    }
+
+    #orderPayment > div:nth-child(1)
+    {
+        width: 53%;
+    }
+
+    #paymentMethod .sec-validate .inputtext{
+        width: 70% !important;
+    }
+}
+
+@media screen and (max-width: 850px) {
+
+    #userSection .nextBtn {
+        /*margin-top: 30px !important;*/
+    }
+
+    .mobileBtnHandler{
+        height: 118px;
+    }
+
+    #orderPayment > div:nth-child(1) {
+        width: 100%;
+        /*padding-bottom: 0px*/
+    }
+
+    #orderPayment > #userCart {
+        box-sizing: border-box;
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    #orderPayment > #userCart{
+        margin: 30px auto;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+
+    #orderPayment{
+        margin: 70px auto;
+        padding-top: 0px;
+    }
+
+    #orderPayment > #userCart{
+        margin-top: 20px;
+    }
+
+    #orderPayment .noUserSection .cover{
+        margin: 16px auto;
+    }
+
+}
+
+@media screen and (max-width: 480px) {
+
+    #orderPayment {
+        margin: 0px auto;
+        padding-top: 20px;
+    }
+
+}
+
+
+
+
+

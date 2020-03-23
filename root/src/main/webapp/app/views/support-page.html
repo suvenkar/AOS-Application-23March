@@ -1,0 +1,74 @@
+<style>
+    section {
+        max-width: 800px;
+        height: 800px;
+        padding: 50px;
+        border: solid #dcfef7;
+        margin: 0 auto;
+    }
+</style>
+
+
+<section>
+    <article>
+
+        <sec-form>
+
+
+            <!--</sec-view>-->
+
+            <sec-view
+                    a-hint="Username"
+                    a-type="select"
+                    a-show="name"
+                    sec-require="require"
+                    sec-model="model"
+                    sec-select-options="countries"
+            >
+            </sec-view>
+
+
+            <sec-view
+                    a-hint="First name"
+                    sec-model="model2"
+
+                    sec-is-field-valid="isFieldValid(valid)"
+                    sec-require="require"
+                    sec-min-length="minLength"
+                    sec-max-length="maxLength"
+                    sec-pattern="email"
+            >
+            </sec-view>
+
+
+            <sec-view
+                    a-type="checkbox"
+                    sec-require="checkboxRequire"
+                    sec-model="model30"
+            ></sec-view>
+
+            <sec-sender a-value="SEND" sec-send="isSended(param)"></sec-sender>
+
+            <sec-sender a-value="Lock" sec-send="isSended(param)"></sec-sender>
+
+
+        </sec-form>
+
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <input type="text" data-ng-model="model2">
+
+    </article>
+</section>
+
+
+
+
+
+
+

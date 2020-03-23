@@ -1,0 +1,175 @@
+
+
+#orderPayment  > div > div{
+    vertical-align: top;
+    padding: 0 30px
+}
+
+
+#orderPayment  h5.bigPadding {
+    padding-bottom: 65px;
+    font-size: 24px;
+    color: #2a2a2a;
+}
+
+#orderPayment  > div > h5 {
+    color: #2a2a2a;
+    font-size: 18px;
+    padding-bottom: 16px;
+}
+
+#orderPayment label.roboto-medium{
+    font-size: 16px;
+    color:#2a2a2a;
+    padding-bottom: 15px;
+    display: inline-block;
+}
+
+#orderPayment .noUserSection{
+    width: 48%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+#orderPayment #Forgot_your_password{
+    color: #828282;
+    padding-bottom: 20px;
+    padding-top: 5px ;
+    display: inline-block;
+    cursor: pointer;
+}
+
+
+#orderPayment .itemsCount{
+    color: #2a2a2a;
+    font-size: 12px;
+    position: absolute;
+    top: 25px;
+    right: 35px;
+}
+
+
+#orderPayment .noUserSection .cover{
+    max-width: 240px;
+    margin: 0 auto;
+}
+
+#orderPayment .noUserSection .cover div{
+    border-left: solid 2px #454545;
+    padding: 0 0 0 27px;
+    /*height: 156px;*/
+    height: 213px;
+}
+
+#orderPayment .noUserSection .cover div.noEmail{
+    height: 170px;
+}
+
+#orderPayment .noUserSection .cover a{
+    margin: 18px 28px;
+    margin-top: 33px;
+}
+
+#orderPayment .sec-sender .sec-sender-a {
+    width: 138px;
+    margin-top: 16px;
+}
+
+#orderPayment #newClient p {
+    line-height: 25px;
+    padding: 10px 0;
+}
+
+
+#orderPayment .noUserSection > .cover {
+    float: right;
+}
+
+
+
+#orderPayment .closeDiv {
+    display: none;
+}
+
+#orderPayment .shipping, #orderPayment .total {
+    color: #2a2a2a;
+    display: block;
+}
+
+#orderPayment label:first-child {
+    font-size: 16px;
+}
+
+
+
+
+
+
+@media screen and (max-width: 650px)
+{
+    #orderPayment{
+        padding-bottom: 0;
+        margin-bottom: 0;
+    }
+
+    #orderPayment .noUserSection{
+        width: 100%;
+        display: block;
+    }
+
+    #orderPayment .noUserSection .cover{
+        max-width: 650px;
+        margin: 20px auto;
+        width: 100%;
+    }
+
+    #orderPayment .noUserSection .cover div{
+        border-left: none 0 #FFF;
+        height: auto;
+        padding: 0;
+    }
+
+    #orderPayment > #userCart{
+        margin: 0 auto;
+        padding: 0px 25px;
+        padding-bottom: 50px;
+    }
+
+    #orderPayment .itemsCount{
+        top: -15px;
+        position: relative;
+        right: 0;
+    }
+
+    #orderPayment .noUserSection .cover a,
+    #orderPayment .noUserSection .a-button{
+        margin: 18px 0;
+        width: 100%;
+        font-size: 15px;
+        padding: 12px 0;
+    }
+
+    .noUserLogin #orderPayment > #userCart{
+        width: 90%;
+        display: block;
+        margin: 288px auto;
+    }
+
+    #orderPayment > div:nth-child(1){
+        width: 90%;
+        display: block;
+        margin: 0 auto;
+    }
+
+    #orderPayment  > div > h5 {
+        padding-bottom: 36px;
+        padding-top: 26px;
+    }
+}
+
+
+
+
+
+
+

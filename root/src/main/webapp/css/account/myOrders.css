@@ -1,0 +1,171 @@
+
+.myOrderSection .cover{
+    margin: 50px auto;
+    max-width: 1100px;
+}
+
+.myOrderSection .cover table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.myOrderSection .cover table{
+    width: 100%;
+}
+
+.myOrderSection tr:not(.innerTr) td {
+    border-top: 1px solid rgba(189, 189, 187, 1);
+}
+
+.myOrderSection .cover table label{
+    display: block;
+    color: #2a2a2a;
+    padding: 12px;
+}
+
+.myOrderSection .cover .center{
+    text-align: center;
+}
+
+.myOrderSection .cover .right {
+    text-align: right;
+}
+
+.myOrderSection .cover table th label,
+.myOrderSection .tabletsSection label{
+    font-size: 11px;
+}
+
+.myOrderSection .cover table img,
+.myOrderSection .products img {
+    padding: 18px 10px;
+    display: inline-block;
+    width:100px;
+}
+
+.myOrderSection .cover table td label,
+.myOrderSection .tabletsSection .products label{
+    font-size: 16px;
+}
+
+.myOrderSection .cover .left{
+    text-align: left;
+}
+
+.myOrderSection .cover table td span{
+    vertical-align: top;
+    padding: 45px 10px;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.myOrderSection .elipse{
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    display: block;
+    margin: 0 auto;
+}
+
+.myOrderSection .tabletsSection{
+    display: none;
+}
+
+.myOrderSection .bigEmptyOrder {
+    font-size: 30px;
+    padding: 20px 12px;
+    margin-top: 180px;
+}
+
+.myOrderSection .bigEmptyOrder label{
+    display: block;
+}
+
+
+@media screen and (max-width: 1250px) {
+
+    .myOrderSection .cover table{
+        display: none;
+    }
+
+    .myOrderSection .tabletsSection{
+        display: block;
+    }
+
+    .myOrderSection .tabletsSection .title{
+        border-bottom: 1px solid rgba(189, 189, 187, 1);
+    }
+
+    .myOrderSection .tabletsSection .orderDetails{
+        background-color: #F4F4F2;
+    }
+
+    .myOrderSection .tabletsSection .title,
+    .myOrderSection .products .orderDetails {
+        display: table;
+        width: 100%;
+    }
+
+    .myOrderSection .tabletsSection .title > div,
+    .myOrderSection .products .orderDetails > div {
+        display: table-cell;
+        width: 33%;
+    }
+
+    .myOrderSection .tabletsSection .title label,
+    .myOrderSection .products .orderDetails label {
+        display: block;
+        padding: 10px;
+    }
+
+    .myOrderSection .products .orderDetails img {
+        width: 80px;
+        padding: 10px 0;
+    }
+
+    .myOrderSection .products div.productName {
+        display: inline-block;
+        position: relative;
+        vertical-align: top;
+        height: 80px;
+        margin: 15px 0;
+    }
+
+    .myOrderSection .products div.productName > span{
+        display: inline-block;
+        position: relative;
+    }
+
+    .myOrderSection .products div.productName > div{
+        position: absolute;
+        bottom: 0;
+        color:#828282;
+    }
+
+    .myOrderSection .products div.productName > div > *{
+        display: block;
+    }
+
+    .myOrderSection .products div.productName > div *{
+        font-size: 11px;
+    }
+
+
+}
+
+
+
+
+@media screen and (max-width: 768px) {
+
+    .myOrderSection {
+        margin: 0 !important;
+    }
+
+    .myOrderSection .bigEmptyOrder {
+        font-size: 30px;
+        padding: 20px 12px;
+        margin-top: 0px;
+    }
+
+}

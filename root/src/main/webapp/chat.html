@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta http-equiv="Content-type" content="text/html; charset=ISO-8859-1">
+    <link rel="shortcut icon" href="css/images/advantage_chat_icon.ico">
+    <title>Advantage Online Shopping Demo Support Chat</title>
+
+    <link href="css/chat/chat.css" rel="stylesheet">
+    <!--<link href="main.min.css" rel="stylesheet">-->
+    <script src="vendor/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript">
+        window.onload = function () {
+
+            setTimeout(function () {
+
+                        var webSocket;
+                        var serverKey = sessionStorage.getItem("serverKey");
+                        sessionStorage.removeItem("serverKey");
+                        if (serverKey == null) {
+                            window.close();
+                        }
+                        webSocket = new WebSocket("ws://" + serverKey + "websocketserverendpoint");
+
+                        var chat = $("#chat #chatBody");
+                        chat.children().remove();
+
+                        var monthNames = [
+                            "January", "February", "March",
+                            "April", "May", "June",
+                            "July", "August", "September",
+                            "October", "November", "December"
+                        ];
+
+                        var day = "";
+                        var month = "";
+                        var year = ""
+
+                        webSocket.onopen = function () {
+                            addAssistantMessage("Server connect.\n", 10);
+                        };
+
+                        webSocket.onmessage = function (message) {
+                            addAssistantMessage(message.data);
+                        };
+
+                        webSocket.onclose = function () {
+                            addAssistantMessage("Server disconnected...", 10);
+                        };
+
+                        webSocket.onerror = function (message) {
+                            addAssistantMessage("Error: " + message, 10);
+                        };
+
+                        var input = $("#btnSender");
+                        var textbox = $("#textMessage");
+                        var chatBussy = false;
+                        input.click(function () {
+                            inputClicked();
+                        });
+
+                        function inputClicked(){
+                            var value = textbox.val();
+                            if (value == "") {
+                                return;
+                            }
+                            if (value != "close" && webSocket.readyState == 1) {
+                                if (!chatBussy) {
+                                    chatBussy = true;
+                                    input.addClass("disable")
+                                    webSocket.send(value);
+                                }
+                                addMyMessage(value);
+                                textbox.val("");
+                            } else {
+                                webSocket.close();
+                            }
+                        }
+
+                        textbox.on({
+                            keyup: function () {
+                                if (textbox.val() == "" || webSocket.readyState != 1) {
+                                    input.addClass("disable")
+                                }
+                                else {
+                                    input.removeClass("disable")
+                                }
+                            },keydown: function (event) {
+                                if(event.keyCode == 13){
+                                    inputClicked();
+                                }
+                            },
+
+                        });
+
+                        function addMessageToParagraph(ballon, str) {
+                            var paragraphs = ballon.children();
+                            $(paragraphs[paragraphs.length - 1]).append("<br />" + str);
+                            animatePageToEnd();
+                        }
+
+                        function addMyMessage(str) {
+                            var date = addDate();
+
+                            var childrens = chat.children();
+                            var child = $(childrens[childrens.length - 1]);
+                            var ballon;
+                            if (child.find(".written").length > 0) {
+                                var myLastChild = $(childrens[childrens.length - 2]);
+                                if (myLastChild.hasClass('user')) {
+                                    ballon = myLastChild.find(".ballon");
+                                    addMessageToParagraph(ballon, str);
+                                    return;
+                                }
+                            }
+                            if (child.hasClass('user')) {
+                                ballon = child.find(".ballon");
+                                addMessageToParagraph(ballon, str);
+                                return;
+                            }
+
+                            chat.append('<div class="message user"><div class="assistant">' +
+                                    '<img src="css/images/chat_icon.png"><span>' +
+                                    date.toTimeString().substring(0, 5) +
+                                    '</span></div><div class="ballon"><p>' + str +
+                                    '</p></div></div>'
+                            );
+                            animatePageToEnd();
+                        }
+
+                        function addAssistantMessage(str, time) {
+
+                            var date = addDate();
+                            setTimeout(function () {
+
+                                var message = $('<div class="message" ><div>')
+                                message.append('<div class="assistant">' +
+                                        '<img src="css/images/user_icon.png">' +
+                                        '</div><div class="written"><ul>' +
+                                        '<li></li><li></li><li></li></ul></div>');
+                                chat.append(message);
+                                animatePageToEnd();
+
+                                setTimeout(function () {
+                                    message.children().remove();
+                                    message.append('<div class="assistant" >' +
+                                            '<img src = "css/images/user_icon.png" ><span>' +
+                                            date.toTimeString().substring(0, 5) +
+                                            '</span></div><div class="ballon"><p>' + str +
+                                            '</p></div>');
+                                    animatePageToEnd();
+                                    chatBussy = false;
+                                }, time || 3000);
+
+                            }, time || 1000);
+                        }
+
+                        function animatePageToEnd() {
+                            chat.parent().stop().animate({
+                                scrollTop: $("#chat > div").height() + "px",
+                            }, 500);
+                        }
+
+                        function addDate() {
+                            var date = new Date();
+                            var currentDay = date.getDate()
+                            var currentMonth = monthNames[date.getMonth()];
+                            var currentYear = date.getFullYear()
+                            if (currentDay != day || currentMonth != month || currentYear != year) {
+                                day = currentDay;
+                                month = currentMonth;
+                                year = currentYear;
+                                chat.append('<div class="chat-date">' +
+                                        '<img src="css/images/clock.png"/>' +
+                                        '<label>' + day + " " + month + ", " +
+                                        year + '</label></div>');
+                            }
+                            return date;
+                        }
+
+                    }, 0
+            )
+            ;
+        }
+    </script>
+
+
+</head>
+
+<body>
+
+<div id="chat">
+
+    <div id="chatBody">
+
+    </div>
+
+</div>
+
+<div id="bottomSection">
+    <input id="textMessage" placeholder="Type a message..." type="text">
+    <img src="css/images/chat_send.png" id="btnSender" class="disable"/>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="safepay:war">
+    <output-path>$PROJECT_DIR$/safepay/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>safepay</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="SafePay.war">
+      <element id="artifact" artifact-name="safepay:war exploded" />
+    </root>
+  </artifact>
+</component>

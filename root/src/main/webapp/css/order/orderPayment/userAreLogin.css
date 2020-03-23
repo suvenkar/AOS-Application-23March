@@ -1,0 +1,523 @@
+
+#detailslink {
+    width: 100%;
+    text-align: center;
+    font-size: 0;
+    margin-bottom: 60px;
+}
+
+#detailslink > label {
+    font-size: 16px;
+    padding: 15px 0;
+    display: inline-block;
+    width: 50%;
+    border-top: #d0d0d0 1px solid;
+    color: #828282;
+    white-space: nowrap;
+}
+
+#detailslink > label.selected {
+    border-top: #54b3ad 3px solid;
+    color: #2a2a2a;
+}
+
+/* SHIPPING DETAILS SECCION   */
+
+#userSection * {
+
+    font-weight: 400;
+}
+
+#userSection > div {
+    position: relative;
+}
+
+#userSection > div > a {
+    color: #54b3ad;
+    font-size: 13px;
+    text-decoration: none;
+}
+
+#userSection > div > label {
+    float: right;
+    font-size: 11px;
+    color: #2a2a2a;
+    text-decoration: none;
+    position: relative;
+    top: -6px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+#userSection > div > label > img {
+    position: relative;
+    top: 4px;
+    padding-left: 9px;
+}
+
+#userSection .spliter {
+    white-space: nowrap;
+}
+
+#userSection .spliter .sec-view {
+    width: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    vertical-align: top;
+}
+
+#userSection .spliter .sec-view:nth-child(odd) {
+    padding-right: 35px;
+}
+
+#userSection .spliter .sec-view div label.select-value {
+    width: 90%;
+}
+
+#userSection .sec-sender {
+    float: right;
+}
+
+/*#userDetailsEditMode .sec-validate .a-button {*/
+/*margin-top: 18px;*/
+/*padding: 10px 48px;*/
+/*}*/
+
+/*#userDetailsEditMode .sec-validate .a-link {*/
+/*margin: 0 48px;*/
+/*margin-top: 18px;*/
+/*padding: 10px 0 4px 0;*/
+/*color: #313131;*/
+/*font-weight: 600;*/
+/*transition: .3s all ease;*/
+/*}*/
+
+/*#userDetailsEditMode .sec-validate .a-link:hover {*/
+/*margin: 0 48px;*/
+/*margin-top: 18px;*/
+/*padding: 10px 0 4px 0;*/
+/*color: #54b3ad;*/
+/*font-weight: 900;*/
+/*}*/
+
+#userDetailsEditMode h6 {
+    margin: 18px 0 0 0;
+    letter-spacing: 1px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/*#userDetailsEditMode .smollInput .validate-directive {*/
+/*width: 49.5%;*/
+/*margin: 14px 0;*/
+/*display: inline-block;*/
+/*}*/
+
+.blueLink a {
+    font-size: 16px;
+    display: inline-block;
+    color: #54b3ad;
+    cursor: pointer;
+}
+
+.blueLink .float-button {
+    float: right;
+    font-size: 12px;
+    color: #313131;
+}
+
+.blueLink .float-button.linkToPress {
+    padding: 9px 43px;
+    margin: 17px 20px;
+}
+
+.blueLink .float-button.linkToPress:hover {
+    color: #54b3ad;
+}
+
+.blueLink .float-button img {
+    position: relative;
+    top: 5px;
+}
+
+#userDetails {
+    font-size: 0;
+    margin-bottom: 11px;
+    border: solid #454545 1px;
+}
+
+#userDetails > div {
+    box-sizing: border-box;
+    font-size: 15px;
+    display: inline-block;
+    vertical-align: top;
+    width: 33.33%;
+    min-height: 122px;
+    padding: 17px;
+    padding-top: 25px;
+    position: relative;
+}
+
+#userDetails > div:nth-child(2) {
+    border-left: solid #454545 1px;
+    border-right: solid #454545 1px;
+}
+
+#userDetails > div img {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 15px;
+}
+
+#userDetails > div .iconCss {
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 15px;
+}
+
+#userDetails > div .iconHome {
+    transform: scale(0.8);
+    margin-top: 22px;
+}
+
+#userDetails > div label {
+    display: block;
+    padding: 2px;
+    font-size: 14px;
+    color: #2a2a2a;
+}
+
+#userSection .nextBtn {
+    width: 138px;
+    position: absolute;
+    right: 0;
+    padding: 8px;
+    margin-top: 75px;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+}
+
+/* END SHIPPING DETAILS SECCION   */
+
+/* USER DETAILS SECCION   */
+
+.Choose_payment {
+    font-size: 16px;
+    color: #2a2a2a;
+}
+
+.paymentMethods {
+    border: solid 1px #454545;
+    font-size: 0;
+}
+
+#paymentMethod .notice {
+    padding-top: 25px;
+}
+
+#paymentMethod .notice h4 {
+
+    background-image: url(/css/images/Bell.png);
+    background-repeat: no-repeat;
+    background-position: left center;
+    font-size: 16px;
+    font-weight: 500;
+    text-indent: 28px;
+}
+
+#paymentMethod .notice p {
+    padding-top: 10px;
+    color: #828282;
+    font-size: 15px;
+}
+
+.float_right {
+    float: right;
+}
+
+#paymentMethod .sec-view {
+    width: 50%;
+}
+
+/*
+#paymentMethod .sec-validate {
+    padding-top: 20px;
+    display: block;
+}
+
+#paymentMethod .validate-directive {
+    margin: 14px 0;
+}
+
+#paymentMethod .sec-validate .inputtext {
+    width: 50%;
+}
+
+#paymentMethod .smollInput .validate-directive {
+    width: 48%;
+    display: inline-block;
+}
+*/
+
+#paymentMethod .grayCheckbox {
+    color: #828282;
+}
+
+.paymentMethods .imgRadioButton {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+}
+
+.paymentMethods .imgRadioButton > img {
+    display: block;
+    padding: 15px;
+    padding-left: 50px;
+}
+
+.paymentMethods .imgRadioButton:before {
+    content: "";
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    border: solid 1px #828282;
+    top: 23px;
+    left: 21px;
+}
+
+.paymentMethods .selected.imgRadioButton:before {
+    box-shadow: 0 0 0 5px white inset, 0 0 0 15px #54b3ad inset;
+}
+
+#paymentMethod .option {
+    margin: 9px 0;
+}
+
+#userSection .option.marginTop {
+    margin-top: 25px;
+}
+
+#paymentMethod .masterCreditSeccion {
+    display: block;
+    border-bottom: solid 1px #454545;
+    padding: 9px 0;
+    margin: 20px 0;
+    width: 50%;
+}
+
+.masterCreditSeccion > div > span {
+    white-space: nowrap;
+    padding: 0 3px;
+}
+
+.masterCreditSeccion > div > label.edit {
+    color: #54b3ad;
+    float: right;
+    cursor: pointer;
+}
+
+#paymentMethod .payment_date {
+    width: 50%;
+    display: inline-block;
+    white-space: nowrap;
+}
+
+.expiration_date_title{
+    display: block;
+    margin-top: 10px;
+}
+
+#paymentMethod .payment_date .sec-view{
+    /*width: 33% !important;*/
+    display: inline-block;
+    /*margin-right: 10%;*/
+}
+
+
+#paymentMethod .payment_date > label {
+    font-size: 14px;
+    color: #2a2a2a;
+    display: block;
+}
+
+.Card_Number_4Digits .validate-label {
+    z-index: 10;
+}
+
+.Card_Number_4Digits:before {
+    position: absolute;
+    top: 7px;
+    left: 0;
+    content: '4886';
+    z-index: 10;
+    opacity: 0.7;
+}
+
+.margin15px {
+    margin: 15px 0;
+    display: block;
+}
+
+
+#paymentMethod .spliter {
+    white-space: nowrap;
+}
+
+#paymentMethod .spliter .sec-view {
+    width: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    vertical-align: top;
+    padding-right: 25%;
+}
+
+#paymentMethod .spliter .sec-view div label.select-value {
+    width: 90%;
+}
+
+#paymentMethod .sec-sender {
+    float: right;
+}
+
+
+@media screen and (max-width: 1100px) {
+
+
+    #paymentMethod .spliter .sec-view {
+        padding-right: 45px;
+    }
+
+    #paymentMethod .spliter .sec-view div label.select-value {
+        width: 70%;
+    }
+
+    #paymentMethod .payment_date .sec-view{
+        width: 44% !important;
+        margin-right: 0px;
+    }
+
+
+
+}
+
+@media screen and (max-width: 768px) {
+
+    #userSection .nextBtn {
+        margin-top: 40px;
+    }
+    #paymentMethod .sec-view,
+    #paymentMethod .masterCreditSeccion{
+        width: 100%;
+    }
+
+}
+
+@media screen and (max-width: 550px) {
+
+    #userSection .spliter {
+        white-space: normal;
+    }
+
+    #userSection .spliter .sec-view {
+        width: 100%;
+    }
+
+    #userSection .spliter .sec-view:nth-child(odd) {
+        padding-right: 0px;
+    }
+
+    #userSection .spliter .sec-view div label.select-value {
+        width: 100%;
+    }
+
+
+    #paymentMethod .spliter {
+        white-space: normal;
+    }
+
+    #paymentMethod .spliter .sec-view {
+        padding-right: 0px;
+    }
+
+    #paymentMethod .spliter .sec-view,
+    #paymentMethod .spliter .sec-view div label.select-value {
+        width: 100%;
+    }
+
+    #paymentMethod .payment_date .sec-view{
+        width: 100% !important;
+        margin-right: 0px;
+    }
+
+    #paymentMethod .payment_date .sec-view:nth-child(odd){
+        width: 90% !important;
+        margin-right: 10%;
+    }
+
+    #paymentMethod .payment_date .sec-view:nth-child(even){
+        width: 90% !important;
+        margin-left: 10%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+
+    #userDetails > div {
+        width: 100%;
+    }
+
+    #userSection .nextBtn {
+        font-size: 15px;
+        width: 100%;
+        padding: 13px 0;
+    }
+
+    #userDetails > div:nth-child(2) {
+        border-top: solid #454545 1px;
+        border-bottom: solid #454545 1px;
+        border-left: none #454545 1px;
+        border-right: none #454545 1px;
+    }
+
+    #orderPayment > div > div {
+        padding: 0 8px;
+    }
+
+    #orderPayment #detailslink > label {
+        font-size: 12px;
+    }
+
+    #detailslink > label {
+        width: 50% !important;
+    }
+
+    /*#userDetailsEditMode .smollInput .validate-directive {*/
+    /*width: 100%;*/
+    /*}*/
+    /*#userDetailsEditMode .sec-validate .validate-directive:nth-child(odd) .inputtext,*/
+    /*#userDetailsEditMode .sec-validate .inputtext {*/
+    /*width: 90%;*/
+    /*}*/
+    /*#userDetailsEditMode .smollInput .validate-directive {*/
+    /*margin: 14px 13px;*/
+    /*}*/
+    /*#paymentMethod .sec-validate .inputtext {*/
+    /*width: 90% !important;*/
+    /*}*/
+    /*#paymentMethod .validate-directive {*/
+    /*margin: 14px 16px;*/
+    /*}*/
+    /*#paymentMethod .smollInput .validate-directive {*/
+    /*width: 93% !important;*/
+    /*}*/
+
+
+    /*#paymentMethod .payment_date .validate-directive {*/
+    /*width: 35% !important;*/
+    /*}*/
+}
+

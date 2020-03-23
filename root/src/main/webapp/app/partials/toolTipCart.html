@@ -1,0 +1,67 @@
+<div>
+    <div ng-hide="cart.productsInCart.length > 0" class="emptyCart" data-ng-click="redirect('/shoppingCart')">
+        <label class="center items roboto-bold"> {{ 'ITEMS' | translate}}
+            <span class="roboto-regular">(0)</span>
+        </label>
+        <label class="center roboto-medium" translate="Your_shopping_cart_is_empty"></label>
+    </div>
+    <table ng-show="cart.productsInCart.length > 0"  >
+        <tbody >
+            <tr ng-repeat="product in cart.productsInCart track by $index" id="product{{product.id}}"
+                data-ng-class="{ lastProduct : $last }" >
+                <td>
+                    <a href="#/product/{{product.productId}}?color={{product.color.code}}&quantity={{product.quantity}}&pageState=edit">
+                        <img class="imageUrl" ng-src="/catalog/fetchImage?image_id={{product.imageUrl}}" alt="imgProduct" />
+                    </a>
+                </td>
+                <td>
+                    <a href="#/product/{{product.productId}}?color={{product.color.code}}&quantity={{product.quantity}}&pageState=edit">
+                        <h3>{{ product.productName  | uppercase | secCatWord:30 }}</h3>
+                        <label>{{'QTY' | translate}} {{product.quantity}}</label>
+                        <label>{{'Color' | translate }}
+                            <span>{{product.color.name}}</span>
+                        </label>
+                    </a>
+                </td>
+                <td>
+                    <p class="price roboto-regular">{{ product.price * product.quantity | currency:'$' }}</p>
+                    <div class="closeDiv" ng-click="removeProduct($index, $event)">
+                        <div icon-x class="removeProduct"></div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+        <tfoot  data-ng-click="redirect('/shoppingCart')">
+            <tr>
+                <td colspan="2">
+                    <span class="roboto-medium">{{'TOTAL' | translate}}
+                        <label class="roboto-regular">({{cart | productsCartCount}} {{ (cart | productsCartCount) > 1 ? 'Items' : 'Item' | translate}})</label>
+                    </span>
+                </td>
+                <td>
+                    <span class="roboto-medium cart-total" >{{cart | productsCartSum | currency:'$'}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <button class="roboto-medium" data-ng-click="checkout($event)">{{'CHECK_OUT' | translate}}  ({{ cart | productsCartSum:shippingCost | currency:'$' }})</button>
+                </td>
+            </tr>
+        </tfoot>
+
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

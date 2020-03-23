@@ -1,0 +1,6 @@
+mvn.buildTime=2017-12-12 00:43:23
+mvn.scmBranch=master
+mvn.commit.revision=e0e2a0e3
+mvn.project.build.finalName=ShipEx
+mvn.project.version=0.0.1-SNAPSHOT
+mvn.buildComputerName=${compName}

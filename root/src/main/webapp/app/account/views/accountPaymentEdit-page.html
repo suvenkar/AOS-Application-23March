@@ -1,0 +1,199 @@
+<nav class="pages">
+    <a translate="HOME" href="#/"></a>
+    <a translate="MY_ACCOUNT" href="#/myAccount"></a>
+    <a class="select" translate="ACCOUNT_DETAILS"> </a>
+</nav>
+<section>
+    <article>
+        <div id="accountCover">
+
+            <h3 class="roboto-regular sticky fixedImportant fixed" translate="ACCOUNT_DETAILS"></h3>
+
+            <div class="maxWidth">
+
+                <div id="infoDemo">
+                    <info-demo a-title="{{'NOTICE' | translate }}" a-lines="{{mainCtrl.getNoticeInfo()}}"></info-demo>
+                </div>
+
+
+                <div id="form">
+
+                    <!-- EDIT EDIT PAYMENT SECTION -->
+
+                    <div id="paymentMethod" ng-hide="firstTag">
+                        <div>
+                            <label class="Choose_payment roboto-medium" translate="Choose_payment_method_below">
+                            </label>
+
+                            <div class="paymentMethods">
+                                <div class="imgRadioButton" data-ng-click="imgRadioButton = 1"
+                                     data-ng-class="{ selected : imgRadioButton == 1 }">
+                                    <img src="css/images/SafePay.png" alt="Safepay"/>
+                                </div>
+                                <div class="imgRadioButton" data-ng-click="imgRadioButton = 2"
+                                     data-ng-class="{ selected : imgRadioButton == 2 }">
+                                    <img src="css/images/Master_credit.png" alt="Master credit"/>
+                                </div>
+                            </div>
+
+                            <!---------------------------- SAFEPAY SECCION ---------------------------->
+
+                            <div ng-show="imgRadioButton == 1">
+
+                                <sec-form sec-disable-until-some-change="true">
+
+
+                                    <sec-view a-hint="{{'SafePay_User_name' | translate}}"
+                                              sec-model="savePay.username"
+                                              sec-require="mainCtrl.getRequire('SafePay_User_name')"
+                                              sec-min-length="mainCtrl.getMin(5)"
+                                              sec-max-length="mainCtrl.getMax(15)"
+                                              sec-pattern="mainCtrl.getPattern('Username')">
+                                    </sec-view>
+
+                                    <sec-view a-hint="{{'SafePay_Password' | translate}}"
+                                              a-type="password"
+                                              sec-model="savePay.password"
+                                              sec-require="mainCtrl.getRequire('SafePay_User_name')"
+                                              sec-min-length="mainCtrl.getMin(4)"
+                                              sec-max-length="mainCtrl.getMax(12)"
+                                              sec-pattern="mainCtrl.getPattern('Password')">
+                                    </sec-view>
+
+                                    <div class="option marginTop">
+                                        <input ng-model="preferredPayment_SafePay" type="checkbox" class="ng-pristine ng-untouched ng-valid">
+                                        <span class="roboto-light ng-binding" data-ng-click="preferredPayment_SafePay = !preferredPayment_SafePay"> {{ 'Set_SafePay_as_Preferred_payment' | translate }} </span>
+                                    </div>
+
+                                    <div class="blueLink">
+                                            <sec-sender class="roboto-medium" a-value="{{'SAVE' | translate}}"
+                                                        sec-send="saveSafePay()"></sec-sender>
+                                    </div>
+
+                                </sec-form>
+
+                            </div>
+
+                            <!-------------------------- END SAFEPAY SECCION -------------------------->
+
+
+                            <!---------------------------- MANUAL PAYMENT SECCION ---------------------------->
+
+                            <div ng-show="imgRadioButton == 2 ">
+
+                                <sec-form sec-disable-until-some-change="true">
+
+                                    <div class="spliter">
+
+                                        <sec-view a-hint="{{'Card_number' | translate}}"
+                                                  a-secret-field="true"
+                                                  sec-model="card.number"
+                                                  sec-require="mainCtrl.getRequire('Card_number')"
+                                                  sec-card-number="mainCtrl.getCardNumber(16)">
+                                        </sec-view>
+
+
+                                        <sec-view a-hint="{{'CCV_Number' | translate}}" class="creditCard"
+                                                  a-secret-field="true"
+                                                  sec-model="card.cvv"
+                                                  sec-require="mainCtrl.getRequire('CCV_Number')"
+                                                  sec-pattern="mainCtrl.getPattern('CCV_Number')">
+                                        </sec-view>
+
+                                    </div>
+                                    <label class="roboto-regular expiration_date_title" translate="Expiration_Date"></label>
+                                    <div class="spliter">
+
+                                        <div class="payment_date">
+
+
+                                            <sec-view a-hint="{{ 'MM' | translate }}"
+                                                      a-type="select"
+                                                      a-do-not-show-info="true"
+                                                      sec-require="mainCtrl.getRequire('Month')"
+                                                      sec-model="card.expirationDate.month"
+                                                      sec-select-options="month">
+                                            </sec-view>
+
+                                            <sec-view a-hint="{{ 'YY' | translate }}"
+                                                      a-type="select"
+                                                      a-do-not-show-info="true"
+                                                      sec-require="mainCtrl.getRequire('Year')"
+                                                      sec-model="card.expirationDate.year"
+                                                      sec-select-change="calculateMonths(value)"
+                                                      sec-select-options="years">
+                                            </sec-view>
+
+                                        </div>
+
+                                        <sec-view a-hint="{{ 'Cartholder_Name' | translate }}"
+                                                  sec-require="mainCtrl.getRequire('Cartholder_Name')"
+                                                  sec-model="card.name">
+                                        </sec-view>
+
+                                    </div>
+
+                                    <div class="option marginTop">
+                                        <input ng-model="saveMasterCredit" type="checkbox" class="ng-pristine ng-untouched ng-valid">
+                                        <span class="roboto-light ng-binding" data-ng-click="saveMasterCredit = !saveMasterCredit"
+                                              translate="Set_MasterCredit_as_Preferred_payment"></span>
+                                    </div>
+
+                                    <div class="blueLink">
+
+                                            <sec-sender class="roboto-medium" a-value="{{'SAVE' | translate}}"
+                                                        sec-send="_saveMasterCredit()"></sec-sender>
+                                    </div>
+
+                                </sec-form>
+
+                            </div>
+
+                            <!---------------------------- END MANUAL PAYMENT SECCION ---------------------------->
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+</section>
+
+<social-media-drtv></social-media-drtv>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

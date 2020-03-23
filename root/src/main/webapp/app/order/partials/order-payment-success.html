@@ -1,0 +1,80 @@
+<div>
+
+    <h2> <span class="roboto-regular" translate="Thank_you_for_buying_with_Advantage"> </span> </h2>
+
+    <p class="roboto-regular"> {{ 'Yor_tracking_number_is' | translate }} {{ trackingNumber }}
+        <span class="separator">|</span>
+        {{ 'Your_order_number_is' | translate }} {{orderNumber}}
+    </p>
+
+    <div>
+        <div class="seccion">
+            <span translate="Shipping_to"> </span>
+            <div>
+                <div class="innerSeccion">
+                    <div icon-user ></div>
+                    <label>{{user.firstName}} {{user.lastName}}</label>
+                </div>
+                <div class="innerSeccion">
+                    <div icon-home ></div>
+                    <label>{{ user.address }}</label>
+                    <label>{{ user.cityName }}</label>
+                    <label>{{ user.stateProvince }}</label>
+                </div>
+                <div class="innerSeccion">
+                    <div icon-phone ></div>
+                    <label>{{ user.phoneNumber }}</label>
+                </div>
+            </div>
+        </div>
+        <div class="seccion">
+            <span translate="Payment_Method"></span>
+            <div class="innerSeccion">
+                <label>
+                    {{TransPaymentMethod}}
+                    <a class="floater" data-ng-show="TransPaymentMethod == 'MasterCredit'">
+                        <span data-ng-repeat="_4numbers in cardNumber track by $index" >
+                            {{ _4numbers | showLast4DigitsCard:$last:$index }}
+                        </span>
+                    </a>
+                </label>
+            </div>
+            <div class="innerSeccion">
+                <label>
+                    {{ 'Date_Ordered' | translate}}
+                    <a class="floater">{{Date_Ordered}}</a>
+                </label>
+            </div>
+        </div>
+        <div class="seccion">
+            <span translate="Order_Summary"></span>
+            <div class="innerSeccion">
+                <label>
+                    {{ 'Subtotal' | translate}}
+                    <a class="floater"> {{ subTotal | currency:$ }} </a>
+                </label>
+            </div>
+            <div class="innerSeccion">
+                <label>
+                    {{ 'shipping' | translate}}
+                    <a class="floater"> {{shippingCost | currency:'$'}}</a>
+                </label>
+            </div>
+            <div class="innerSeccion">
+                <label class="total">
+                    {{ 'TOTAL' | translate}}
+                    <a class="floater">  {{ total | currency:$ }} </a>
+                </label>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+
+
+

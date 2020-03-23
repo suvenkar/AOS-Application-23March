@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Parameters>
+    <!--
+        User level configuration.
+        Managed by Admin-User in ADM Demo .NET administration application
+    -->
+    <!-- Original Name = "Email_address_in_login" ; Corrected Name = "Email_in_login" -->
+    <!--<Email_address_in_login datatype="enum:[Yes,No]" description="No=(Default) Do Not; or Yes = e-mail address is mandatory in create-user and show it in login/sign-in page. With this feature (2 screens with one difference to show a change ), BPT shows that if there is one change in one page, if it was defined as a component, the user can change this component only, and not touch all tests like in UFT." tools="BPT" locationInAdvantage="">No</Email_address_in_login>-->
+    <Email_in_login datatype="enum:[Yes,No]" description="Determines whether a mandatory Email field is added to the login screen. Use this parameter to demonstrate that in BPT, a single component can be modified without updating other tests. Default = No. Yes = Add the Email Address field." tools="BPT" locationInAdvantage="Login page">No</Email_in_login>
+
+    <!-- Original Name = "Repeat_ShipEx_call" ; Corrected Name = "ShipEx_repeat_calls" -->
+    <!--<Repeat_ShipEx_call datatype="string" description="Perform the same call to ShipEx multiple times (place shipping order - from Order service to ShipEx). Parameter values: 0=(Default) Disabled; any other positive number is the number of repeat calls to ShipEx. The goal of this capability is to find multiple calls to the same methods usually done by multiple developers causing inefficient application." tools="LoadRunner;SV;StormRunner" locationInAdvantage="">0</Repeat_ShipEx_call>-->
+    <ShipEx_repeat_calls datatype="string" description="Defines the number of times to repeat a call to ShipEx. Use this parameter to find unneccesary multiple calls to the same methods, and affects performance. Default = 0 (no repeat calling). " tools="LoadRunner;SV;StormRunner" locationInAdvantage="Purchase">0</ShipEx_repeat_calls>
+
+    <!-- Original Name = "Add_wrong_product_to_speakers_category" ; Corrected Name = "Add_product_to_incorrect_category" -->
+    <!--<Add_wrong_product_to_speakers_category datatype="enum:[Yes,No]" description="No=(Default) Disabled; Yes = Move product-id=13 from Headphones category to Speakers category. UI and API. " tools="LeanFT;UFT" locationInAdvantage="">No</Add_wrong_product_to_speakers_category>-->
+    <Add_product_to_incorrect_category datatype="enum:[Yes,No]" description="Defines whether to move a Headphones item (product-id=13) from the Headphones category to the Speakers category. Use this parameter to demonstrate an error in GUI or API testing. Default = No (category is not changed). Yes = Modify the product category." tools="LeanFT;UFT" locationInAdvantage="Speakers page">No</Add_product_to_incorrect_category>
+
+    <!-- Original Name = "Slow_DB_call" ; Corrected Name = "DB_call_delay" -->
+    <!--<Slow_DB_call datatype="string" description="Create a stored procedure that retrieves the list of countries (in user registration) from the database and use it instead of the exiting Hibernate and Spring frameworks (for this action only). insert a delay in the procedure. Parameter values: 0=(Default) Disabled, any other positive number is the number of seconds to delay the Stored Procedure execution." tools="LoadRunner;StormRunner" locationInAdvantage="">0</Slow_DB_call>-->
+    <DB_call_delay datatype="string" description="Defines the number of seconds to delay the retrieval of countries during user registration. Default = 0 (no delay). Possible values = Any positive integer." tools="LoadRunner;StormRunner" locationInAdvantage="CREATE ACCOUNT page">0</DB_call_delay>
+
+    <!-- feature 1510 -->
+    <!-- Original Name = "user_second_wsdl" ; Corrected Name = "User_alternate_WSDL" -->
+    <!--<user_second_wsdl datatype="enum:[Yes,No]" description="Whether to use the second WSDL in user registration page. Parameter values: NO=(Default) Don't use, Yes = Use the second WSDL request to register new user." tools="UFT" locationInAdvantage="">No</user_second_wsdl>-->
+    <User_alternate_WSDL datatype="enum:[Yes,No]" description="Determines whether to modify the field names on the user registration page. (Preferred payment method > Favorite payment; Phone > Mobile phone) Use this parameter to demonstrate API testing. Default = No. Yes = Use the second WSDL request to register a new user" tools="UFT" locationInAdvantage="CREATE ACCOUNT page">No</User_alternate_WSDL>
+
+    <!-- No = (Default) Do Not, or Yes=e-mail address is mandatory in create-user and shown it in login/sign-in page -->
+    <!-- Original Name = "Error_500_in_update_cart" ; Corrected Name = "Error_500" -->
+    <!--<Error_500_in_update_cart datatype="enum:[Yes,No]" description="No=(Default) Do Not Show; or Yes=Show HTTP error code 500 when trying to update cart." tools="AppPulse" locationInAdvantage="">No</Error_500_in_update_cart>-->
+    <Error_500 datatype="enum:[Yes,No]" description="Determines whether to show an HTTP error code 500 when trying to update the cart. Default = No. Yes = Show error" tools="AppPulse" locationInAdvantage="Update cart page">No</Error_500>
+
+    <!-- 0 = (Default) Disabled, any other number is the sum to add to cart calculation -->
+    <!-- feature 1542 -->
+    <!-- Original Name = "Sum_to_add_to_cart_calculation" ; Corrected Name = "Sum_added_to_cart" -->
+    <!--<Sum_to_add_to_cart_calculation datatype="string" description="0=(Default) Disabled; any other number is the sum to add to cart calculation when the user is logged in. UI only, Web and mobiles." tools="LeanFT;UFT" locationInAdvantage="">0</Sum_to_add_to_cart_calculation>-->
+    <Sum_added_to_cart datatype="string" description="Defines a sum to be added to each cart calculation. The sum is updated in to both the Web and Mobile UI (no API). A user must be logged in to enable this change. Default = 0 (no sum added)" tools="LeanFT;UFT" locationInAdvantage="Order payment page">0</Sum_added_to_cart>
+
+    <!-- 0 = (Default) Disabled, any other positive number is the amount of memory leak in MegaBytes -->
+    <!-- Original Name = "Generate_memory_leak" ; Corrected Name = "User_alternate_WSDL" -->
+    <!-- feature 1779 -->
+    <Generate_memory_leak datatype="string" description="Defines the amount of memory leak in megabytes while retrieving the order history. The memory leak is visible in both the UI and the API. Default = 0 (no leak at all). Positive Integer = Number, multiplied by 1000. For example 1 = 1000 megabyte memory leak." tools="LoadRunner;StormRunner" locationInAdvantage="Order history">0</Generate_memory_leak>
+
+    <!-- Feature #1550  -->
+    <!-- Values: (default) -1 = DISABLED, any other positive number = the actual number of concurrent sessions. -->
+    <!-- When this parameter is DISABLED the number of concurrent sessions will be set to 1K. -->
+    <Max_concurrent_users datatype="string" description="Defines the maximum number of concurrent users allowed. Any additional users are rejected with an error code 500. Default = 0 (no concurrent sessions allowed). Possible values = Any positive integer." tools="LoadRunner;StormRunner;NV" locationInAdvantage="Login response">0</Max_concurrent_users>
+
+    <!-- No = (Default) Do not make OR Yes=make spelling mistakes in order payment page -->
+    <!-- Original Name = "Spelling_mistakes_in_order_payment_page" ; Corrected Name = "Typos_on_order_payment" -->
+    <!-- feature 1544 -->
+    <!--<Spelling_mistakes_in_order_payment_page datatype="enum:[Yes,No]" description="In order payment page change 'SHIPPING DETAILS' to 'SHIPING DETAILS', 'Receiver Details' to 'Reciever Details', 'City' to 'Ciity', 'ORDER SUMMARY' to 'ORDERR SUMMARY'. Parameter values: No=(Default) Do nothing; Yes=make spelling mistakes in order payment page. Web and mobile." tools="Sprinter" locationInAdvantage="">No</Spelling_mistakes_in_order_payment_page>-->
+    <Typos_on_order_payment datatype="enum:[Yes,No]" description="Determines whether spelling errors appear in the UI. Default = No. Yes = The following spelling errors are shown: - SHIPING DETAILS - Ciity - Recipeint Details (Web only) - ORDERR SUMMARY (Web only)" tools="Sprinter" locationInAdvantage="Web: ORDER PAYMENT page ; Mobile: SHIPPING DETAILS page">No</Typos_on_order_payment>
+
+    <!-- No = (Default) Do not, or Yes=Mix places of pictures in home page -->
+    <!-- Original Name = "Mix_pictures_in_home_page" ; Corrected Name = "Misplace_pictures_on_Android" -->
+    <!-- feature 1551 -->
+    <!--<Mix_pictures_in_home_page datatype="enum:[Yes,No]" description="No=(Default) Do nothing; Yes=Mix places of pictures in home page. Android Only (to show different pages in each device)." tools="LeanFT;MobileCenter;UFT" locationInAdvantage="">No</Mix_pictures_in_home_page>-->
+    <Misplace_pictures_on_Android datatype="enum:[Yes,No]" description="Determines whether pictures are placed differently on the home page when viewed on an Android  device. Use this parameter to demonstrate how the application may function differently on different mobile OSs. Default = No. Yes = Pictures are placed differently on Android devices." tools="LeanFT;MobileCenter;UFT" locationInAdvantage="Home page">No</Misplace_pictures_on_Android>
+
+    <!-- "SLA: Add delay in add to cart response time (seconds)": 0 = (Default) Disabled; any other positive number = the number of seconds to add as a delay in response time -->
+    <!-- Original Name = "SLA_Add_Delay_In_Add_To_Cart_Response_Time" ; Corrected Name = "SLA_add_delay_time" -->
+    <!-- feature 1270 -->
+    <!--<SLA_Add_Delay_In_Add_To_Cart_Response_Time datatype="string" description="Create a delay in DB call, *** NEED TO UPDATE WHICH DB CALL ***. 0=(Default) Disabled, any other positive number = the number of seconds to add as a delay in response time. UI and API." tools="LoadRunner;StormRunner" locationInAdvantage="">0</SLA_Add_Delay_In_Add_To_Cart_Response_Time>-->
+    <SLA_add_delay_time datatype="string" description="Defines the number of seconds to add as a delay in response time when adding an item to cart. Default = 0 (no delay). If you modify this value, also modify the SLA_add_delay_sessions parameter." tools="LoadRunner;StormRunner" locationInAdvantage="ADD TO CART response">0</SLA_add_delay_time>
+
+    <!-- This parameter is enabled only if "SLA: Add delay in add to cart response time (seconds)" is greater than zero. The system will start adding the delay if the number of sessions will be higher than this value and will stop the delay when the number of sessions will go back down. Valid values: 0-n, default=20. -->
+    <!-- Original Name = "SLA_Number_Of_Sessions_To_Add_The_Delay" ; Corrected Name = "SLA_add_delay_sessions" -->
+    <!-- feature 1270 -->
+    <!--<SLA_Number_Of_Sessions_To_Add_The_Delay datatype="string" description="This parameter is enabled only if 'SLA_Add_Delay_In_Add_To_Cart_Response_Time' is greater than zero. The system will start adding the delay if the number of sessions will be higher than this value and will stop the delay when the number of sessions will go back down. Valid values: 0-n, default=20" tools="LoadRunner;StormRunner" locationInAdvantage="">20</SLA_Number_Of_Sessions_To_Add_The_Delay>-->
+    <SLA_add_delay_sessions datatype="string" description="Defines a number of concurrent Add to Cart sessions at which a delay is added to the Add to Cart response. Enabled only when SLA_add_delay_in_cart is set to a number greater than 0. Default = 20. Valid values = 0-n. The system starts adding a delay if the number of sessions is greater than the defined value. It will stop the delay if the number of sessions is decreased to less than the defined value. If you modify this value, also modify the SLA_add_delay_time parameter." tools="LoadRunner;StormRunner" locationInAdvantage="ADD TO CART response">20</SLA_add_delay_sessions>
+
+    <!-- No=(Default) Do not, or Yes=show more than 40 seconds difference between WiFi and 3G in optimization report -->
+    <!-- Original Name = "Slow_Page" ; Corrected Name = "Show_slow_pages" -->
+    <!-- feature 1141 -->
+    <!--<Slow_Page datatype="enum:[Yes,No]" description="*** NEED TO UPDATE*** No=(Default) Do not; Yes=show more than 40 seconds difference between WiFi and 3G in optimization report" tools="NV;StormRunner" locationInAdvantage="">No</Slow_Page>-->
+    <Show_slow_pages datatype="enum:[Yes,No]" description="Determines whether NV report shows problems and errors: HTTP Codes 4xx and 5xx, loading unused libraries, timeout, downloading big images, etc. " tools="NV;StormRunner" locationInAdvantage="Home Page; Laptops Page">No</Show_slow_pages>
+
+    <!-- No=(Default) Do not; Yes=Front End takes the product price and doubles it (multiply the product price by 2) to show a difference in product price in API (DB, Web Back End) and UI (Front End) -->
+    <!-- Original Name = "Different_price_in_UI_and_API" ; Corrected Name = "Price_diffs_UI_vs_API" -->
+    <!-- feature 1541 -->
+    <!--<Different_price_in_UI_and_API datatype="enum:[Yes,No]" description="Multiply each product price by 2, No=(Default) Do nothing; Yes=Front End takes the product price and doubles it (multiply the product price by 2) to show a difference in product price in API (DB, Web Back End) and UI (Front End)" tools="LeanFT;UFT" locationInAdvantage="">No</Different_price_in_UI_and_API>-->
+    <Price_diffs_UI_vs_API datatype="enum:[Yes,No]" description="Creates a difference in the prices shown in the UI and the prices used in the API. Default = No. Yes = Price is doubled in the UI only, for both desktop and mobile, across the entire app." tools="LeanFT;UFT" locationInAdvantage="Entire site">No</Price_diffs_UI_vs_API>
+
+    <!-- Original Name = "Allow_SQL_Injection_Error_in_Login_Password" ; Corrected Name = "Allow_Error_in_Login" -->
+    <!-- Feature 1539 -->
+    <!--<Allow_SQL_Injection_Error_in_Login_Password datatype="enum:[Yes,No]" description="No=(Default) Do Not inject; or Yes=Inject SQL error in Login/Password." tools="Fortify" locationInAdvantage="">No</Allow_SQL_Injection_Error_in_Login_Password>-->
+    <Allow_Error_in_Login datatype="enum:[Yes,No]" description="Determines whether an invalid passwords are allowed. These would trigger an error in a test, indicating a security gap in the product. Default = No. Yes = Invalid passwords allowed, such as an empty password, or ‘1’=’1’" tools="Fortify" locationInAdvantage="Login page">No</Allow_Error_in_Login>
+
+    <!-- Feature 1788 for DevOps process -->
+    <Implement_DevOps_Process datatype="enum:[Yes,No]" description="Enables password changes from mobile, in addition to desktop. Use this parameter to demonstrate the end-to-end DevOps process. Default = No (Password changes are allowed from desktop only). Yes = Add support for password changes from mobile." tools="" locationInAdvantage="Change password">No</Implement_DevOps_Process>
+    <Tips_Implement_DevOps_Process datatype="enum:[Tip]" description="Change password is enabled only when the configuration parameter Implement_DevOps_Process is set to Yes.  To demonstrate the DevOpps process in a lifecycle management product, do the following:  1. In the Admin UI, set the configuration parameter Implement_DevOps_Process  value to Yes.  2. In your product release add a user story to the Change password back end feature (backend only, the UI user stories are implemented already).  3. Demonstrate that you can view this new user story in ALI.  4. Implement the user story by adding pre-defined code from 'feature_1788_DevOps.txt' file located in '\DevOps' folder to the GIT files. You will see a place holder 'TODO DevOps - PlaceHolder Feature 1788' for this code.  Demonstrate the DevOps process and that you can now change password on both desktop and mobile." tools="" locationInAdvantage="Change password">Tip</Tips_Implement_DevOps_Process>
+
+    <ShipEx_Free_Number_Of_Products datatype="string" description="The quantity of products in a single purchase that are entitled to free shipping. Default = 1." tools="" locationInAdvantage="Order Payment">1</ShipEx_Free_Number_Of_Products>
+    <Tips_Mock_SOAP_ShipEx_Service datatype="enum:[Tip]" description="The shipping cost is determined by a table table in the 'shipex-mock-for-db.properties' configuration file, according to country.  Shipping costs to countries not defined in the table are determined based on the value for Other.  Free shipping can be provided when the number of items ordered is equal to or less than the value  of the 'ShipEx_Free_Number_Of_Products' configuration parameter (default = 1)." tools="" locationInAdvantage="Order Payment">Tip</Tips_Mock_SOAP_ShipEx_Service>
+
+    <!-- SSL ? -->
+    <!-- Not implementing at the moment -->
+
+    <!-- Demo Tips -->
+    <Tips_Application_Development_Environment datatype="enum:[Tip]" description="The Advantage demo site uses the following software versions and interfaces:  - Java server: Java 8  - Application server: Tomcat 8  - Web UI: Angular 1.47  - Admin Application: Standalone .NET  - Database: PostgreSQL 9.4  - Schema Management: Liquibase 3.4  - Catalog, Order Services: REST API  - User Management: WSDL." tools="" locationInAdvantage="">Tip</Tips_Application_Development_Environment>
+    <Tips_Scripting datatype="enum:[Tip]" description="The demo app IP addresses are not fixed. In any scripts you create for a demo, make sure to use a parameter for the application IP address." tools="LeanFT;UFT" locationInAdvantage="">Tip</Tips_Scripting>
+    <Tips_Scripting datatype="enum:[Tip]" description="The demo app IP addresses are not fixed. In any scripts you create for a demo, make sure to use a parameter for the application IP address." tools="LoadRunner;StormRunner" locationInAdvantage="">Tip</Tips_Scripting>
+    <Tips_Fill_User_Location_From_GPS datatype="enum:[Tip]" description="To use your GPS location instead of the default values, toggle on the Use my location option on the following pages:  1. CREATE ACCOUNT, for the user account details.  2. ORDER PAYMENT, for the shipping details." tools="MobileCenter" locationInAdvantage="Create Account, Order Payment - Shipping details">Tip</Tips_Fill_User_Location_From_GPS>
+    <Tips_Mock_MasterCredit_Generate_Error datatype="enum:[Tip]" description="To generate an error using the MasterCredit card, enter a MasterCredit expiration date earlier than the current day." tools="" locationInAdvantage="Order Payment">Tip</Tips_Mock_MasterCredit_Generate_Error>
+    <Tips_Mock_SafePay_Generate_Error datatype="enum:[Tip]" description="To generate an error using SafePay, enter identical (case sensitive) username and password." tools="" locationInAdvantage="Order Payment">Tip</Tips_Mock_SafePay_Generate_Error>
+    <Tips_WebSocket_example datatype="enum:[Tip]" description="To demonstrate WebSocket features, use the chat widget located on the Home page (http://www.advantageonlineshopping.com/), under Contact Us." tools="LoadRunner" locationInAdvantage="Home page - CONTACT US">Tip</Tips_WebSocket_example>
+    <Tips_Support_Different_Types_Of_Controls datatype="enum:[Tip]" description="Use the following UI elements to demonstrate various functional testing features:  * String: On the CREATE ACCOUNT or ACCOUNT DETAILS page, update the Personal Details fields.  * Radio button: On the ORDER PAYMENT page, select a payment method.  * Date value: On the ORDER PAYMENT page, select the MasterCredit option and then enter an expiration date.  * List box: On the CREATE ACCOUNT page, select a country from the Country drop down list.  * Multiple selection: Browse products by category and filter the products shown by using the options on the left" tools="BPT;MobileCenter;LeanFT;UFT" locationInAdvantage="Entire Site">Tip</Tips_Support_Different_Types_Of_Controls>
+    <Tips_System_Configuration datatype="enum:[Tip]" description="The Admin UI menu and pages are read-only in the shared system on the cloud.  You can make changes in a local instance.  Troubleshooting: If you are unable to make changes in a local instance:  1. Navigate to the DemoApp.properties file.  2. Ensure that the Allow user configuration value is set to Yes. This is the default setting.  3. Verify that you can configure the relevant field from the Admin UI as needed." tools="" locationInAdvantage=".NET Admin app">Tip</Tips_System_Configuration>
+    <!--<Tips_Implement_DevOps_Process datatype="enum:[Tip]" description="Change password is enabled only when the configuration parameter Implement_DevOps_Process is set to Yes. To demonstrate the DevOpps process in a lifecycle management product, do the following: 1. In the Admin UI, set the configuration parameter Implement_DevOps_Process  value to Yes.  2. In your product release add a user story to the Change password back end feature (backend only, the UI user stories are implemented already).  3. Demonstrate that you can view this new user story in ALI.  4. Implement the user story by adding pre-defined code from feature_1788_DevOps.txt under \DevOps folder to the GIT files. (TBD - target file name) you will see a place holder for this code.  Demonstrate the DevOps process and that you can now change password on both desktop and mobile." tools="" locationInAdvantage="Change password">Tip</Tips_Implement_DevOps_Process>-->
+    <!--<Tips_Add_The_Cart_Sum_To_Pay_Button datatype="enum:[Tip]" description="The button text always starts with Pay to allow for demonstrating regular expressions in object identification." tools="" locationInAdvantage="Cart">Tip</Tips_Add_The_Cart_Sum_To_Pay_Button>-->
+
+    <!-- Feature 1387 -->
+    <Tips_replace_3rd_party_services_with_SV datatype="enum:[Tip]" description="Replace the ShipEx, MasterCredit, or SafePay 3rd party services with Service Virtualization by updating the relevant URLs in the services.properties configuration file.  This file is located in properties folder of 5 services: accountservice, MasterCredit, order, ROOT, SafePay.  For example: /accountservice/properties/services.properties.  1. Navigate to the &lt;service-name&gt;.url.host line, and modify the URL/IP address string to the Service Virtualization URL and IP address.  2. Navigate to the &lt;service-name&gt;.url.port line and modify the port string to the Service Virtualization port.  3. Save the file, and repeat these steps for each service in the services.properties file, and in the services.properties files for each service." tools="SV" locationInAdvantage="ShipEx;MasterCredit;SafePay">Tip</Tips_replace_3rd_party_services_with_SV>
+
+    <!-- Feature 1199 -->
+    <Tips_How_To_Use_Product_Video datatype="enum:[Tip]" description="ADM performance tools support HTML5 video streaming via: native browsers, plugins such as Adobe Flash, or standalone software.  To demonstrate this feature, browse to one of the following products and view the demo video:  - HP ROAR WIRELESS SPEAKER (Product ID: 22)  - BEATS STUDIO 2 OVER-EAR MATTE BLACK HEADPHONES (product ID: 15)  - HP ELITEPAD 1000 G2 TABLET (product ID: 16)" tools="LoadRunner" locationInAdvantage="Selected Products">Tip</Tips_How_To_Use_Product_Video>
+
+    <!-- Feature 1643 - THIS IS FOR ALL CLIENTS -->
+    <Tips_regular_expression datatype="enum:[Tip]" description="The button text always starts with Pay to allow for demonstrating regular expressions in object identification." tools="LeanFT;UFT" locationInAdvantage="Pay button in cart sum">Tip</Tips_regular_expression>
+
+    <!-- Feature 1372 -->
+    <Tips_correlation_example datatype="enum:[Tip]" description="To demonstrate correlation, make sure that you include a login step in your flow.  The correlation is implemented with the session ID." tools="LoadRunner" locationInAdvantage="Home Page">Tip</Tips_correlation_example>
+
+    <!-- Feature 1206 -->
+    <Tips_async_example datatype="enum:[Tip]" description="ADM performance tools support asynchronous communication.  To demonstrate this feature, browse to any of the products in the HEADPHONES category, and record the comments (web only)." tools="LoadRunner" locationInAdvantage="">Tip</Tips_async_example>
+
+    <!-- Feature 1273 -->
+    <Tips_Swagger_Interface_For_REST_APIs datatype="enum:[Tip]" description="To use Swagger interface for REST APIs change the URL to http://&lt;your-server&gt;:&lt;port&gt;/&lt;service&gt;/api/docs.  &lt;service&gt; can be on of the following (case sensitive): catalog, order, MasterCredit or SafePay.  For example: http://www.advantageonlineshopping.com:80/catalog/api/docs." tools="" locationInAdvantage="catalog,MasterCredit,order,SafePay services">Tip</Tips_Swagger_Interface_For_REST_APIs>
+
+    <!-- Feature 1249 -->
+    <Tips_REST_API_Params_In_Request_URL datatype="enum:[Tip]" description="Send the REST API request and parameters in request URL. Example: http://www.advantageonlineshopping.com/catalog/api/v1/products/1." tools="UFT" locationInAdvantage="catalog,MasterCredit,order,SafePay services">Tip</Tips_REST_API_Params_In_Request_URL>
+
+    <Tips_REST_API_Params_In_Request_Body datatype="enum:[Tip]" description="Send the REST API parameters in the request body. Example: http://www.advantageonlineshopping.com/MasterCredit/api/v1/payments/payment, body: { &quot;MCCVVNumber&quot;: 666, &quot;MCCardNumber&quot;: 6543210987654321, &quot;MCCustomerName&quot;: &quot;King David&quot;, &quot;MCCustomerPhone&quot;: &quot;+12025551969&quot;, &quot;MCExpirationDate&quot;: &quot;032017&quot;, &quot;MCRecevingAmount.Value&quot;: 2011.03, &quot;MCRecevingCard.AccountNumber&quot;: 112987298763, &quot;MCRecevingCard.Currency&quot;: &quot;USD&quot;, &quot;MCTransactionDate&quot;: &quot;02092016&quot;, &quot;MCTransactionType&quot;: &quot;PAYMENT&quot; }." tools="UFT" locationInAdvantage="catalog,MasterCredit,order,SafePay services">Tip</Tips_REST_API_Params_In_Request_Body>
+
+    <!-- Feature 1207 -->
+    <Tips_DFE datatype="enum:[Tip]" description="Send login request and response in Base-64 encoded, instead of in plain text, to show DFE in snapshot (display only)." tools="LoadRunner" locationInAdvantage="Web Application Login">Tip</Tips_DFE>
+
+</Parameters>

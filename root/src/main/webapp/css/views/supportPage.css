@@ -1,0 +1,256 @@
+
+#contact_us{
+    background-color: #54b3ad;
+}
+
+#supportCover {
+    padding: 30px 0;
+    margin: 0 auto;
+    display: table;
+    width: 1366px;
+}
+
+#supportCover .inputMargin .validate-directive {
+    margin: 18px 0;
+}
+
+#supportCover > div {
+
+    width: 75%;
+    margin: 0 auto;
+    text-align: center;
+    vertical-align: top;
+    display: table-cell;
+}
+
+#supportCover > div:first-child {
+    width: 25%;
+    margin: 0 auto;
+    text-align: center;
+    vertical-align: middle;
+}
+
+#supportCover > div:first-child .chat{
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    height: 256px;
+    background-color: #4aa29c;
+    margin: 0 50px 0 auto;
+    text-align: center;
+    display: table;
+    cursor: pointer;
+}
+
+#supportCover > div:first-child .chat div{
+    display: table-cell;
+    vertical-align: middle;
+}
+
+#supportCover > div:first-child .chat div label{
+
+    display: block;
+    color: white;
+    padding: 10px 40px;
+    cursor: pointer;
+}
+
+
+#supportCover .contact_us {
+    font-size: 35px;
+    text-align: left;
+    padding: 30px calc(20px + 4%);
+    padding-bottom: 20px;
+    color: white;
+    letter-spacing: 2px;
+}
+
+#supportCover .splitter {
+    width: 49%;
+    font-size: 0;
+    display: inline-block;
+    vertical-align: top;
+}
+
+
+#supportCover .splitter label {
+    font-size: 14px;
+    color: #FFFFFF !important;
+}
+
+#supportCover .splitter > div {
+    margin: 0 50px;
+    text-align: left;
+}
+
+#supportCover .splitter > div.smollPadding {
+    padding-top: 20px;
+}
+
+#supportCover .splitter > div.smollPadding.margin-right{
+    margin-right: 118px;
+}
+
+#supportCover .splitter .sec-view div .star {
+    color: white;
+}
+
+#supportCover input[type=text], #supportCover input[type="password"], #supportCover .inputtext {
+    width: 100%;
+    background-color: #54b3ad;
+    border-bottom: 1px solid #ffffff;
+    color: #FFFFFF;
+}
+
+#supportCover textarea.inputtext {
+    height: 135px;
+    padding: 10px 5px;
+    border: 1px solid #ffffff;
+    box-sizing: border-box;
+    resize: none;
+}
+
+#supportCover option {
+    background-color: white;
+    color: #313131;
+    font-size: 12px;
+}
+
+#supportCover select {
+    cursor: pointer;
+    color:white;
+}
+
+#supportCover select > option:hover {
+    background: #F4F4F2 !important;
+}
+
+#supportCover .buttonCover {
+    direction: rtl;
+    padding: 0 26px;
+}
+
+#supportCover button {
+    font-size: 14px;
+    margin: 10px 32px;
+    padding: 8px 46px;
+    display: block;
+    color: white;
+    background-color: #54b3ad;
+    border: solid 2px white;
+}
+
+#supportCover .sec-validate-invalid, .sec-validate-invalid:hover {
+    color: #82c8c3 !important;
+    background-color: #54b3ad !important;
+    border: solid 2px #82c8c3 !important;;
+}
+
+#supportCover .validate-directive input.validateInvalid {
+    border-bottom: solid white 1px !important;
+}
+
+#supportCover button:hover {
+    color: #54b3ad;
+    background-color: white;
+}
+
+#supportCover label.center {
+    display: block;
+    padding: 10px 0;
+}
+
+
+@media screen and (max-width: 1368px) {
+
+    #supportCover {
+        width: 100%;
+    }
+}
+
+
+@media screen and (max-width: 1150px) {
+    #supportCover > div:first-child .chat{
+        margin: 0 10px 0 auto;
+    }
+    #supportCover .splitter > div.smollPadding.margin-right{
+        margin-right: 30px;
+    }
+}
+
+
+
+@media screen and (max-width: 1000px) {
+
+    #supportCover > div {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    #separator {
+        height: 0px;
+    }
+
+    #supportCover {
+        margin-top: 0px;
+    }
+
+    #supportCover .splitter {
+        width: 100%;
+    }
+
+    #supportCover .buttonCover {
+        padding: 20px 0px 0px 0px;
+        box-sizing: border-box;
+        width: 100%;
+        margin: 0;
+    }
+
+    #supportCover .splitter > div {
+        margin: 0 26px;
+        text-align: left;
+    }
+
+    #supportCover > div {
+        width: 100%;
+        display: block;
+    }
+
+    #supportCover > div:first-child{
+        width: auto;
+        display: inherit;
+    }
+}
+
+@media screen and (max-width: 600px) {
+
+    #supportCover > div {
+        margin: 0px;
+    }
+
+    #supportCover button {
+        width: 90%;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    #supportCover .contact_us {
+        padding: 20px calc(20px + 4%);
+        padding-top: 50px;
+    }
+
+    #supportCover .buttonCover {
+        width: 100%;
+    }
+
+}
+
+@media screen and (max-width: 480px) {
+
+}
+
+

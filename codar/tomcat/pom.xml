@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.apache</groupId>
+    <artifactId>tomcat</artifactId>
+    <version>8.0.33</version>
+    <packaging>pom</packaging>
+
+    <name>Pre-Configured Tomcat</name>
+
+    <properties>
+        <version.tomcat>${project.version}</version.tomcat>
+        <tomcat.archive.file>${project.build.directory}/apache-tomcat-${version.tomcat}.zip</tomcat.archive.file>
+    </properties>
+
+    <build>    
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>2.10</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <version>1.8</version>
+                <executions>
+                    <execution>
+                        <id>repackage-tomcat</id>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                        <configuration>
+                            <target>
+                                <echo message="Re-packaging ${tomcat.archive.file}..." />
+                                <unzip src="${basedir}/apache-tomcat-${version.tomcat}.zip" dest="${project.build.directory}" />
+                                <move file="${project.build.directory}/apache-tomcat-${version.tomcat}" tofile="${project.build.directory}/tomcat" />
+                                <!-- Remove the default webapps -->
+                                <delete dir="${project.build.directory}/tomcat/webapps/docs" />
+                                <delete dir="${project.build.directory}/tomcat/webapps/manager" />
+                                <delete dir="${project.build.directory}/tomcat/webapps/host-manager" />
+                                <delete dir="${project.build.directory}/tomcat/webapps/examples" />
+                                <delete dir="${project.build.directory}/tomcat/webapps/ROOT" />
+                                <replaceregexp file="${project.build.directory}/tomcat/conf/server.xml" flags="gs" match="\&lt;!--.*?--\&gt;" replace="" byline="false" />
+                                <replaceregexp file="${project.build.directory}/tomcat/conf/server.xml" flags="g" match="^\s*" replace="" byline="true" />
+                                <replace file="${project.build.directory}/tomcat/conf/server.xml" token='Server port="8005" shutdown="SHUTDOWN"' value='Server port="8005" shutdown="SHUTDOWN"' />
+                                <echo file="${project.build.directory}/tomcat/conf/logging.properties" append="true">org.apache.catalina.core.StandardContext.[Catalina].level = ALL
+org.apache.catalina.core.StandardContext.[Catalina].handlers = java.util.logging.ConsoleHandler</echo>
+                                <zip destfile="${tomcat.archive.file}" basedir="${project.build.directory}/tomcat" />
+                            </target>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>build-helper-maven-plugin</artifactId>
+                <version>1.10</version>
+                <executions>
+                    <execution>
+                        <id>attach-artifacts</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>attach-artifact</goal>
+                        </goals>
+                        <configuration>
+                            <artifacts>
+                                <artifact>
+                                    <file>${tomcat.archive.file}</file>
+                                    <type>zip</type>
+                                </artifact>
+                            </artifacts>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+ <distributionManagement>
+  <repository>
+    <id>adm-demo-app-release</id>
+    <url>http://mydtbld0028.hpeswlab.net:8081/nexus/content/repositories/adm-demo-app-release</url>
+  </repository>
+  <snapshotRepository>
+    <id>adm-demo-app-snapshot</id>
+    <url>http://mydtbld0028.hpeswlab.net:8081/nexus/content/repositories/adm-demo-app-snapshot</url>
+  </snapshotRepository>
+</distributionManagement>
+
+</project>

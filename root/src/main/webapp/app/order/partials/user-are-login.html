@@ -1,0 +1,351 @@
+<div>
+
+
+    <div id="detailslink">
+        <label class="roboto-regular" ng-class="{ selected : firstTag }">1. {{ mainCtrl.config.spellingMistakes ? 'SHIPING_DETAILS' : 'SHIPPING_DETAILS' | translate}} </label>
+        <label class="roboto-regular" ng-class="{ selected : !firstTag }">2. {{ 'PAYMENT_METHOD' | translate }}</label>
+    </div>
+
+    <!-- USER DETAILS SECTION-->
+
+    <div id="userSection" ng-show="firstTag">
+
+        <div data-ng-show="!userDetailsEditMode">
+            <div id="userDetails">
+                <div>
+                    <img src="css/images/User.jpg" alt="user">
+                    <!--<div icon-user></div>-->
+                    <label>{{user.firstName}} {{user.lastName}}</label>
+                </div>
+                <div>
+                    <!--<img src="css/images/.jpg" alt="user">-->
+                    <div icon-home></div>
+                    <label data-ng-show="user.address != ''">{{ user.address }}</label>
+                    <label data-ng-show="user.cityName != ''">{{ user.cityName }}</label>
+                    <label data-ng-show="country.name != ''">{{ country.name }}</label>
+                    <label data-ng-show="user.stateProvince != ''">{{ user.stateProvince }}</label>
+                    <label data-ng-show="user.zipcode != ''">{{ user.zipcode }}</label>
+                </div>
+                <div>
+                    <div icon-phone></div>
+                    <label>{{ user.phoneNumber }}</label>
+                </div>
+            </div>
+            <div class="blueLink">
+                <a data-ng-click="setUserDetailsEditMode()"
+                   translate="Edit_shipping_Details"></a>
+                <label class="float-button">{{ 'SHIPPING_BY' | translate }}:
+                    <img src="css/images/Shipex.png" alt="ShipEx"/></label>
+            </div>
+            <div class="mobileBtnHandler">
+                <button data-ng-click="shippingDetails_next()" class="a-button nextBtn marginTop75" translate="NEXT">
+                </button>
+            </div>
+        </div>
+
+
+        <div data-ng-show="userDetailsEditMode" id="userDetailsEditMode">
+
+            <!-- EDIT USER DETAILS SECTION-->
+
+            <sec-form sec-get-form-validation-when-ready="validSecValidate(valid)">
+
+                <h6 class="roboto-bold"> {{ mainCtrl.config.spellingMistakes ? 'Reciever_Details' : 'Receiver_Details' | translate}} </h6>
+
+                <div class="spliter">
+
+                    <sec-view a-hint="{{'First_Name' | translate}}"
+                              sec-model="user.firstName"
+                              sec-min-length="mainCtrl.getMin(2)"
+                              sec-max-length="mainCtrl.getMax(30)">
+                    </sec-view>
+
+                    <sec-view a-hint="{{'Last_Name' | translate}}"
+                              sec-model="user.lastName"
+                              sec-min-length="mainCtrl.getMin(2)"
+                              sec-max-length="mainCtrl.getMax(30)">
+                    </sec-view>
+
+                </div>
+
+                <div class="spliter">
+
+                    <sec-view a-hint="{{'Phone_Number' | translate}}"
+                              sec-max-length="mainCtrl.getMax(20)"
+                              sec-model="user.phoneNumber">
+                    </sec-view>
+
+                </div>
+
+
+                <h6 translate="Address" class="roboto-bold"></h6>
+
+                <div class="spliter">
+                    <sec-view a-hint="Country"
+                              sec-require="mainCtrl.getRequire('Country')"
+                              a-type="select"
+                              a-show="name"
+                              sec-model="country"
+                              sec-select-options="countries">
+                    </sec-view>
+
+                    <sec-view a-hint="{{ mainCtrl.config.spellingMistakes ? 'Ciity' : 'City' | translate}}"
+                              sec-model="user.cityName"
+                              sec-max-length="mainCtrl.getMax(25)">
+                    </sec-view>
+                </div>
+
+                <div class="spliter">
+
+                    <sec-view a-hint="{{'Address' | translate}}"
+                              sec-model="user.address"
+                              sec-max-length="mainCtrl.getMax(50)">
+                    </sec-view>
+
+
+                    <sec-view a-hint="{{'Postal_Code' | translate}}"
+                              sec-model="user.zipcode"
+                              sec-max-length="mainCtrl.getMax(10)">
+                    </sec-view>
+
+                </div>
+
+                <div class="spliter">
+                    <sec-view a-hint="{{'State__Province__Region' | translate}}"
+                              sec-model="user.stateProvince"
+                              sec-max-length="mainCtrl.getMax(10)">
+                    </sec-view>
+                </div>
+
+                <div class="option marginTop">
+                    <input ng-model="agree_Agreement" type="checkbox"/>
+                    <span class="roboto-light" translate="Save_changes_in_profile_for_future_use"></span>
+                </div>
+
+                <div class="blueLink">
+                    <sec-sender class="roboto-medium"
+                                a-value="{{'NEXT' | translate}}"
+                                sec-send="accountUpdate()">
+                    </sec-sender>
+                    <a class="roboto-medium float-button a-link linkToPress"
+                       data-ng-class="{ buttonDisable : invalidUser}"
+                       data-ng-click="backToMainShippingDetails()" translate="BACK">
+                    </a>
+                </div>
+
+            </sec-form>
+
+            <!-- END EDIT USER DETAILS SECTION-->
+
+        </div>
+
+    </div>
+
+    <!-- END USER DETAILS SECTION-->
+
+
+    <!-- EDIT EDIT PAYMENT SECTION -->
+
+    <div id="paymentMethod" data-ng-hide="firstTag">
+        <div>
+            <label class="Choose_payment roboto-medium" translate="Choose_payment_method_below">
+            </label>
+            <div class="paymentMethods">
+                <div class="imgRadioButton" data-ng-click="imgRadioButtonClicked(1)"
+                     data-ng-class="{ selected : imgRadioButton == 1 }">
+                    <img src="css/images/SafePay.png" alt="Safepay"/>
+                </div>
+                <div class="imgRadioButton" data-ng-click="imgRadioButton = 2"
+                     data-ng-class="{ selected : imgRadioButton == 2 }">
+                    <img src="css/images/Master_credit.png" alt="Master credit"/>
+                </div>
+            </div>
+
+            <!---------------------------- SAFEPAY SECCION ---------------------------->
+
+            <div ng-show="imgRadioButton == 1">
+
+                <div class="notice">
+                    <h4 translate="Notice"></h4>
+
+                    <p class="roboto-light">{{ 'This_is_a_demo' | translate }} {{ 'Please_enter_a_fake_data' |
+                        translate }}</p>
+                </div>
+
+                <sec-form >
+
+                    <sec-view a-hint="{{'SafePay_User_name' | translate}}"
+                              sec-model="savePay.username"
+                              sec-require="mainCtrl.getRequire('SafePay_User_name')"
+                              sec-min-length="mainCtrl.getMin(5)"
+                              sec-max-length="mainCtrl.getMax(15)"
+                              sec-pattern="mainCtrl.getPattern('Username')">
+                    </sec-view>
+
+                    <sec-view a-hint="{{'SafePay_Password' | translate}}"
+                              a-type="password"
+                              sec-model="savePay.password"
+                              sec-require="mainCtrl.getRequire('SafePay_Password')"
+                              sec-min-length="mainCtrl.getMin(4)"
+                              sec-max-length="mainCtrl.getMax(12)"
+                              sec-pattern="mainCtrl.getPattern('Password')">
+                    </sec-view>
+
+                    <div class="option marginTop">
+                        <input ng-model="saveSafePay" type="checkbox">
+                        <span class="roboto-light ng-binding" translate="Save_changes_in_profile_for_future_use"> </span>
+                    </div>
+
+                    <div class="blueLink margin15px">
+                        <a data-ng-click="Back_to_shipping_details()" translate="Back_to_shipping_details"></a>
+                        <!--<a data-ng-click="firstTag = true" translate="Back_to_shipping_details"></a>-->
+                        <label class="float_right">
+                            <sec-sender class="roboto-medium" a-value="{{'PAY_NOW' | translate}}"
+                                        sec-send="payNow_SafePay()"></sec-sender>
+                        </label>
+                    </div>
+
+                </sec-form>
+
+            </div>
+
+            <!-------------------------- END SAFEPAY SECCION -------------------------->
+
+
+            <!-------------------------- MASTERCREDIT SECCION --------------------------->
+
+            <div ng-show="imgRadioButton == 2 && !noCards && !showMasterCart">
+
+                <div class="masterCreditSeccion">
+                    <div class="roboto-regular">
+                        <span class="MasterCredit">MasterCredit</span>
+                        <span data-ng-repeat="_4numbers in CardNumber track by $index">
+                            {{ _4numbers | showLast4DigitsCard:$last:$index}}
+                        </span>
+                        <label class="edit " data-ng-click="toggleShowMasterCart()" translate="Edit">
+                        </label>
+                    </div>
+                </div>
+
+                <div class="blueLink marginBottom">
+                    <a ng-click="Back_to_shipping_details()" translate="Back_to_shipping_details"></a>
+                    <label>
+                        <button class="roboto-medium float-button a-button" data-ng-click="payNow_manual()">
+                            {{'PAY_NOW' | translate}}
+                        </button>
+                    </label>
+                </div>
+
+            </div>
+
+            <!-------------------------- END MASTERCREDIT SECCION --------------------->
+
+
+            <!---------------------------- MANUAL PAYMENT SECCION ---------------------------->
+
+            <div ng-show="(imgRadioButton == 2) && (noCards || showMasterCart)">
+
+                <div class="notice">
+                    <h4 translate="Notice"></h4>
+                    <p class="roboto-light">{{ 'This_is_a_demo' | translate }} {{ 'Please_enter_a_fake_data' | translate }}</p>
+                </div>
+
+                <sec-form>
+
+                    <div class="spliter">
+
+                        <sec-view a-hint="{{'Card_number' | translate}}"
+                                  a-secret-field="true"
+                                  sec-model="card.number"
+                                  sec-require="mainCtrl.getRequire('Card_number')"
+                                  sec-card-number="mainCtrl.getCardNumber(16)">
+                        </sec-view>
+
+
+                        <sec-view a-hint="{{'CCV_Number' | translate}}" class="creditCard"
+                                  a-secret-field="true"
+                                  sec-model="card.cvv"
+                                  sec-require="mainCtrl.getRequire('CCV_Number')"
+                                  sec-pattern="mainCtrl.getPattern('CCV_Number')">
+                        </sec-view>
+
+                    </div>
+                    <label class="roboto-regular expiration_date_title" translate="Expiration_Date"></label>
+                    <div class="spliter">
+
+                        <div class="payment_date">
+
+                            <sec-view a-hint="{{ 'MM' | translate }}"
+                                      a-type="select"
+                                      a-do-not-show-info="true"
+                                      sec-require="mainCtrl.getRequire('Month')"
+                                      sec-model="card.expirationDate.month"
+                                      sec-select-options="month"
+                            >
+                            </sec-view>
+
+                            <sec-view a-hint="{{ 'YY' | translate }}"
+                                      a-type="select"
+                                      a-do-not-show-info="true"
+                                      sec-require="mainCtrl.getRequire('Year')"
+                                      sec-model="card.expirationDate.year"
+                                      sec-select-change="calculateMonths(value)"
+                                      sec-select-options="years">
+                            </sec-view>
+                            <!--sec-value-change=""-->
+
+                        </div>
+
+
+                        <sec-view a-hint="{{ 'Cartholder_Name' | translate }}"
+                                  sec-require="mainCtrl.getRequire('Cartholder_Name')"
+                                  sec-model="card.name">
+                        </sec-view>
+
+                    </div>
+
+                    <div class="option marginTop">
+                        <input ng-model="saveMasterCredit" type="checkbox" class="ng-pristine ng-untouched ng-valid">
+                        <span class="roboto-light ng-binding" translate="Save_changes_in_profile_for_future_use"></span>
+                    </div>
+
+                    <div class="blueLink">
+                        <a ng-click="Back_to_shipping_details()" translate="Back_to_shipping_details"></a>
+                        <label>
+                            <sec-sender class="roboto-medium" a-value="{{'PAY_NOW' | translate}}"
+                                        sec-send="payNow_masterCredit()"></sec-sender>
+                        </label>
+                    </div>
+
+                </sec-form>
+
+            </div>
+
+            <!---------------------------- END MANUAL PAYMENT SECCION ---------------------------->
+
+        </div>
+    </div>
+
+    <!-- END EDIT PAYMENT SECTION-->
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

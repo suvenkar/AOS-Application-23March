@@ -1,0 +1,32 @@
+<div>
+    <a class="must" ng-show="warnings.length > 0 && !noRedStar">*</a>
+
+    <label class="validate-label"
+           ng-class="{ validateInvalid : !textToShow.valid}"
+           ng-click="validateLabelClicked(id)">
+        {{textToShow.text}}
+    </label>
+    <textarea name="{{id}}" class="inputtext"
+           data-ng-class="{ validateInvalid : !textToShow.valid }"
+           data-ng-model="modelAttr"
+           data-ng-focus="inputFocus(id)"
+           data-ng-blur="inputBlur(id)"
+           data-ng-keyup="inputKeyup(id)"
+           id="secInput_{{id}}" />
+
+    <div class="validate-info" ng-show="warnings.length > 0">
+        <ul>
+            <li data-ng-repeat="info in warnings" data-ng-show="info.info != '' && info.show" >
+                <a>{{ info.info }}</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+
+
+
+
+
+

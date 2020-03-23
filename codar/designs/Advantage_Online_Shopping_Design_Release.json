@@ -1,0 +1,270 @@
+{
+  "@self" : "/csa/api/topology-model/topology/da88219f-7c37-4679-b3b7-7c19592e4fc6",
+  "@type" : "urn:x-hp:2013:software:cloud:topology_model:topology",
+  "groupId" : "com.hp.csa",
+  "artifactId" : "90bbbef653e562e401542facc7511a24",
+  "version" : "1.0.0",
+  "displayName" : "Advantage Online Shopping Design - Release",
+  "description" : "Advantage Online Shopping Design - Beta2 v4.0.0",
+  "resources" : [ {
+    "id" : "23af439e-6333-066b-59dd-bd54b5d2283e",
+    "name" : "AdvantageOnlineShopping Application",
+    "component" : {
+      "@self" : "/csa/api/topology-model/component-type/2e71b11e-403d-4d40-afb7-c817214a3eb8",
+      "groupId" : "com.hp.csa.type.HPOO",
+      "artifactId" : "LibraryIntegrationsHewlettPackardCloudServiceAutomationComponentsHPOOAdvantageOnlineShoppingApplication1600002",
+      "version" : "1.60.0002"
+    },
+    "properties" : [ {
+      "propertyKey" : "configurationurl",
+      "propertyValue" : {
+        "value" : "http://hpecsademo.hpswlabs.adapps.hp.com:8080/job/Software/ws/abs/deployabs.sh",
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "hostusername",
+      "propertyValue" : {
+        "value" : null,
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "undeploycommand",
+      "propertyValue" : {
+        "value" : "sh /tmp/undeployabs.sh",
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "_modifiable_properties",
+      "propertyValue" : {
+        "value" : "artifacturl, configurationurl, tomcathome, undeployconfigurationurl",
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "deploycommand",
+      "propertyValue" : {
+        "value" : "sh /tmp/deployabs.sh",
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "localfilepath",
+      "propertyValue" : {
+        "value" : "aos.zip",
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "apphostname",
+      "propertyValue" : {
+        "value" : null,
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "result",
+      "propertyValue" : {
+        "value" : null,
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "artifactusername",
+      "propertyValue" : {
+        "value" : null,
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "environment",
+      "propertyValue" : {
+        "value" : null,
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "artifactpassword",
+      "propertyValue" : {
+        "value" : null,
+        "type" : "string_encrypted"
+      }
+    }, {
+      "propertyKey" : "_enable_modify_during_lifecycle_properties",
+      "propertyValue" : {
+        "value" : "artifacturl, configurationurl",
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "dbhostname",
+      "propertyValue" : {
+        "value" : "localhost",
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "dbpassword",
+      "propertyValue" : {
+        "value" : "ENC(6vx+YnOQZs+w4ahwNBlTPJF+/LogwAAN)",
+        "type" : "string_encrypted"
+      }
+    }, {
+      "propertyKey" : "port",
+      "propertyValue" : {
+        "value" : "22",
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "tomcathome",
+      "propertyValue" : {
+        "value" : "/var/lib/tomcat7",
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "response",
+      "propertyValue" : {
+        "value" : null,
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "undeployconfigurationurl",
+      "propertyValue" : {
+        "value" : "http://hpecsademo.hpswlabs.adapps.hp.com:8080/job/Software/ws/abs/undeployabs.sh",
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "undeployconfigfilename",
+      "propertyValue" : {
+        "value" : "undeployabs.sh",
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "artifacturl",
+      "propertyValue" : {
+        "value" : "http://mydtbld0028.hpeswlab.net:8081/nexus/service/local/artifact/maven/redirect?r=adm-demo-app-snapshot&g=com.advantage.online.store&a=pack_wars&e=zip&v=LATEST",
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "dbusername",
+      "propertyValue" : {
+        "value" : "root",
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "privatekeyPath",
+      "propertyValue" : {
+        "value" : "C:\\AWS\\LG_LR_EC2_NVG.pem",
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "remotefilepath",
+      "propertyValue" : {
+        "value" : "/tmp",
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "hostpassword",
+      "propertyValue" : {
+        "value" : null,
+        "type" : "string_encrypted"
+      }
+    } ],
+    "outgoingRelations" : [ {
+      "relationType" : "association",
+      "id" : "a57057fb-e3cc-a4a9-4cca-303e0296e8fa",
+      "properties" : [ {
+        "propertyKey" : "_enable_modify_during_lifecycle_properties",
+        "propertyValue" : {
+          "value" : null,
+          "type" : "string"
+        }
+      }, {
+        "propertyKey" : "_modifiable_properties",
+        "propertyValue" : {
+          "value" : null,
+          "type" : "string"
+        }
+      }, {
+        "propertyKey" : "_relation_type",
+        "propertyValue" : {
+          "value" : {
+            "first" : "Association",
+            "second" : "ASSOCIATION"
+          },
+          "type" : "pair"
+        }
+      } ],
+      "relationDescriptorName" : "deployOnAppServer_LibraryIntegrationsHewlettPackardCloudServiceAutomationComponentsHPOOAdvantageOnlineShoppingApplication1600002__VERSION__1^60^0002",
+      "resourceReference" : {
+        "name" : "Application Server"
+      }
+    } ],
+    "annotations" : {
+      "uniqueName" : "AdvantageOnlineS0001",
+      "displayName" : "23af439e-6333-066b-59dd-bd54b5d2283e",
+      "x" : "595",
+      "y" : "96"
+    },
+    "capabilityChars" : [ ],
+    "requirements" : [ ]
+  }, {
+    "id" : "da746e42-4458-d7b2-cdae-eeb2a40cdc0a",
+    "name" : "Application Server",
+    "component" : {
+      "@self" : "/csa/api/topology-model/component-type/2966f971-29e9-42b2-b91a-1673711407fb",
+      "groupId" : "com.hp.csa.type",
+      "artifactId" : "ApplicationServer",
+      "version" : "1"
+    },
+    "properties" : [ {
+      "propertyKey" : "installPath",
+      "propertyValue" : {
+        "value" : null,
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "hostname",
+      "propertyValue" : {
+        "value" : "",
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "password",
+      "propertyValue" : {
+        "value" : null,
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "protocol",
+      "propertyValue" : {
+        "value" : "",
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "port",
+      "propertyValue" : {
+        "value" : "",
+        "type" : "string"
+      }
+    }, {
+      "propertyKey" : "username",
+      "propertyValue" : {
+        "value" : "",
+        "type" : "string"
+      }
+    } ],
+    "outgoingRelations" : [ ],
+    "annotations" : {
+      "uniqueName" : "ApplicationServe0001",
+      "displayName" : "da746e42-4458-d7b2-cdae-eeb2a40cdc0a",
+      "x" : "595",
+      "description" : "Application Server is a capability component that provides required properties for application servers. Application Server can be associated with concrete components that support this capability, for example PHP and JBoss.",
+      "y" : "271"
+    },
+    "capabilityChars" : [ ],
+    "requirements" : [ ]
+  } ],
+  "revision" : 101,
+  "properties" : [ ],
+  "iconUrl" : "/csa/images/library/AOSHOPING.png",
+  "tagIds" : [ ],
+  "state" : "UNLOCKED",
+  "hidden" : false,
+  "partial" : true,
+  "profiles" : [ ],
+  "annotations" : {
+    "serviceBlueprintId" : "90bbbef653e562e401542facc88f1a29",
+    "providerType" : "independent"
+  }
+}

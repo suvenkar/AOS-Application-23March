@@ -1,0 +1,55 @@
+
+<nav class="pages fixed fixedImportant">
+    <a translate="HOME" href="#/" ></a>
+    <a translate="SHOPPING_CART" href="#/shoppingCart" ></a>
+    <a class="select" translate="ORDER_PAYMENT"></a>
+</nav>
+
+<section>
+    <article>
+        <h3 class="roboto-regular sticky fixed fixedImportant" translate="ORDER_PAYMENT"></h3>
+        <div id="orderPayment">
+            <div>
+                <user-not-login></user-not-login>
+            </div>
+            <div id="userCart" data-ng-show="(cart | productsCartCount) > 0" >
+                <h5 translate="ORDER_SUMMARY" class="roboto-regular"></h5>
+                <span class="itemsCount roboto-medium">
+                    {{ cart | productsCartCount }} {{ (cart | productsCartCount) == 1 ?  'ITEM' : 'ITEMS' | translate }}
+                </span>
+                <div class="penetrationInCart">
+                    <span class="roboto-regular" translate="PRODUCT"></span>
+                    <span class="totalTitle roboto-regular" translate="TOTAL"></span>
+                </div>
+                <tool-tip-cart id="toolTipCart" ></tool-tip-cart>
+                <div class="penetrationInCart">
+                    <label class="shippingText roboto-regular noShipping" >
+                        {{ 'SHIPPING' | translate }}
+                        <span class="shippingValue roboto-light" >
+                            {{ shippingCost | currency: '$'}}
+                        </span>
+                    </label>
+                    <label class="roboto-bold totalText" > {{ 'TOTAL' | translate }}
+                        <span class="roboto-medium totalValue">
+                            {{ cart | productsCartSum:shippingCost | currency:'$' }}
+                        </span>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </article>
+</section>
+
+
+
+
+
+
+
+<social-media-drtv></social-media-drtv>
+
+
+
+
+
+

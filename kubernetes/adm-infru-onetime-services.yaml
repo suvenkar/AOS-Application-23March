@@ -1,0 +1,89 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: sv-mastercredit
+  namespace: ${namespace}
+  labels:
+    name: sv-mastercredit
+spec:
+  type: NodePort
+  ports:
+  - port: 8080
+    nodePort: ${mastercreditPort}
+  selector:
+    name: pod-mastercredit
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: sv-order
+  namespace: ${namespace}
+  labels:
+    name: sv-order
+spec:
+  type: NodePort
+  ports:
+  - port: 8080
+    nodePort: ${orderPort}
+  selector:
+    name: pod-mastercredit
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: sv-safepay
+  namespace: ${namespace}
+  labels:
+    name: sv-safepay
+spec:
+  type: NodePort
+  ports:
+  - port: 8080
+    nodePort: ${safepayPort}
+  selector:
+    name: pod-safepay
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: sv-shipex
+  namespace: ${namespace}
+  labels:
+    name: sv-shipex
+spec:
+  type: NodePort
+  ports:
+  - port: 8080
+    nodePort: ${shipexPort}
+  selector:
+    name: pod-shipex
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: sv-accountservice
+  namespace: ${namespace}
+  labels:
+    name: sv-accountservice
+spec:
+  type: NodePort
+  ports:
+  - port: 8080
+    nodePort: ${accountServicePort}
+  selector:
+    name: pod-accountservice
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: sv-frontend
+  namespace: ${namespace}
+  labels:
+    name: sv-frontend
+spec:
+  type: NodePort
+  ports:
+  - port: 8080
+    nodePort: ${frontPort}
+  selector:
+    name: pod-frontend

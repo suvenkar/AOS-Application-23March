@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<web-app>
+
+    <servlet>
+        <servlet-class>com.advantage.catalog.store.servlet.FetchImageHttpServlet</servlet-class>
+        <servlet-name>FetchImageHttpServlet</servlet-name>
+        <!--<multipart-config> &lt;!&ndash;MultipartFile config&ndash;&gt;
+            <location>/image_repository</location>
+            <max-file-size>5242880</max-file-size>&lt;!&ndash;5MB&ndash;&gt;
+            <max-request-size>20971520</max-request-size>&lt;!&ndash;20MB&ndash;&gt;
+            <file-size-threshold>0</file-size-threshold>
+        </multipart-config> &lt;!&ndash;MultipartFile config&ndash;&gt;-->
+        <init-param>
+            <param-name>repository-directory-path</param-name>
+            <param-value>/image_repository</param-value>
+        </init-param>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>FetchImageHttpServlet</servlet-name>
+        <url-pattern>/fetchImage</url-pattern>
+    </servlet-mapping>
+    <filter>
+        <filter-name>ExpiresFilter</filter-name>
+        <filter-class>org.apache.catalina.filters.ExpiresFilter</filter-class>
+        <init-param>
+            <param-name>ExpiresByType image</param-name>
+            <param-value>access plus 10 days</param-value>
+        </init-param>
+        <init-param>
+            <param-name>ExpiresByType text/css</param-name>
+            <param-value>access plus 10 hours</param-value>
+        </init-param>
+        <init-param>
+            <param-name>ExpiresByType application/javascript</param-name>
+            <param-value>access plus 10 minutes</param-value>
+        </init-param>
+        <!-- Let everything else expire immediately -->
+        <init-param>
+            <param-name>ExpiresDefault</param-name>
+            <param-value>access plus 0 seconds</param-value>
+        </init-param>
+    </filter>
+    <filter>
+        <filter-name>CORS</filter-name>
+        <filter-class>com.thetransactioncompany.cors.CORSFilter</filter-class>
+        <init-param>
+            <param-name>cors.allowOrigin</param-name>
+            <param-value>*</param-value>
+        </init-param>
+        <init-param>
+            <param-name>cors.supportedHeaders</param-name>
+            <param-value>Content-Type,Accept,Origin, Authorization</param-value>
+        </init-param>
+        <init-param>
+            <param-name>cors.supportedMethods</param-name>
+            <param-value>GET, POST, HEAD, OPTIONS, PUT, DELETE</param-value>
+        </init-param>
+        <init-param>
+            <param-name>cors.maxAge</param-name>
+            <param-value>3601</param-value>
+        </init-param>
+        <init-param>
+            <param-name>cors.supportsCredentials</param-name>
+            <param-value>true</param-value>
+        </init-param>
+        <init-param>
+            <param-name>cors.allowSubdomains</param-name>
+            <param-value>true</param-value>
+        </init-param>
+    </filter>
+    <filter>
+        <filter-name>CEF</filter-name>
+        <filter-class>com.advantage.common.filter.CefFilter</filter-class>
+        <init-param>
+            <param-name>cef.service.name</param-name>
+            <param-value>catalog</param-value>
+        </init-param>
+
+        <!--If true = start and end value extended CEF values will be format to MMMM dd yyyy HH:mm:ss, otherwise (default) - unixtime milliseconds-->
+        <init-param>
+            <param-name>cef.filter.format_start_end_fields</param-name>
+            <param-value>true</param-value>
+        </init-param>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>ExpiresFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+        <dispatcher>REQUEST</dispatcher>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>CORS</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>CEF</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <session-config>
+        <session-timeout>60</session-timeout>
+    </session-config>
+</web-app>
