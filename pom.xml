@@ -38,7 +38,7 @@
         <spring-security.version>4.0.3.RELEASE</spring-security.version>
         <jsr250.version>1.0</jsr250.version>
         <spring-session.version>1.0.0.RELEASE</spring-session.version>
-        <spring-framework-data-version>1.9.2.RELEASE</spring-framework-data-version>
+        <spring-framework-data-version>1.13.13.RELEASE</spring-framework-data-version>
         <spring-framework-data-jpa-version>1.7.2.RELEASE</spring-framework-data-jpa-version>
         <!--<hibernate.version>5.1.0.Final</hibernate.version>-->
         <hibernate.version>4.3.9.Final</hibernate.version>
