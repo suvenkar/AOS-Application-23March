@@ -46,7 +46,7 @@
         <liquibase.version>3.5.1</liquibase.version>
         <liquibase.hibernate4.version>3.5</liquibase.hibernate4.version>
         <liquibase.postgres.version>3.0</liquibase.postgres.version>
-        <jackson.version>2.4.5</jackson.version>
+        <jackson.version>2.10.3</jackson.version>
         <modelmapper.version>0.7.3</modelmapper.version>
         <springfox.version>2.0.3</springfox.version>
         <!--<postgres.driver.version>9.3-1100-jdbc41</postgres.driver.version>-->
