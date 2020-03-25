@@ -1,7 +1,7 @@
 package com.advantage.mastercredit.util;
 
 
-import com.voltage.payments.host.*;
+//import com.voltage.payments.host.*;
 import org.apache.log4j.Logger;
 /**
  * Created by hechuang on 10/19/2017.
@@ -9,8 +9,8 @@ import org.apache.log4j.Logger;
 public class DecryptionHelper {
     private static final String CONFIG_PIE_DISTRICT  = "modeloffice.org";
     private static final String CONFIG_HOST_DISTRICT = "modeloffice.org";
-    private static final String CONFIG_AUTH_METHOD   =
-            HostContext.AUTH_METHOD_SHARED_SECRET;
+    //private static final String CONFIG_AUTH_METHOD   =
+            //HostContext.AUTH_METHOD_SHARED_SECRET;
     private static final String CONFIG_AUTH_INFO     = "voltage123";
     private static final String CONFIG_MERCHANT_ID   = "AOS";
     private static final String CONFIG_DECRYPT_TIME  = null;
@@ -75,16 +75,16 @@ public class DecryptionHelper {
         int     dataMismatch    = 0;
         boolean exceptionThrown = false;
 
-        try {
+      /*  try {
 
             // Load the DLL containing the native C code.
             System.loadLibrary("vphostjava");
 
             // Get and print the Host SDK version information.
-            HostVersionInfo versionInfo = HostContext.getVersionInfo();
-            short  currCryptoProtocolVersion = versionInfo.getCryptoProtocolVersion();
-            long   hostVersionNumber         = versionInfo.getHostVersionNumber();
-            String hostVersionString         = versionInfo.getHostVersionString();
+            //HostVersionInfo versionInfo = HostContext.getVersionInfo();
+            //short  currCryptoProtocolVersion = versionInfo.getCryptoProtocolVersion();
+            //long   hostVersionNumber         = versionInfo.getHostVersionNumber();
+            //String hostVersionString         = versionInfo.getHostVersionString();
 
             /*******************
             System.out.println();
@@ -104,7 +104,7 @@ public class DecryptionHelper {
              ***************/
 
             // Create the HostContext using memory storage.1
-            HostContext hostContext =
+            /*HostContext hostContext =
                     new HostContext(
                             HostContext.FLAGS_MEMORY_STORAGE,       // use memory storage
                             CONFIG_PIE_DISTRICT,                     // POS district name
@@ -115,18 +115,16 @@ public class DecryptionHelper {
                             null,               // no storage password for memory storage
                             // the next param, trustStore, is ignored on Windows
                             //null);
-                            "/opt/HPE-SecureData-Payments-Host-SDK-Linux-64bit-4.2.0-r218900/trust-store");
+                            "/opt/HPE-SecureData-Payments-Host-SDK-Linux-64bit-4.2.0-r218900/trust-store");*/
 
             // PIE PAN/CVV data decryption code starts here.
 
             // Dev Guide Code Snippet: PIE2PLAIN_PREP_INPUT_ARRAY; LC:39
             // Establish three sets of PIE-protected card data.
-            HostPIECardData[] pieProtectedCardDataArray =
-                    new HostPIECardData[CARD_DATA_COUNT];
+          /*  HostPIECardData[] pieProtectedCardDataArray = new HostPIECardData[CARD_DATA_COUNT];
 
             // Input card data setup for external PIE without integrity checking.
-            pieProtectedCardDataArray[0] =
-                    new HostPIECardData(HostPIECardData.FLAGS_PIE_TYPE_EXTERNAL,
+            pieProtectedCardDataArray[0] = new HostPIECardData(HostPIECardData.FLAGS_PIE_TYPE_EXTERNAL,
                             ciphertextSampleExternalPAN,
                             ciphertextSampleExternalCVV,
                             keyId2,
@@ -141,7 +139,7 @@ public class DecryptionHelper {
                             keyId2,
                             phaseBit,
                             ciphertextSampleExternalIntegrity);
-
+*/
             /*****
             System.out.println("Calling method translatePIECardData(" +
                     "PIE->plaintext)...");
@@ -149,7 +147,7 @@ public class DecryptionHelper {
 
             // Dev Guide Code Snippet: PIE2PLAIN_TRANSLATE; LC:13
             // Decrypt PIE-protected ciphertext card data.
-            HostPIETranslateResult[] plaintextCardDataResultArray =
+           /* HostPIETranslateResult[] plaintextCardDataResultArray =
                     hostContext.translatePIECardData(
                             1,                                      // PIE version - always 1
                             CONFIG_MERCHANT_ID,      // merchant identifier for key retrieval
@@ -160,7 +158,7 @@ public class DecryptionHelper {
                             null,                         // no output identity for plaintext
                             null,                       // no output tweak data for plaintext
                             0,                              // CVV encryption type - always 0
-                            pieProtectedCardDataArray);     // sample PIE-encrypted card data
+                            pieProtectedCardDataArray);     // sample PIE-encrypted card data  */
 
             // Print the results of the translation call.
             System.out.println();
@@ -170,7 +168,7 @@ public class DecryptionHelper {
             System.out.println("  To:   Recovered plaintext (PAN and CVV)");
             System.out.println();
 
-            for( int i = 0; i < plaintextCardDataResultArray.length; i++ ) {
+           /* for( int i = 0; i < plaintextCardDataResultArray.length; i++ ) {
 
                 // Print the type of encryption for this data.
                 System.out.println("    Sample data is: " +
@@ -202,11 +200,11 @@ public class DecryptionHelper {
                                 new String(pieProtectedCardDataArray[i].getIntegrity());
                         System.out.println("       Integrity value: " +
                                 tempIntegrity);
-                    }
+                    }*/
 
                     // Dev Guide Code Snippet: PIE2PLAIN_GET_CARD_DATA_RESULTS; LC:4
                     // Convert returned byte array to a String for output.
-                    String tempRecovPAN =
+                    /*String tempRecovPAN =
                             new String(plaintextCardDataResultArray[i].getPAN());
                     System.out.println("         Recovered PAN: " + tempRecovPAN);
                     this.setOutPlainPAN(tempRecovPAN);
@@ -225,16 +223,15 @@ public class DecryptionHelper {
                     this.setOutPlainCVV(tempRecovCVV);
 
                 }
-            }
+            }*/
 
             /**********
              System.out.println("Deleting the array elements...");
             System.out.println();
              **********/
-
             // Dev Guide Code Snippet: PIE2PLAIN_ARRAY_DELETE; LC:7
             // Delete the card data array elements.
-            for (int i = 0; i < pieProtectedCardDataArray.length; i++) {
+            /*for (int i = 0; i < pieProtectedCardDataArray.length; i++) {
                 pieProtectedCardDataArray[i].delete();
             }
             for (int i = 0; i < plaintextCardDataResultArray.length; i++) {
@@ -249,7 +246,7 @@ public class DecryptionHelper {
             **********/
 
             // Delete the versioInfo instance.
-            versionInfo.delete();
+           // versionInfo.delete();
 
             /**********
             System.out.println("Deleting the HostContext...");
@@ -257,11 +254,11 @@ public class DecryptionHelper {
             **********/
 
             // Always delete the HostContext explicitly.
-            hostContext.delete();
-        }
+           // hostContext.delete();
+     //   }
 
         // Catch exceptions related to the Host SDK.
-        catch ( HostException e ) {
+        /*catch ( HostException e ) {
 
             System.out.println();
             System.out.println("Host SDK exception thrown...");
@@ -302,7 +299,7 @@ public class DecryptionHelper {
                     + "values were not zero.");
         }
 
-
+*/
 
     }
 

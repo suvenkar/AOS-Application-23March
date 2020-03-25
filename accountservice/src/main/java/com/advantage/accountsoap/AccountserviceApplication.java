@@ -11,7 +11,6 @@ import javax.inject.Inject;
 @SpringBootApplication(scanBasePackageClasses = {Url_resources.class})
 @Configuration
 @EnableAspectJAutoProxy(proxyTargetClass=true)
-@ComponentScan
 @PropertySources({
         @PropertySource(Constants.FILE_PROPERTIES_DEMO_APP),
         @PropertySource(Constants.FILE_PROPERTIES_INTERNAL),

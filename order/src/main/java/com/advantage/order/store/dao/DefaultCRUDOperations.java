@@ -1,7 +1,8 @@
 package com.advantage.order.store.dao;
 
 import org.springframework.transaction.annotation.Transactional;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
+//import sun.reflect.generics.reflectiveObjects.NotImplementedException;
+import org.apache.commons.lang3.NotImplementedException;
 
 import java.util.Collection;
 import java.util.List;
@@ -15,7 +16,7 @@ public interface DefaultCRUDOperations<T> {
      */
     @Transactional
     default T create(String name) {
-        throw new NotImplementedException();
+        throw new NotImplementedException("getCurrentWorkerId() not (yet) implemented.");
     }
 
     /**
@@ -26,7 +27,7 @@ public interface DefaultCRUDOperations<T> {
      */
     @Transactional
     default Long create(T entity) {
-        throw new NotImplementedException();
+        throw new NotImplementedException("getCurrentWorkerId() not (yet) implemented.");
     }
 
     /**
@@ -60,7 +61,7 @@ public interface DefaultCRUDOperations<T> {
      */
     @Transactional
     default int deleteByIds(Collection<Long> ids) {
-        throw new NotImplementedException();
+        throw new NotImplementedException("getCurrentWorkerId() not (yet) implemented.");
     }
 
     /**
